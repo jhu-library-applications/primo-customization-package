@@ -1,6 +1,6 @@
 name:  Create the customization package
 run-name: ${{ github.actor }} is creating a customization package for the 01JHU_INST-01JHU_INST primo view
-on: [push]
+on: [push, workflow_dispatch]
 jobs:
     Create-Pacakge:
         runs-on: ubuntu-latest
