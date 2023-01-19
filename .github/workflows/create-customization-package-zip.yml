@@ -2,7 +2,7 @@ name:  Create the customization package
 run-name: Creating 01JHU_INST-JHU Customization Package Zip
 on: [push, workflow_dispatch]
 jobs:
-    Create-Pacakge:
+    Create-Package:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
