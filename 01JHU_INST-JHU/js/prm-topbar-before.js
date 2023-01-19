@@ -17,5 +17,5 @@ angular.module('viewCustom')
 		 bindings:{parentCtrl:'<'},
 		 controller: 'prmTopBarBeforeCtrl',
 		 controllerAs:'vm',
-		 templateUrl:'/primo-explore/custom/HVD2/html/prm-topbar-before.html'
+		 templateUrl:'/primo-explore/custom/01JHU_INST-JHU/html/prm-topbar-before.html'
  });
