@@ -15,3 +15,20 @@
 
 
 })
+
+angular.module('viewCustom')
+.controller('prmTopBarBeforeCtrl',[function () {
+    var vm=this;
+    vm.$onInit=function () {
+
+    };
+
+}]);
+
+angular.module('viewCustom')
+.component('prmTopBarBefore',{
+    bindings:{parentCtrl:'<'},
+    controller: 'prmTopBarBeforeCtrl',
+    controllerAs:'vm',
+    templateUrl:'/primo-explore/custom/01JHU_INST-JHU/html/prm-top-bar-before.html'
+});
