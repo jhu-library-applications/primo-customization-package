@@ -1,3 +1,5 @@
+/* Fonts */
+
 /* GENTONA */
 /*=== Medium (500) ===*/
 @font-face {
@@ -100,9 +102,10 @@
 
 
 body {
-  font-family: 'gentona', sans-serif;
+  font-family: 'gentona', tahoma, sans-serif;
 }
 
+/* end fonts */
 
 /* #fff = top bar
    #001f4e = top bar text, hover
@@ -128,7 +131,7 @@ body {
   /*NAV BAR REGULAR button hover */
   prm-topbar .md-button:focus, prm-topbar .md-button:hover {
       color: #fff !important;
-      background-color: #001f4e !important;
+      background-color: #002d72 !important;
       box-shadow: none;
   }
 
