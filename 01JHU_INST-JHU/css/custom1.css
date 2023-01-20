@@ -212,6 +212,9 @@ prm-brief-result .item-title span {
 [class*="available"] {
   color: #286140;
 }
+[class*="available"] > span {
+  color: #002d72;
+}
 
 mark {
   box-shadow: inset 0 -.3em 0 0 #f1c400;
@@ -220,7 +223,7 @@ mark {
   color: #9e5330;
 }
 prm-icon md-icon {
-  color: #9e5330;
+  color: #9e5330!important;
 }
 .md-button.button-as-link.link-alt-color {
   color: #002d72,
