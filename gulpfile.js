@@ -3,16 +3,16 @@ const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 
 function scripts () {
-  return src('js/*.js')
+  return src('01JHU_INST-JHU/js/*.js')
     .pipe(uglify())
     .pipe(concat('custom.js'))
-    .pipe(dest('vendor/js/'));
+    .pipe(dest('01JHU_INST-JHU/vendor/js/'));
 };
 
 function styles () {
-    return src('css/*.css')
+    return src('01JHU_INST-JHU/css/*.css')
         .pipe(concat('custom1.css'))
-        .pipe(dest('vendor/css/'));
+        .pipe(dest('01JHU_INST-JHU/vendor/css/'));
 };
 
 exports.scripts = scripts;
