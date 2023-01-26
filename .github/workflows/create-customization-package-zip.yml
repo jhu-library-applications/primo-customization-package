@@ -2,6 +2,23 @@ name:  Create the customization package
 run-name: Creating 01JHU_INST-JHU Customization Package Zip
 on: [push, workflow_dispatch]
 jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+        - uses: actions/checkout@v3
+            
+        - name: Use Node.js 16
+          uses: actions/setup-node@v3
+          with:
+            node-version: 16.x
+
+        - name: Build
+          run: |
+            npm install
+            gulp cleanFiles
+            gulp scripts
+            gulp styles
     Create-Package:
         runs-on: ubuntu-latest
         steps:
