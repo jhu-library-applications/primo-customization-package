@@ -1,4 +1,4 @@
-# Primo customization pacakges
+# Primo customization packages
 
 This repo contains the files that are used for generating a Primo customization package for a view. 
 
