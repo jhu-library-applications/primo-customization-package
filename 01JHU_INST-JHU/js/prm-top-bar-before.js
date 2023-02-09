@@ -1,21 +1,15 @@
-/**
- * Created by mferrarini on 2/9/22.
- * This header will use for image component page and image detail page
- */
+(function () {
+    "use strict";
+    'use strict';
 
- angular.module('viewCustom')
- .controller('prmTopBarBeforeCtrl',[function () {
-		 var vm=this;
-		 vm.$onInit=function () {
+var app = angular.module('viewCustom', ['angularLoad']);
+    app.component('jhuTopBar', {
+	templateUrl: "/discovery/custom/01JHU_INST-JHU/html/prm-top-bar-before.html"
+    });
 
-		 };
-
- }]);
-
-angular.module('viewCustom')
- .component('prmTopBarBefore',{
-		 bindings:{parentCtrl:'<'},
-		 controller: 'prmTopBarBeforeCtrl',
-		 controllerAs:'vm',
-		 templateUrl:'/primo-explore/custom/01JHU_INST-JHU/html/prm-top-bar-before.html'
- });
+app.component('prmTopBarBefore', {
+        bindings: {parentCtrl: `<`},
+        template: `<jhu-top-bar></jhu-top-bar>`    
+});
+	
+})();
