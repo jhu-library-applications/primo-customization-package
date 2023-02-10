@@ -60,7 +60,7 @@ Example:
 
 -  Use the `showDirectives` (located in the root directory of this package is the showDirectives.txt file
 , just add the content of the file as a bookmark to your browser) scriplet to identify the `prmSearchBarAfter` directive which you will plugin to
--  Edit the primo-explore/custom/js/custom.js file and add a component declaration for the `prmSearchBarAfter` directive
+-  Edit the discovery/custom/js/custom.js file and add a component declaration for the `prmSearchBarAfter` directive
 
     ```
     app.component('prmSearchBarAfter', {
@@ -95,7 +95,7 @@ Example:
 
 - Review the properties of the directive to decide which data elements can be used, avoid methods/functions as they wont be backwards compatible
 
-- Edit  primo-explore/custom/js/custom.js file and add a component declaration for the `prmSearchBarAfter` directive
+- Edit  discovery/custom/js/custom.js file and add a component declaration for the `prmSearchBarAfter` directive
 
 - Add a binding definition the input parentCtrl
 ```
