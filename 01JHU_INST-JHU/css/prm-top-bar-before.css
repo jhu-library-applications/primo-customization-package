@@ -1,3 +1,8 @@
+/* Hide the extra top bar for now */
+prm-topbar {
+    display: none;
+}
+
 .jh-header-container {
     margin-left: auto;
     margin-right: auto;
