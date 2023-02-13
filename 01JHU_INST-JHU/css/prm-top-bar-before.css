@@ -32,7 +32,3 @@ prm-topbar {
     height: auto;
     max-width: 100%;
 }
-
-body > primo-explore > div > prm-explore-main > div > prm-search-bar {
-    margin-top: 54px;
-}
