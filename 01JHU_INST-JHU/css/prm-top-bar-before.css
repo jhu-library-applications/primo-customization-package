@@ -1,5 +1,5 @@
 /* Hide the extra top bar for now */
-prm-topbar-before {
+prm-top-bar-before {
     display: none;
 }
 
