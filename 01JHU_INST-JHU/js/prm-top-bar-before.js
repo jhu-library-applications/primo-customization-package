@@ -13,4 +13,9 @@ app.component('prmSearchBarAfter', {
     templateUrl: "/discovery/custom/01JHU_INST-JHU/html/prm-search-bar-after.html"  
 });
 	
+app.component('prmBackToLibrarySearchButtonAfter', {
+    bindings: { parentCtrl: `<` },
+    templateUrl: "/discovery/custom/01JHU_INST-JHU/html/prm-back-to-library-search-button-after.html"
+});
+
 })();
