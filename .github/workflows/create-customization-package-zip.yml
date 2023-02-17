@@ -16,7 +16,6 @@ jobs:
           - name: Build
             run: |
               npm install
-              gulp cleanJS
               gulp cleanCSS
               gulp scripts
               gulp styles
