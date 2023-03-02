@@ -31,11 +31,18 @@
 }
 .jh-header-menu {
     margin: 0 20px 0 40px;
+    float:left;
 }
 .jh-header-menu ul {
-    display:inline;
+
     list-style-type:none;
 }
 .jh-header-menu ul li {
-    display:block;
+    display:inline block;
+    float:left;
+}
+.jh-header-menu ul li a {
+    color:#fff;
+    font-weight:bold;
+    font-size: 1.2em;
 }
