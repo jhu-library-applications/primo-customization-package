@@ -5,6 +5,8 @@
     padding-right: 40px;
     box-shadow: 0 5px 5px rgba(30,30,30,0.1);
     height: 53px;
+    background-color:#002d72;
+    color:#fff;
 }
 
 @media only screen and (max-width: 1280px) {
@@ -26,4 +28,14 @@
 .jh-image {
     height: auto;
     max-width: 100%;
+}
+.jh-header-menu {
+    margin: 0 20px 0 40px;
+}
+.jh-header-menu ul {
+    display:inline;
+    list-style-type:none;
+}
+.jh-header-menu ul li {
+    display:block;
 }
