@@ -255,21 +255,3 @@ prm-search-bar {
         padding-right: 20px;
     }
 }
-.jh-header-logo {
-    height: 54px;
-    width: 73px;
-    margin-bottom: -12px;
-    align-self: flex-end;
-}
-.jh-header-logo a:hover,
-.jh-header-logo a:focus {
-    box-shadow: none;
-}
-.jh-image {
-    height: auto;
-    max-width: 100%;
-}
-
-.logo-image {
-    display: none;
-}
