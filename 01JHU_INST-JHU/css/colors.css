@@ -104,7 +104,10 @@ prm-brief-result .item-title span {
 [class*="available"] > span {
   color: #002d72;
 }
-.not_restricted, .fulltext {
+.not_restricted {
+  color: #286140;
+}
+.fulltext {
   color: #286140;
 }
 prm-quick-link a span {
@@ -117,8 +120,8 @@ mark {
 .prm-notice {
   color: #9e5330;
 }
-prm-icon md-icon {
-  color: #9e5330!important;
+.result-item-actions .pin-button {
+  color: #002d72;
 }
 .md-button.button-as-link.link-alt-color {
   color: #002d72,
