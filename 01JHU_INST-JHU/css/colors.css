@@ -104,7 +104,7 @@ prm-brief-result .item-title span {
 [class*="available"] > span {
   color: #002d72;
 }
-.not_restricted {
+.not_restricted, .fulltext {
   color: #286140;
 }
 prm-quick-link a span {
