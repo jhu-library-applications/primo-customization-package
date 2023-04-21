@@ -171,7 +171,13 @@ prm-newspapers-spotlight h3 a {
 .md-button.button-as-link:hover:not([disabled]) {
   background-color: #002d72;
 }
+.md-button.button-as-link:focus:not([disabled]) {
+  background-color: #002d72;
+}
 [external-link]:hover {
+  color: #fff;
+}
+[external-link]:focus {
   color: #fff;
 }
 md-tabs.tabs-as-app .back-button {
@@ -188,4 +194,16 @@ a {
 }
 a:hover {
   box-shadow: inset 0 -2px 0 0 #002d72;
+}
+.bar prm-authentication .md-button {
+  color: #002d72;
+}
+.bar prm-authentication .md-button:hover:not([disabled]) {
+  background-color:#002d72;
+}
+.bar prm-authentication .md-button:focus:not([disabled]) {
+  background-color:#002d72;
+}
+.bar.alert-bar {
+  border-color: #F1C400;
 }
