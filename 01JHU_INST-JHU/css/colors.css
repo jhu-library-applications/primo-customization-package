@@ -123,8 +123,11 @@ mark {
 .result-item-actions .pin-button {
   color: #002d72;
 }
+prm-facet .switch-results md-switch.md-checked .md-label {
+  color: #002d72;
+}
 .md-button.button-as-link.link-alt-color {
-  color: #002d72,
+  color: #002d72;
 }
 .md-button.button-as-link.link-alt-color:focus:not([disabled]), .md-button.button-as-link.link-alt-color:hover:not([disabled]) {
   background-color: #002d72;
@@ -133,6 +136,12 @@ prm-facet-exact .section-title prm-icon {
   color: #002d72;
 }
 prm-facet-exact .section-title:focus span, prm-facet-exact .section-title:hover span {
+  color: #002d72;
+}
+, prm-facet-range .section-title:focus span, prm-facet-range .section-title:hover span {
+  color: #002d72;
+}
+prm-facet-range .section-title prm-icon {
   color: #002d72;
 }
 prm-newspapers-spotlight h3 a {
