@@ -85,12 +85,11 @@ prm-user-area md-fab-toolbar .md-fab-action-item md-input-container md-select:ho
     background-color: #002d72;
 }
 .classic-input {
-  border-color: #F1C400;
-  background-color: #F1C400
+
 }
 .search-scope {
-  border-color: #F1C400;
-  background-color: #F1C400
+ 
+
 }
 
 /* sign in */
