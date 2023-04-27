@@ -84,11 +84,7 @@ prm-user-area md-fab-toolbar .md-fab-action-item md-input-container md-select:ho
 .prm-primary-bg, prm-atoz-search-bar, prm-browse-search-bar, prm-collection-gallery-header .collection-header-inner, prm-newspapers-search-bar, prm-search-bar, prm-spinner.overlay-cover.light-on-dark::after, prm-tags-search-bar {
     background-color: #002d72;
 }
-.classic-input {
-  border-color: #F1C400;
-  background-color: #F1C400
-}
-.search-scope {
+.classic-input .search-scope {
   border-color: #F1C400;
   background-color: #F1C400
 }
