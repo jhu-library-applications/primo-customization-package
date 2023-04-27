@@ -84,10 +84,18 @@ prm-user-area md-fab-toolbar .md-fab-action-item md-input-container md-select:ho
 .prm-primary-bg, prm-atoz-search-bar, prm-browse-search-bar, prm-collection-gallery-header .collection-header-inner, prm-newspapers-search-bar, prm-search-bar, prm-spinner.overlay-cover.light-on-dark::after, prm-tags-search-bar {
     background-color: #002d72;
 }
+.classic-input {
+  border-color: #F1C400;
+  background-color: #F1C400
+}
+.search-scope {
+  border-color: #F1C400;
+  background-color: #F1C400
+}
 
 /* sign in */
 .bar.alert-bar {
-	background-color: lightgray;
+	background-color: #ffffff;
 }
 
 /* results list colors */
@@ -100,7 +108,6 @@ prm-brief-result .item-title span {
 }
 [class*="available"] {
   color: #286140;
-  font-weight:bold;
 }
 [class*="available"] > span {
   color: #002d72;
@@ -154,8 +161,8 @@ prm-facet-range .section-title prm-icon {
 prm-newspapers-spotlight h3 a {
   color: #002d72;
 }
-.media-delimiter {
-  opacity: 0.7;
+prm-brief-result .item-detail [class^="media-"] {
+  opacity: .4;
 }
 
 /* item detail listing */
