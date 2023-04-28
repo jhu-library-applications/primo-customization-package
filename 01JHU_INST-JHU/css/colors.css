@@ -84,7 +84,9 @@ prm-user-area md-fab-toolbar .md-fab-action-item md-input-container md-select:ho
 .prm-primary-bg, prm-atoz-search-bar, prm-browse-search-bar, prm-collection-gallery-header .collection-header-inner, prm-newspapers-search-bar, prm-search-bar, prm-spinner.overlay-cover.light-on-dark::after, prm-tags-search-bar {
     background-color: #002d72;
 }
-
+prm-search-bar {
+  padding: 1.5em 1.5em 0.7em 1.5em;
+}
 
 /* sign in */
 .bar.alert-bar {
@@ -210,6 +212,13 @@ a:hover {
 .bar.alert-bar {
   border-color: #F1C400;
 }
+
+/* facets */
+
+.section-content .md-chips .md-chip .md-chip-content { /* always show checkboxes */
+  color: #000;
+}
+
 prm-facet .switch-results md-switch.md-checked .md-bar {
   color: #002d72;
   background-color: #002d72;
