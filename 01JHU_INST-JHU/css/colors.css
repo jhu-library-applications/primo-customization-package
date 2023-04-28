@@ -215,10 +215,6 @@ a:hover {
 
 /* facets */
 
-.section-content .md-chips .md-chip .md-chip-content { /* always show checkboxes */
-  color: #000;
-}
-
 prm-facet .switch-results md-switch.md-checked .md-bar {
   color: #002d72;
   background-color: #002d72;
