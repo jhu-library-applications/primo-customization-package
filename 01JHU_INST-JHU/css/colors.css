@@ -164,14 +164,11 @@ prm-brief-result .item-detail [class^="media-"] {
   opacity: .4;
 }
 
-.best-location-delivery {
-  font-weight:normal;
+.best-location-delivery::before {
+      content: "\--\00a0";
 }
 prm-search-result-availability-line .availability-status span:first-child + .locations-link::before {
   content: "\--\00a0";
-}
-prm-search-result-availability-line .availability-status span:first-child + .locations-link::after {
-    content: "\00a0\--";
 }
 .availability-line-parenthesis {
   display:none;
