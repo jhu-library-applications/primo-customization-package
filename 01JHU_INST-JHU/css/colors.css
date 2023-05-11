@@ -167,13 +167,9 @@ prm-brief-result .item-detail [class^="media-"] {
 prm-search-result-availability-line .availability-status span:first-child + .locations-link::before {
     content: "\--\00a0";
 }
-prm-search-result-availability-line .availability-status span:first-child + .locations-link::before {
-    content: "\--\00a0";
+.availability-line-parenthesis {
+  display:none;
 }
-.best-location-delivery {
-  font-weight:bold;
-}
-
 
 /* item detail listing */
 .md-button.button-link {
