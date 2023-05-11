@@ -167,10 +167,10 @@ prm-brief-result .item-detail [class^="media-"] {
 .best-location-delivery {
   font-weight:normal;
 }
-prm-search-result-availability-line .availability-status span:first-child + .locations-link::before {
+prm-search-result-availability-line .locations-link::before {
     content: "\--\00a0";
 }
-prm-search-result-availability-line .availability-status span:first-child + .locations-link::after {
+prm-search-result-availability-line .locations-link::after {
     content: "\00a0\--";
 }
 .availability-line-parenthesis {
