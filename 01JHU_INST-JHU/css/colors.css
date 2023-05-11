@@ -95,6 +95,10 @@ prm-search-bar {
 
 /* results list colors */
 
+has-checkbox .list-item-count { /* item count spacing inside of checkbox */
+  top: 1.5em;
+}
+
 prm-brief-result .item-title span {
   color: #002d72;
 }
@@ -159,6 +163,17 @@ prm-newspapers-spotlight h3 a {
 prm-brief-result .item-detail [class^="media-"] {
   opacity: .4;
 }
+
+prm-search-result-availability-line .availability-status span:first-child + .locations-link::before {
+    content: "\--\00a0";
+}
+prm-search-result-availability-line .availability-status span:first-child + .locations-link::before {
+    content: "\--\00a0";
+}
+.best-location-delivery {
+  font-weight:bold;
+}
+
 
 /* item detail listing */
 .md-button.button-link {
