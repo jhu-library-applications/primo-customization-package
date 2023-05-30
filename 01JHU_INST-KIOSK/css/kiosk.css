@@ -1,0 +1,29 @@
+/* CSS for hiding sign-in and request options */
+
+#signInBtn {
+    display: none;
+}
+
+prm-alert-bar {
+    display: none;
+}
+
+md-menu {
+    display: none;
+}
+
+prm-authentication {
+    display: none;
+}
+
+prm-library-card-menu {
+    display: none;
+}
+
+#favorites-button > prm-icon {
+    display: none;
+}
+
+prm-save-to-favorites-button {
+    display: none;
+}
