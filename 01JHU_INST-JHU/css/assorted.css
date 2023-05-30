@@ -1,5 +1,8 @@
 
+/* hide the anchor links on full record page */
 prm-search-result-availability-line {
-    line-height: 0;
-display: none;
+
+  }
+.search-result-availability-line-wrapper {
+
   }
