@@ -1,4 +1,5 @@
 
-.search-result-availability-line-wrapper {
-    display: none;
+prm-search-result-availability-line {
+    line-height: 0;
+display: none;
   }
