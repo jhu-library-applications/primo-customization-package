@@ -27,3 +27,11 @@ prm-library-card-menu {
 prm-save-to-favorites-button {
     display: none;
 }
+
+#searchHistory > prm-icon > md-icon {
+    display: none;
+}
+
+prm-request-services {
+    display: none;
+}
