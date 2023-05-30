@@ -11,11 +11,6 @@ prm-alert-bar {
 md-menu {
     display: none;
 }
-
-prm-authentication {
-    display: none;
-}
-
 prm-library-card-menu {
     display: none;
 }
@@ -35,3 +30,11 @@ prm-save-to-favorites-button {
 prm-request-services {
     display: none;
 }
+
+ prm-authentication {
+    display: none !important;
+ }
+
+ #dialogContent_265 > prm-main-menu > div > div > md-content > div > div > div.settings-container.align-self-stretch.layout-gt-xs-row.layout-align-center-start {
+    display: none !important;
+ }
