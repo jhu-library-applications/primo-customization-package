@@ -4,17 +4,17 @@ const clean = require('gulp-clean');
 const fs = require('fs');
 
 function cleanCSS() {
-  if (fs.existsSync('01JHU_INST-JHU/css/custom1.css')) {
-    return src(['01JHU_INST-JHU/css/custom1.css'], { read: false })
+  if (fs.existsSync('01JHU_INST-KIOSK/css/custom1.css')) {
+    return src(['01JHU_INST-KIOSK/css/custom1.css'], { read: false })
       .pipe(clean());
   }
   return Promise.resolve('No CSS to clean');
 }
 
 function styles() {
-  return src('01JHU_INST-JHU/css/*.css')
+  return src('01JHU_INST-KIOSK/css/*.css')
     .pipe(concat('custom1.css'))
-    .pipe(dest('01JHU_INST-JHU/css/'));
+    .pipe(dest('01JHU_INST-KIOSK/css/'));
 };
 
 exports.cleanCSS = cleanCSS;
