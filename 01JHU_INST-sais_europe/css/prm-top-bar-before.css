@@ -3,7 +3,7 @@
     margin-right: auto;
     padding-left: 40px;
     padding-right: 40px;
-    height: 68px;
+    height: 78px;
     background-color:#002d72;
     color:#fff;
 }
@@ -23,26 +23,23 @@
     box-shadow: none;
 }
 .jh-image {
-    height: auto;
+    height: 45px;
     max-width: 100%;
 }
 .jh-header-menu {
-    margin: 10px 20px 0 40px;
+    margin: 13px 20px 0 25px;
     float:left;
 }
 .jh-header-menu ul {
-
     list-style-type:none;
 }
 .jh-header-menu ul li {
     display:inline block;
     float:left;
-    padding: 0 15px;
 }
 .jh-header-menu ul li a {
     color:#fff;
-    font-weight:bold;
-    font-size: 1.1em;
+    font-size: 1.7em;
 }
 prm-topbar .top-nav-bar {
     clear:both;
