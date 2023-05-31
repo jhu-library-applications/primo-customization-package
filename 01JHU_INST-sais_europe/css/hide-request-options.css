@@ -1,3 +1,5 @@
+/* hiding to test because these changes are too comprehensive
+
 prm-user-area-expandable,
 prm-search-bookmark-filter,
 prm-authentication,
@@ -11,3 +13,4 @@ prm-request-services {
 prm-full-view-service-container > div.section-head > prm-service-header > div > h4 {
     display: none !important;
 }
+ */
