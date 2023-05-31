@@ -2,3 +2,7 @@
     height: 30px;
     margin-left:70px;
   }
+
+  prm-main-menu[menu-type="menu"] .md-button {
+    font-size: .80em;
+  }
