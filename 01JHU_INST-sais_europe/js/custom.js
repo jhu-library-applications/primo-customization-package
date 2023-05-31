@@ -6,17 +6,17 @@
 
     app.component('prmTopBarBefore', {
         bindings: { parentCtrl: `<` },
-        templateUrl: "/discovery/custom/01JHU_INST-JHU/html/prm-top-bar-before.html"
+        templateUrl: "/discovery/custom/01JHU_INST-sais_europe/html/prm-top-bar-before.html"
     });
 
     app.component('prmSearchBarAfter', {
         bindings: { parentCtrl: `<` },
-        templateUrl: "/discovery/custom/01JHU_INST-JHU/html/prm-search-bar-after.html"
+        templateUrl: "/discovery/custom/01JHU_INST-sais_europe/html/prm-search-bar-after.html"
     });
 
     app.component('prmSearchResultThumbnailContainerAfter', {
         bindings: { parentCtrl: `<` },
-        templateUrl: "/discovery/custom/01JHU_INST-JHU/html/prm-search-result-thumbnail-container-after.html"
+        templateUrl: "/discovery/custom/01JHU_INST-sais_europe/html/prm-search-result-thumbnail-container-after.html"
     });
 
      
