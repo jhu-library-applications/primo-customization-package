@@ -1,3 +1,4 @@
+
 /* #fff = top bar
    #001f4e = top bar text, hover
    turquoise = guest/name
@@ -84,13 +85,20 @@ prm-user-area md-fab-toolbar .md-fab-action-item md-input-container md-select:ho
 .prm-primary-bg, prm-atoz-search-bar, prm-browse-search-bar, prm-collection-gallery-header .collection-header-inner, prm-newspapers-search-bar, prm-search-bar, prm-spinner.overlay-cover.light-on-dark::after, prm-tags-search-bar {
     background-color: #002d72;
 }
+prm-search-bar {
+  padding: 1.5em 1.5em 0.7em 1.5em;
+}
 
 /* sign in */
 .bar.alert-bar {
-	background-color: lightgray;
+	background-color: #ffffff;
 }
 
 /* results list colors */
+
+has-checkbox .list-item-count { /* item count spacing inside of checkbox */
+  top: 1.5em;
+}
 
 prm-brief-result .item-title span {
   color: #002d72;
@@ -104,6 +112,15 @@ prm-brief-result .item-title span {
 [class*="available"] > span {
   color: #002d72;
 }
+.not_restricted {
+  color: #286140;
+}
+.fulltext {
+  color: #286140;
+}
+prm-quick-link a span {
+  color: #286140;
+}
 
 mark {
   box-shadow: inset 0 -.3em 0 0 #f1c400;
@@ -111,11 +128,14 @@ mark {
 .prm-notice {
   color: #9e5330;
 }
-prm-icon md-icon {
-  color: #9e5330!important;
+.result-item-actions .pin-button {
+  color: #002d72;
+}
+prm-facet .switch-results md-switch.md-checked .md-label {
+  color: #002d72;
 }
 .md-button.button-as-link.link-alt-color {
-  color: #002d72,
+  color: #002d72;
 }
 .md-button.button-as-link.link-alt-color:focus:not([disabled]), .md-button.button-as-link.link-alt-color:hover:not([disabled]) {
   background-color: #002d72;
@@ -123,115 +143,126 @@ prm-icon md-icon {
 prm-facet-exact .section-title prm-icon {
   color: #002d72;
 }
-prm-facet-exact .section-title:focus span, prm-facet-exact .section-title:hover span {
+prm-facet-exact .section-title:focus span{
+  color: #002d72;
+}
+prm-facet-exact .section-title:hover span {
+  color: #002d72;
+}
+prm-facet-range .section-title:focus span {
+  color: #002d72;
+}
+prm-facet-range .section-title:hover span {
+  color: #002d72;
+}
+prm-facet-range .section-title prm-icon {
   color: #002d72;
 }
 prm-newspapers-spotlight h3 a {
   color: #002d72;
 }
-/* GENTONA */
-/*=== Medium (500) ===*/
-@font-face {
-  font-family: 'gentona';
-  src: url('https://bespoke.mse.jhu.edu/webfonts/Gentona-Medium.eot');
-  src: url('https://bespoke.mse.jhu.edu/webfonts/Gentona-Medium.eot?#iefix') format('embedded-opentype'),
-       url('https://bespoke.mse.jhu.edu/webfonts/Gentona-Medium.woff') format('woff'),
-       url('https://bespoke.mse.jhu.edu/webfonts/Gentona-Medium.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'gentona';
-  src: url('https://bespoke.mse.jhu.edu/webfonts/Gentona-MediumItalic.eot');
-  src: url('https://bespoke.mse.jhu.edu/webfonts/Gentona-MediumItalic.eot?#iefix') format('embedded-opentype'),
-       url('https://bespoke.mse.jhu.edu/webfonts/Gentona-MediumItalic.woff') format('woff'),
-       url('https://bespoke.mse.jhu.edu/webfonts/Gentona-MediumItalic.ttf') format('truetype');
-  font-weight: 500;
-  font-style: italic;
+prm-brief-result .item-detail [class^="media-"] {
+  opacity: .4;
 }
 
-/*=== Book (400) ===*/
-@font-face {
-  font-family: 'gentona-book';
-  src: url('https://bespoke.mse.jhu.edu/webfonts/Gentona-Book.eot');
-  src: url('https://bespoke.mse.jhu.edu/webfonts/Gentona-Book.eot?#iefix') format('embedded-opentype'),
-       url('https://bespoke.mse.jhu.edu/webfonts/Gentona-Book.woff') format('woff'),
-       url('https://bespoke.mse.jhu.edu/webfonts/Gentona-Book.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
+.best-location-delivery::before {
+      content: "\--\00a0";
+}
+prm-search-result-availability-line .availability-status span:first-child + .locations-link::before {
+  content: "\--\00a0";
+}
+.availability-line-parenthesis {
+  display:none;
 }
 
-@font-face {
-  font-family: 'gentona-book';
-  src: url('https://bespoke.mse.jhu.edu/webfonts/Gentona-BookItalic.eot');
-  src: url('https://bespoke.mse.jhu.edu/webfonts/Gentona-BookItalic.eot?#iefix') format('embedded-opentype'),
-       url('https://bespoke.mse.jhu.edu/webfonts/Gentona-BookItalic.woff') format('woff'),
-       url('https://bespoke.mse.jhu.edu/webfonts/Gentona-BookItalic.ttf') format('truetype');
-  font-weight: 400;
-  font-style: italic;
+/* item detail listing */
+.md-button.button-link {
+  color: #002d72;
+}
+.md-button.button-link:hover:not([disabled]) {
+  background-color: #002d72;
+}
+.md-button.button-link:focus:not([disabled]) {
+  background-color: #002d72;
+}
+.md-button.button-as-link {
+  color: #002d72;
+}
+.md-button.button-as-link:hover:not([disabled]) {
+  background-color: #002d72;
+}
+.md-button.button-as-link:focus:not([disabled]) {
+  background-color: #002d72;
+}
+[external-link]:hover {
+  color: #fff;
+}
+[external-link]:focus {
+  color: #fff;
+}
+md-tabs.tabs-as-app .back-button {
+  color: #002d72;
+}
+md-tabs.tabs-as-app .back-button:hover:not([disabled]) {
+  background-color: #002d72;
+}
+md-tabs.tabs-as-app .back-button:focus:not([disabled]) {
+  background-color: #002d72;
+}
+a {
+  color:#002d72;
+}
+a:hover {
+  box-shadow: inset 0 -2px 0 0 #002d72;
+}
+.bar prm-authentication .md-button {
+  color: #002d72;
+}
+.bar prm-authentication .md-button:hover:not([disabled]) {
+  background-color:#002d72;
+}
+.bar prm-authentication .md-button:focus:not([disabled]) {
+  background-color:#002d72;
+}
+.bar.alert-bar {
+  border-color: #F1C400;
 }
 
-/* ARNHEM */
-/*=== Blond (300) ===*/
-@font-face {
-  font-family: 'arnhem';
-  src: url('https://bespoke.mse.jhu.edu/webfonts/Arnhem-Blond.eot');
-  src: url('https://bespoke.mse.jhu.edu/webfonts/Arnhem-Blond.eot?#iefix') format('embedded-opentype'),
-       url('https://bespoke.mse.jhu.edu/webfonts/Arnhem-Blond.woff') format('woff'),
-       url('https://bespoke.mse.jhu.edu/webfonts/Arnhem-Blond.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-}
-/*=== Bold (700) ===*/
-@font-face {
-  font-family: 'arnhem';
-  src: url('https://bespoke.mse.jhu.edu/webfonts/Arnhem-Bold.eot');
-  src: url('https://bespoke.mse.jhu.edu/webfonts/Arnhem-Bold.eot?#iefix') format('embedded-opentype'),
-       url('https://bespoke.mse.jhu.edu/webfonts/Arnhem-Bold.woff') format('woff'),
-       url('https://bespoke.mse.jhu.edu/webfonts/Arnhem-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-}
+/* facets */
 
-/* QUADON */
-/*=== Bold (500) ===*/
-@font-face {
-  font-family: 'quadon';
-  src: url('https://bespoke.mse.jhu.edu/webfonts/Quadon-Bold.eot');
-  src: url('https://bespoke.mse.jhu.edu/webfonts/Quadon-Bold.eot?#iefix') format('embedded-opentype'),
-       url('https://bespoke.mse.jhu.edu/webfonts/Quadon-Bold.woff') format('woff'),
-       url('https://bespoke.mse.jhu.edu/webfonts/Quadon-Bold.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
+prm-facet .switch-results md-switch.md-checked .md-bar {
+  color: #002d72;
+  background-color: #002d72;
+  opacity: .4;
 }
-
-/* TITLING GOTHIC */
-/*=== Medium (500) ===*/
-@font-face {
-  font-family: 'titling-gothic';
-  src: url('https://bespoke.mse.jhu.edu/webfonts/Titling-Gothic-Medium.eot');
-  src: url('https://bespoke.mse.jhu.edu/webfonts/Titling-Gothic-Medium.eot?#iefix') format('embedded-opentype'),
-       url('https://bespoke.mse.jhu.edu/webfonts/Titling-Gothic-Medium.woff') format('woff'),
-       url('https://bespoke.mse.jhu.edu/webfonts/Titling-Gothic-Medium.ttf') format('truetype'),
-       url('https://bespoke.mse.jhu.edu/webfonts/Titling-Gothic-Medium.svg#titlinggothicmedium') format('svg');
-  font-weight: 500;
-  font-style: normal;
+prm-facet .switch-results md-switch.md-checked .md-thumb {
+  color: #002d72;
+  background-color: #002d72;
 }
-/*=== Regular (300) ===*/
-@font-face {
-  font-family: 'titling-gothic';
-  src: url('https://bespoke.mse.jhu.edu/webfonts/Titling-Gothic-Regular.eot');
-  src: url('https://bespoke.mse.jhu.edu/webfonts/Titling-Gothic-Regular.eot?#iefix') format('embedded-opentype'),
-       url('https://bespoke.mse.jhu.edu/webfonts/Titling-Gothic-Regular.woff') format('woff'),
-       url('https://bespoke.mse.jhu.edu/webfonts/Titling-Gothic-Regular.ttf') format('truetype'),
-       url('https://bespoke.mse.jhu.edu/webfonts/Titling-Gothic-Regular.svg#titlinggothicregular') format('svg');
-  font-weight: 300;
-  font-style: normal;
+prm-facet .switch-results md-switch:hover.active {
+  background-color: #002d72;
 }
-
+prm-facet .switch-results md-switch:focus.active {
+  background-color: #002d72;
+}
+@import url("https://use.typekit.net/jge8wgr.css");
 
 body {
-  font-family: 'gentona', tahoma, sans-serif;
+  font-family: "proxima-nova", sans-serif;
+}
+
+prm-user-area-expandable,
+prm-search-bookmark-filter,
+prm-authentication,
+prm-library-card-menu,
+.pin-button,
+prm-alert-bar,
+prm-request-services {
+    display: none !important;
+}
+
+prm-full-view-service-container > div.section-head > prm-service-header > div > h4 {
+    display: none !important;
 }
 
 prm-atoz-search-bar {
@@ -241,6 +272,9 @@ prm-browse-search-bar {
     margin-top: 75px;
 }
 #citationLinker {
+    margin-top: 75px;
+}
+prm-newspapers-search-bar {
     margin-top: 75px;
 }
 prm-search-bar {
@@ -278,7 +312,7 @@ prm-tags-search-bar {
     max-width: 100%;
 }
 .jh-header-menu {
-    margin: 5px 20px 0 40px;
+    margin: 10px 20px 0 40px;
     float:left;
 }
 .jh-header-menu ul {
