@@ -249,7 +249,7 @@ prm-facet .switch-results md-switch:focus.active {
 prm-main-menu[menu-type="full"] .md-button .md-headline, prm-main-menu[menu-type="full"] .overlay-menu-item .md-headline {
   color: #fff;
 }
-dialog md-list md-list-item.list-login .md-button {
+md-dialog.light-on-dark-dialog md-list md-list-item.list-login .md-button {
   color: #fff;
 }
 md-dialog.light-on-dark-dialog {
