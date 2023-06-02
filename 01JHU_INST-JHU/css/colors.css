@@ -244,3 +244,14 @@ prm-facet .switch-results md-switch:hover.active {
 prm-facet .switch-results md-switch:focus.active {
   background-color: #002d72;
 }
+
+/* modal pop-up for menu and sign-in */
+prm-main-menu[menu-type="full"] .md-button .md-headline, prm-main-menu[menu-type="full"] .overlay-menu-item .md-headline {
+  color: #fff;
+}
+dialog md-list md-list-item.list-login .md-button {
+  color: #fff;
+}
+md-dialog.light-on-dark-dialog {
+  background-color: #002d72;
+}
