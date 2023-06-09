@@ -250,7 +250,7 @@ prm-main-menu[menu-type="full"] .md-button .md-headline, prm-main-menu[menu-type
   color: #fff;
 }
 md-dialog.light-on-dark-dialog md-list md-list-item.list-login .md-button {
-  color: #fff;
+  color: #fff!important;
 }
 md-dialog.light-on-dark-dialog {
   background-color: #002d72;
