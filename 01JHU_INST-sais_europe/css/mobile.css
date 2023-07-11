@@ -9,4 +9,7 @@
         padding:0px;
         font-size:0.9em;
     }
+    .layout-column {
+        max-width:100%!important;
+    }
 }
