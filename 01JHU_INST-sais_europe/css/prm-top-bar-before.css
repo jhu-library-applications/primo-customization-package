@@ -40,6 +40,10 @@
 .jh-header-menu ul li a {
     color:#fff;
     font-size: 1.7em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding-left: 40px;
+    border-left: 1px solid #fff;
 }
 prm-topbar .top-nav-bar {
     clear:both;
