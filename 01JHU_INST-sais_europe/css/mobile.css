@@ -3,9 +3,10 @@
         display:none;
     }
     .logo-image {
-        margin-left:0;
+        margin-left:0px!important;
     }
-    prm-search-bar .search-switch-buttons .md-button {
-        padding:0;
+    .search-switch-buttons {
+        padding:0px;
+        font-size:0.9em;
     }
 }
