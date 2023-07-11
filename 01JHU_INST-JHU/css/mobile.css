@@ -1,3 +1,11 @@
+@media (max-width: 1140px) {
+    .jh-header-menu {
+        margin-left:0px;
+    }
+    .jh-header-menu ul li {
+        font-size: 0.8em;
+      }
+}
 @media (max-width: 768px) {
     .jh-header-menu {
         display:none;
@@ -8,5 +16,8 @@
     .search-switch-buttons {
         padding:0px;
         font-size:0.9em;
+    }
+    .layout-column {
+        width:100%!important;
     }
 }
