@@ -1,0 +1,11 @@
+@media (max-width: 768px) {
+    .jh-header-menu {
+        display:none;
+    }
+    .logo-image {
+        margin-left:0;
+    }
+    prm-search-bar .search-switch-buttons .md-button {
+        padding:0;
+    }
+}
