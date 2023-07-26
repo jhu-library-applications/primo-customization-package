@@ -27,8 +27,10 @@
     var checkIlliadSpans = document.querySelectorAll('span[translate="Go to Interlibrary Loan Form"]');
 
     // Is the item available or not? 
+   if (document.querySelector('.availability-status') && document.querySelector('.availability-status').textContent) {
     var available = document.querySelector('.availability-status').textContent.indexOf('Available') === 0
-
+   }
+   
     if (itemRequestElements && checkBorrowDirectSpans.length >= 1 && checkIlliadSpans.length >= 1 && available) {
       checkBorrowDirectSpans.forEach(function (checkBorrowDirectSpan) {
         checkBorrowDirectSpan.parentElement.style.display = "none";
