@@ -18,19 +18,25 @@
     templateUrl: "/discovery/custom/01JHU_INST-JHU/html/prm-search-result-thumbnail-container-after.html"
   });
 
-  var observer = new MutationObserver(function () {
-    // Item request information
-    var itemRequestElements = document.querySelectorAll('span[translate="AlmaItemRequest"]');
+  var observerActive = false;
 
-    // Our General Electronic Service links
+  function startObserver() {
+    if (!observerActive) {
+      observer.observe(document, { childList: true, subtree: true });
+      observerActive = true;
+    }
+  }
+
+  var observer = new MutationObserver(function () {
+    var itemRequestElements = document.querySelectorAll('span[translate="AlmaItemRequest"]');
     var checkBorrowDirectSpans = document.querySelectorAll('span[translate="Check BorrowDirect"]');
     var checkIlliadSpans = document.querySelectorAll('span[translate="Go to Interlibrary Loan Form"]');
 
-    // Is the item available or not? 
-   if (document.querySelector('.availability-status') && document.querySelector('.availability-status').textContent) {
-    var available = document.querySelector('.availability-status').textContent.indexOf('Available') === 0
-   }
-   
+    var available = false;
+    if (document.querySelector('prm-location-items .availability-status') && document.querySelector('prm-location-items .availability-status').textContent) {
+      available = document.querySelector('prm-location-items .availability-status').textContent.indexOf('Available') === 0;
+    }
+
     if (itemRequestElements && checkBorrowDirectSpans.length >= 1 && checkIlliadSpans.length >= 1 && available) {
       checkBorrowDirectSpans.forEach(function (checkBorrowDirectSpan) {
         checkBorrowDirectSpan.parentElement.style.display = "none";
@@ -41,14 +47,19 @@
       });
 
       document.querySelectorAll('.skewed-divider').forEach(function (skewedDivider) {
-        skewedDivider.style.display = "none"
+        skewedDivider.style.display = "none";
       });
 
       observer.disconnect();
+      observerActive = false;
     }
   });
 
+  // Initial observer start
+  startObserver();
 
-  observer.observe(document, { childList: true, subtree: true });
-
+  // Restarting observer on click, if it's not active
+  document.addEventListener('click', function () {
+    startObserver();
+  });
 })();
