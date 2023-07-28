@@ -1,0 +1,15 @@
+@media (max-width: 768px) {
+    .jh-header-menu {
+        display:none;
+    }
+    .logo-image {
+        margin-left:0px!important;
+    }
+    .search-switch-buttons {
+        padding:0px;
+        font-size:0.9em;
+    }
+    .layout-column {
+        max-width:100%!important;
+    }
+}

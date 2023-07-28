@@ -1,0 +1,16 @@
+/* hiding to test because these changes are too comprehensive
+
+prm-user-area-expandable,
+prm-search-bookmark-filter,
+prm-authentication,
+prm-library-card-menu,
+.pin-button,
+prm-alert-bar,
+prm-request-services {
+    display: none !important;
+}
+
+prm-full-view-service-container > div.section-head > prm-service-header > div > h4 {
+    display: none !important;
+}
+ */

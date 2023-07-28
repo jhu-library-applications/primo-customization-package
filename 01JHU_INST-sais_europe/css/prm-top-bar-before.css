@@ -1,0 +1,50 @@
+.jh-header-container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    height: 78px;
+    background-color:transparent;
+    color:#fff;
+}
+
+@media only screen and (max-width: 1280px) {
+    .jh-header-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+.jh-header-logo {
+   margin:15px 0;
+    float:left;
+}
+.jh-header-logo a:hover,
+.jh-header-logo a:focus {
+    box-shadow: none;
+}
+.jh-image {
+    height: auto;
+    max-width: 100%;
+}
+.jh-header-menu {
+    margin: 13px 20px 0 25px;
+    float:left;
+}
+.jh-header-menu ul {
+    list-style-type:none;
+}
+.jh-header-menu ul li {
+    display:inline block;
+    float:left;
+}
+.jh-header-menu ul li a {
+    color:#fff;
+    font-size: 1.7em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding-left: 40px;
+    border-left: 1px solid #fff;
+}
+prm-topbar .top-nav-bar {
+    clear:both;
+  }

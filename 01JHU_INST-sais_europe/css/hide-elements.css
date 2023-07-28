@@ -1,0 +1,15 @@
+/* hide virtual browse for SAIS view because we can't filter what it shows */
+
+#virtualBrowse {
+    display:none!important;
+}
+
+/* hide alert bar prompting users to log in because we can't change the language on a view-by-view basis */
+
+prm-request-services {
+    display:none!important;
+}
+
+prm-alert-bar {
+    display:none!important;
+}
