@@ -3,9 +3,12 @@
     margin-right: auto;
     padding-left: 40px;
     padding-right: 40px;
-    height: 78px;
+    height: 200px;
     background-color:#002d72;
     color:#fff;
+    background-image: url("/discovery/custom/01JHU_INST-sais_europe/img/bolognabanner1.jpg");
+    background-position: center;
+    background-repeat: no-repeat; 
 }
 
 @media only screen and (max-width: 1280px) {

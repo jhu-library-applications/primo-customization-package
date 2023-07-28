@@ -245,11 +245,39 @@ prm-facet .switch-results md-switch:hover.active {
 prm-facet .switch-results md-switch:focus.active {
   background-color: #002d72;
 }
+
+/* modal pop-up for menu and sign-in */
+prm-main-menu[menu-type="full"] .md-button .md-headline, prm-main-menu[menu-type="full"] .overlay-menu-item .md-headline {
+  color: #fff;
+}
+md-dialog.light-on-dark-dialog md-list md-list-item.list-login .md-button {
+  color: #fff!important;
+}
+md-dialog.light-on-dark-dialog {
+  background-color: #002d72;
+}
 @import url("https://use.typekit.net/jge8wgr.css");
 
 body {
   font-family: "proxima-nova", sans-serif;
 }
+
+/* hide virtual browse for SAIS view because we can't filter what it shows */
+
+#virtualBrowse {
+    display:none!important;
+}
+
+/* hide alert bar prompting users to log in because we can't change the language on a view-by-view basis */
+
+prm-request-services {
+    display:none!important;
+}
+
+prm-alert-bar {
+    display:none!important;
+}
+/* hiding to test because these changes are too comprehensive
 
 prm-user-area-expandable,
 prm-search-bookmark-filter,
@@ -264,31 +292,60 @@ prm-request-services {
 prm-full-view-service-container > div.section-head > prm-service-header > div > h4 {
     display: none !important;
 }
-
+ */
+.md-headline2 {
+    margin-top: -24px;
+}
+.logo-image {
+    margin-top:3px;
+}
+@media (max-width: 768px) {
+    .jh-header-menu {
+        display:none;
+    }
+    .logo-image {
+        margin-left:0px!important;
+    }
+    .search-switch-buttons {
+        padding:0px;
+        font-size:0.9em;
+    }
+    .layout-column {
+        max-width:100%!important;
+    }
+}
 prm-atoz-search-bar {
-    margin-top: 75px;
+    margin-top: 85px;
 }
 prm-browse-search-bar {
-    margin-top: 75px;
+    margin-top: 85px;
 }
 #citationLinker {
-    margin-top: 75px;
+    margin-top: 85px;
 }
+/* This is for the services page which is the equivalent of Find It in the pre-Alma times 
+   this is the page that displays when you use the citation linker. */
+
+
+/* This fixes a problem with the services page where the top of the page is hidden by the top navigation bar. */
+body > primo-explore > div > prm-services-page > prm-full-view-cont > md-content {
+    margin-top: 85px !important;
+  }
 prm-newspapers-search-bar {
-    margin-top: 75px;
+    margin-top: 85px;
 }
 prm-search-bar {
-    margin-top: 75px;
+    margin-top: 85px;
 }
 prm-tags-search-bar {
-    margin-top: 75px;
+    margin-top: 85px;
 }
 .jh-header-container {
     margin-left: auto;
     margin-right: auto;
     padding-left: 40px;
     padding-right: 40px;
-    height: 68px;
+    height: 78px;
     background-color:#002d72;
     color:#fff;
 }
@@ -312,22 +369,23 @@ prm-tags-search-bar {
     max-width: 100%;
 }
 .jh-header-menu {
-    margin: 10px 20px 0 40px;
+    margin: 13px 20px 0 25px;
     float:left;
 }
 .jh-header-menu ul {
-
     list-style-type:none;
 }
 .jh-header-menu ul li {
     display:inline block;
     float:left;
-    padding: 0 15px;
 }
 .jh-header-menu ul li a {
     color:#fff;
-    font-weight:bold;
-    font-size: 1.1em;
+    font-size: 1.7em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding-left: 40px;
+    border-left: 1px solid #fff;
 }
 prm-topbar .top-nav-bar {
     clear:both;
