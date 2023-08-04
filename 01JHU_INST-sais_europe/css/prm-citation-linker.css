@@ -1,5 +1,7 @@
 #citationLinker {
-    margin-top: 85px;
+    margin-top: 110px;
+    background-color:transparent;
+    padding: 1.5em 1.5em 1.5em 1.5em;
 }
 /* This is for the services page which is the equivalent of Find It in the pre-Alma times 
    this is the page that displays when you use the citation linker. */
@@ -9,3 +11,8 @@
 body > primo-explore > div > prm-services-page > prm-full-view-cont > md-content {
     margin-top: 85px !important;
   }
+
+  /* display navigation links on services page */
+  prm-topbar .isDeposit, prm-topbar .isServicePage, prm-topbar .isSummonOverAlma {
+    display: inline;
+}
