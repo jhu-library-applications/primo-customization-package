@@ -1,11 +1,8 @@
-#prm-explore-main {
-  margin-top:0px;
-}
 
-#citationLinker {
+
+prm-citation-linker {
     margin-top: 110px;
     background-color:transparent;
-    padding: 1.5em 1.5em 1.5em 1.5em;
 }
 /* This is for the services page which is the equivalent of Find It in the pre-Alma times 
    this is the page that displays when you use the citation linker. */
