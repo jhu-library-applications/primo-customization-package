@@ -12,4 +12,7 @@
     .layout-column {
         max-width:100%!important;
     }
+    .search-extras {
+        display:none;
+    }
 }
