@@ -1,3 +1,11 @@
+@media (max-width: 1140px) {
+    .jh-header-menu {
+        margin-left:0px;
+    }
+    .jh-header-menu ul li {
+        font-size: 0.8em;
+      }
+}
 @media (max-width: 768px) {
     .jh-header-menu {
         display:none;
@@ -10,9 +18,6 @@
         font-size:0.9em;
     }
     .layout-column {
-        max-width:100%!important;
-    }
-    .search-extras {
-        display:none;
+        max-width: 100% !important;
     }
 }
