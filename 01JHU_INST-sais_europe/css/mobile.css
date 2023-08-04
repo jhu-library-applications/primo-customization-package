@@ -20,4 +20,12 @@
     .layout-column {
         max-width: 100% !important;
     }
+    .search-extras {
+        display:none;
+    }
 }
+ @media (max-width: 480px) {
+    .search-extras {
+        display:none;
+    }
+ }
