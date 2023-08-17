@@ -1,3 +1,3 @@
-md-radio-button {
-    display:none;
+md-radio-button[value="journal"] {
+    display:none!important;
 }
