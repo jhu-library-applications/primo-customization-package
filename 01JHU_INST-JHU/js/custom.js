@@ -11,9 +11,7 @@ Sample metadata substitutions -- only exact matches will be replaced in this exa
 This will perform replacement on both CDI and local records */
 
 var metadataSubstitutions = {
-    "Illegal Aliens": "Undocumented immigrants",
-    "Illegal Immigrants": "Undocumented immigrants",
-    "Illegal immigration": "Undocumented immigration"
+    "Nutrition": "Nutrition and Food Science"
 }
 
 app.component('prmServiceDetailsAfter', {
