@@ -3,6 +3,43 @@
 
   var app = angular.module('viewCustom', ['angularLoad']);
 
+
+    /* Critical cataloging customization */
+
+/* Customization for changing full display 
+Sample metadata substitutions -- only exact matches will be replaced in this example 
+This will perform replacement on both CDI and local records */
+
+var metadataSubstitutions = {
+    "Illegal Aliens": "Undocumented immigrants",
+    "Illegal Immigrants": "Undocumented immigrants"
+}
+
+app.component('prmServiceDetailsAfter', {
+    controller: 'prmServiceDetailsAfterController',
+  });
+
+app.controller('prmServiceDetailsAfterController', ['$scope', function ($scope) {
+
+//Get an array of the subjects to be displayed
+var subjectValues = $scope.$parent.$ctrl["item"]["pnx"]["display"]["subject"]
+
+
+if (subjectValues){  //Very important to test for presence of subject values
+   for (var i = 0; i < subjectValues.length; i++){
+      var metadataKeys = Object.keys(metadataSubstitutions)
+      for (var j = 0; j < metadataKeys.length; j++){
+        var metadataKey = metadataKeys[j];
+        //The replace function is case-sensitive, but you can use a regular expression for case-insensitive replacement -- see https://www.sitepoint.com/community/t/javascript-replace-making-it-case-insensitive/1831
+        subjectValues[i] = subjectValues[i].replace(metadataKey, metadataSubstitutions[metadataKey])
+      }
+    }
+    //Re-sort array after tern replacement 
+    $scope.$parent.$ctrl["item"]["pnx"]["display"]["subject"].sort();
+ }
+     
+}]);
+    
   app.component('prmTopBarBefore', {
     bindings: { parentCtrl: `<` },
     templateUrl: "/discovery/custom/01JHU_INST-JHU/html/prm-top-bar-before.html"
