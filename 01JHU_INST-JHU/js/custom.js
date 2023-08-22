@@ -31,7 +31,7 @@ if (subjectValues){  //Very important to test for presence of subject values
       for (var j = 0; j < metadataKeys.length; j++){
         var metadataKey = metadataKeys[j];
           //The replace function is case-sensitive, but you can use a regular expression for case-insensitive replacement -- see https://www.sitepoint.com/community/t/javascript-replace-making-it-case-insensitive/1831
-	  console.log(subjectValue[i])
+	  console.log(subjectValues[i])
 	  console.log(subjectValues[i].replace(metadataKey, metadataSubstitutions[metadataKey]))
         subjectValues[i] = subjectValues[i].replace(metadataKey, metadataSubstitutions[metadataKey])
       }
