@@ -32,14 +32,13 @@ if (subjectValues){  //Very important to test for presence of subject values
       for (var j = 0; j < metadataKeys.length; j++){
         var metadataKey = metadataKeys[j];
           //The replace function is case-sensitive, but you can use a regular expression for case-insensitive replacement -- see https://www.sitepoint.com/community/t/javascript-replace-making-it-case-insensitive/1831
-	  var subjectRegex = new RegExp(subjectValues[i], "gi");
+	  //var subjectRegex = new RegExp(subjectValues[i], "gi");
 	  
-	  console.log(subjectValues[i])
-	  console.log(subjectValues[i].replace(subjectRegex, metadataSubstitutions[metadataKey]))
+	console.log(subjectValues[i].replace(subjectValues[i], metadataSubstitutions[metadataKey]))
         subjectValues[i] = subjectValues[i].replace(subjectRegex, metadataSubstitutions[metadataKey])
       }
     }
-    //Re-sort array after tern replacement 
+    //Re-sort array after term replacement 
     $scope.$parent.$ctrl["item"]["pnx"]["display"]["subject"].sort();
  }
      
