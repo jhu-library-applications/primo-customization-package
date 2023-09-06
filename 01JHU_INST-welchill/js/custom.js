@@ -1,7 +1,7 @@
 (function () {
   "use strict"
 
-  var app = angular.module('viewCustom', ['angularLoad'])
+  var app = angular.module('viewCustom', ['angularLoad', 'expand-items', 'request-links'])
 
   app.component('prmTopBarBefore', {
     bindings: { parentCtrl: `<` },
