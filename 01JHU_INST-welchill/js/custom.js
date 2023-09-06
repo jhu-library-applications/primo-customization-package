@@ -18,13 +18,13 @@
     templateUrl: "/discovery/custom/01JHU_INST-JHU/html/prm-search-result-thumbnail-container-after.html"
   })
 
-  app.component('prm-opac-after', {
+  app.component('prmLocationItemAfter', {
     bindings: { parentCtrl: `<` },
-    controller: 'prmOpacAfterController'
+    controller: 'prmLocationItemAfterController'
   })
 
 
-  app.controller('prmLocationItemAfter', ['$scope', function ($scope) {
+  app.controller('prmLocationItemAfterController', ['$scope', function ($scope) {
     var vm = this
     var items = vm.$scope().$parent.$ctrl.currLoc.items
 
