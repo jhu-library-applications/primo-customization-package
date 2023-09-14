@@ -34,6 +34,23 @@
     templateUrl: "/discovery/custom/01JHU_INST-JHU/html/prm-search-result-thumbnail-container-after.html"
   });
 
+  // This uses an HTTP interceptor to watch for responses from the server and then activate the user journey
+  // This needs to be done because there are a variety of scenarios where the availabilty links are loaded and reloaded on the page
+  app.config(function ($httpProvider, $provide) {
+    $provide.factory('httpInterceptor', function ($q, $rootScope) {
+      return {
+        'response': function (response) {
+          $rootScope.$broadcast('httpResponse', response);
+ 
+          if (JHU.options.customUserJourneyActive) {
+            JHU.userJourney.startPageOverrides();
+          }
+          return response || $q.when(response);
+        }
+      };
+    });
+    $httpProvider.interceptors.push('httpInterceptor');
+  });
 
   var JHU = {
     // JHU specific customizations
@@ -73,7 +90,10 @@
             }
 
             // Hide BorrowDirect and Illiad links if item is available locally
-            if (itemRequestElements && checkBorrowDirectSpans.length >= 1 && checkIlliadSpans.length >= 1 && available) {
+            // Welch exception 
+            var welchPrintUse = document.body.textContent.includes('Onsite Print Use Only')
+            console.log("Welch print use: " + welchPrintUse)
+            if (itemRequestElements && checkBorrowDirectSpans.length >= 1 && checkIlliadSpans.length >= 1 && available && welchPrintUse) {
               checkBorrowDirectSpans.forEach(function (checkBorrowDirectSpan) {
                 checkBorrowDirectSpan.parentElement.style.display = "none";
               });
@@ -81,6 +101,12 @@
               checkIlliadSpans.forEach(function (checkIlliadSpan) {
                 checkIlliadSpan.parentElement.style.display = "none";
               });
+
+              if (welchPrintUse) {
+                checkIlliadSpans.forEach(function (checkIlliadSpan) {
+                  checkIlliadSpan.parentElement.style.display = "block";
+                });
+              }
 
               document.querySelectorAll('.skewed-divider').forEach(function (skewedDivider) {
                 skewedDivider.style.display = "none";
@@ -97,18 +123,10 @@
       },
     }
   };
-
-  if (JHU.options.customUserJourneyActive) {
-    JHU.userJourney.startPageOverrides();
-
-    document.addEventListener('click', function () {
-      JHU.userJourney.startPageOverrides();
-    });
-  }
 })();
 
 /* StackMap: Start */
-(function(){
+(function () {
 
   var a = document.querySelector("head");
   var css1 = document.createElement("link");
