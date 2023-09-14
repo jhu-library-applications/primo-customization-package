@@ -38,12 +38,10 @@
     controller: 'prmServiceDetailsAfterController',
   });
 
-  app.component('prmFacetExactAfter', {
-    controller: 'prmFacetExactAfterController',
-  });
-
  var metadataSubstitutions = {
-    "Leprosy": "Hansen's disease"
+  "Illegal immigration": "Undocumented immigrants",
+  "Illegal immigration in literature": "Undocumented immigrants in literature",
+  "Noncitizen detention centers": "Immigrant detention centers",
   }
 
   // Critical cataloging subject overlays 
