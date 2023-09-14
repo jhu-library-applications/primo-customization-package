@@ -3,6 +3,20 @@
 
   var app = angular.module('viewCustom', ['angularLoad']);
 
+  app.component('prmSearchBookmarkFilterAfter', {  
+    template: `
+      <help-menu-topbar>
+          <a class="md-icon-button button-over-dark md-button md-primoExplore-theme md-ink-ripple"
+                    aria-label="Submit Feedback" target="_blank"
+                    href="https://jh.qualtrics.com/jfe/form/SV_8v0RG9l4bQUPpIi" title="Submit Feedback (opens in new tab)">
+            <prm-icon icon-type="svg" svg-icon-set="action" icon-definition="ic_feedback_24px"></prm-icon>
+          </a>
+
+        <span class="notification-indicator"></span>
+      </help-menu-topbar>`
+  });
+
+
   app.component('prmTopBarBefore', {
     bindings: { parentCtrl: `<` },
     templateUrl: "/discovery/custom/01JHU_INST-JHU/html/prm-top-bar-before.html"
