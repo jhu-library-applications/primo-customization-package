@@ -34,6 +34,39 @@
     templateUrl: "/discovery/custom/01JHU_INST-JHU/html/prm-search-result-thumbnail-container-after.html"
   });
 
+  app.component('prmServiceDetailsAfter', {
+    controller: 'prmServiceDetailsAfterController',
+  });
+
+  app.component('prmFacetExactAfter', {
+    controller: 'prmFacetExactAfterController',
+  });
+
+ var metadataSubstitutions = {
+    "Leprosy": "Hansen's disease"
+  }
+
+  // Critical cataloging subject overlays 
+  app.controller('prmServiceDetailsAfterController', ['$scope',
+    function ($scope) {
+
+      var subjectValues = $scope.$parent.$ctrl["item"]["pnx"]["display"]["subject"]
+      console.log("subjectValues are")
+      console.log(subjectValues);
+
+      if (subjectValues) {
+        for (var i = 0; i < subjectValues.length; i++) {
+          var metadataKeys = Object.keys(metadataSubstitutions)
+          for (var j = 0; j < metadataKeys.length; j++) {
+            var metadataKey = metadataKeys[j];
+            subjectValues[i] = subjectValues[i].replace(metadataKey, metadataSubstitutions[metadataKey])
+          }
+        }
+        $scope.$parent.$ctrl["item"]["pnx"]["display"]["subject"].sort();
+      }
+    }
+  ]);
+
 
   var JHU = {
     // JHU specific customizations
