@@ -34,16 +34,6 @@
     templateUrl: "/discovery/custom/01JHU_INST-JHU/html/prm-search-result-thumbnail-container-after.html"
   });
 
-  app.component('prmServiceButtonAfter', {
-    bindings: { parentCtrl: `<` },
-    template: `<div class="service-button-after" ng-controller="prmServiceButtonAfterController as $ctrl">
-      <ng-if="$ctrl.onsiteUse">
-        <a href="#">Go to Interlibrary Loan Form</a>
-      </ng-if>
-    </div>
-    `
-  });
-  
   // This uses an HTTP interceptor to watch for responses from the server and then activate the user journey
   // This needs to be done because there are a variety of scenarios where the availabilty links are loaded and reloaded on the page
   app.config(function ($httpProvider, $provide) {
