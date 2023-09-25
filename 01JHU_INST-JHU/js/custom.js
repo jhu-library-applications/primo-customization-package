@@ -34,6 +34,16 @@
     templateUrl: "/discovery/custom/01JHU_INST-JHU/html/prm-search-result-thumbnail-container-after.html"
   });
 
+  app.component('prmServiceButtonAfter', {
+    bindings: { parentCtrl: `<` },
+    template: `<div class="service-button-after" ng-controller="prmServiceButtonAfterController as $ctrl">
+      <ng-if="$ctrl.onsiteUse">
+        <a href="#">Go to Interlibrary Loan Form</a>
+      </ng-if>
+    </div>
+    `
+  });
+  
   // This uses an HTTP interceptor to watch for responses from the server and then activate the user journey
   // This needs to be done because there are a variety of scenarios where the availabilty links are loaded and reloaded on the page
   app.config(function ($httpProvider, $provide) {
@@ -41,7 +51,7 @@
       return {
         'response': function (response) {
           $rootScope.$broadcast('httpResponse', response);
- 
+          //console.log(response)
           if (JHU.options.customUserJourneyActive) {
             JHU.userJourney.startPageOverrides();
           }
@@ -60,6 +70,9 @@
     },
     userJourney: {
       observerActive: false,
+      changeItemGenre: function () {
+        
+      },
       startPageOverrides: function () {
         if (!this.observerActive) {
           // Using a mutation observer allows us to watch for changes made to the DOM
@@ -92,7 +105,7 @@
             // Hide BorrowDirect and Illiad links if item is available locally
             // Welch exception 
             var welchPrintUse = document.body.textContent.includes('Onsite Print Use Only')
-            console.log("Welch print use: " + welchPrintUse)
+
             if (itemRequestElements && checkBorrowDirectSpans.length >= 1 && checkIlliadSpans.length >= 1 && available && welchPrintUse) {
               checkBorrowDirectSpans.forEach(function (checkBorrowDirectSpan) {
                 checkBorrowDirectSpan.parentElement.style.display = "none";
@@ -105,6 +118,7 @@
               if (welchPrintUse) {
                 checkIlliadSpans.forEach(function (checkIlliadSpan) {
                   checkIlliadSpan.parentElement.style.display = "block";
+     
                 });
               }
 
