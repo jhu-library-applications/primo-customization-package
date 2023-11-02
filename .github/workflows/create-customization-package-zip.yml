@@ -22,5 +22,5 @@ jobs:
           - name: Archive production artifacts
             uses: actions/upload-artifact@v3
             with:
-                name: 01JHU_INST-JHU
-                path: ./**/01JHU_INST-JHU
+                name: 01JHU_INST-newbooks
+                path: ./**/01JHU_INST-newbooks
