@@ -1,0 +1,10 @@
+.container {
+    display: inline-flex;
+    max-width: 600px;
+    overflow: scroll;
+    
+}
+
+img {
+    height: 200px;
+}
