@@ -1,0 +1,36 @@
+/* Request buttons in the GetIt section and the item-level request button */
+prm-service-button .md-button.button-as-link, 
+.bar prm-authentication prm-location-items md-list prm-service-button .md-button, 
+prm-location-items md-list prm-service-button .bar prm-authentication .md-button, 
+prm-location-items md-list prm-service-button .md-button, 
+prm-location-items md-list prm-service-button .md-button.button-as-link {
+    color: #fff;
+    background-color: #002d72;
+    padding: 1em;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+    border-radius: .2em;
+    margin-top: 0;
+    margin-bottom: 1em;
+    min-width: 285px;
+}
+
+/* External link icon */
+prm-service-button prm-icon md-icon.md-primoExplore-theme {
+	margin-left: .25em;
+    color: #fff !important
+}
+
+/* Label that says "REQUEST:" before the button in the GetIt section */
+prm-request-services .section-title {
+    display: none;
+}
+
+.skewed-divider {
+    display: none;
+}
+
+prm-location-items > md-list > md-list-item> div.layout-row.flex > div.md-list-item-text.layout-wrap.layout-row.flex > div.layout-wrap.layout-align-end-center.layout-row.flex-xs-100.flex-sm-30 {
+    flex-direction: column;
+    align-items: flex-end;
+}
