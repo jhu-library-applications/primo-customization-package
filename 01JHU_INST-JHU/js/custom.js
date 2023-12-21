@@ -33,14 +33,4 @@
     bindings: { parentCtrl: `<` },
     templateUrl: "/discovery/custom/01JHU_INST-JHU/html/prm-search-result-thumbnail-container-after.html"
   });
-
-  app.directive('euCookieLawPopup', function () {
-    return {
-      link: function(scope, elem, attrs) {
-        $(document).euCookieLawPopup().init({
-  
-        });
-      }
-    }
-  });
 })();
