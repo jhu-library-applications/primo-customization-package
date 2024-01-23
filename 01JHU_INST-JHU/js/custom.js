@@ -3,7 +3,7 @@
 
   var app = angular.module('viewCustom', ['angularLoad']);
 
-  app.component('prmSearchBookmarkFilterAfter', {  
+  app.component('prmSearchBookmarkFilterAfter', {
     template: `
       <help-menu-topbar>
           <a class="md-icon-button button-over-dark md-button md-primoExplore-theme md-ink-ripple"
@@ -28,4 +28,27 @@
     bindings: { parentCtrl: `<` },
     templateUrl: "/discovery/custom/01JHU_INST-JHU/html/prm-search-result-thumbnail-container-after.html"
   });
+
+  app.component('prmLocationAfter', {
+    bindings: { parentCtrl: `<` },
+    templateUrl: "/discovery/custom/01JHU_INST-JHU/html/prm-location-after.html",
+    controller: function () {
+      
+      this.requestFromThisLocation = function (e) {
+        console.log("requestFromThisLocation")
+        var clickedElement = e.target;
+
+        var requestButton = clickedElement.parentElement.parentElement.firstChild;
+        console.log(requestButton);
+
+        if (requestButton) {
+          requestButton.click();
+        } else {
+          console.log('No clickable location found');
+        }
+
+      };
+    }
+  });
+
 })();
