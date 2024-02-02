@@ -1,7 +1,6 @@
 
 /* Sign in button that displays when you are an item page and not signed-in. */
-
-.bar prm-authentication .md-button {
+.bar prm-authentication .md-button[aria-label="Sign in"] {
     color: #fff !important;
     background-color: #002d72;
     padding: 1em;
