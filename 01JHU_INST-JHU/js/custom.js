@@ -33,18 +33,27 @@
     bindings: { parentCtrl: `<` },
     templateUrl: "/discovery/custom/01JHU_INST-JHU/html/prm-location-after.html",
     controller: function () {
-      
-      this.requestFromThisLocation = function (e) {
-        console.log("requestFromThisLocation")
-        var clickedElement = e.target;
 
+      this.requestHover = function(e) {
+        var clickedElement = e.target;
         var requestButton = clickedElement.parentElement.parentElement.firstChild;
-        console.log(requestButton);
+
+        if (requestButton) {
+          var mouseoverEvent = new Event('mouseover');
+          requestButton.dispatchEvent(mouseoverEvent);
+        } else {
+          console.log('No request button found');
+        }
+      }
+
+      this.requestFromThisLocation = function (e) {
+        var clickedElement = e.target;
+        var requestButton = clickedElement.parentElement.parentElement.firstChild;
 
         if (requestButton) {
           requestButton.click();
         } else {
-          console.log('No clickable location found');
+          console.log('No request button found');
         }
 
       };

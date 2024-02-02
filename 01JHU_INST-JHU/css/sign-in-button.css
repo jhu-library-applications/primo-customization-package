@@ -1,0 +1,21 @@
+
+/* Sign in button that displays when you are an item page and not signed-in. */
+
+.bar prm-authentication .md-button, .md-button.button-as-link  {
+    color: #fff;
+    background-color: #002d72;
+    padding: 1em;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+    border-radius: .2em;
+    margin-top: 0;
+    margin-bottom: 1em;
+    margin-right: 1em;
+    min-width: 285px;
+    float: right;
+    cursor: pointer;
+}
+
+.bar {
+    height: 100px;
+}
