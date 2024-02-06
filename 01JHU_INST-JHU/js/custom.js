@@ -34,22 +34,13 @@
     templateUrl: "/discovery/custom/01JHU_INST-JHU/html/prm-search-result-thumbnail-container-after.html"
   });
 
+  /* This component is used to add a "Request" button to the prm-location component. */
   app.component('prmLocationAfter', {
     bindings: { parentCtrl: `<` },
     templateUrl: "/discovery/custom/01JHU_INST-JHU/html/prm-location-after.html",
     controller: function () {
-
-      this.requestHover = function(e) {
-        var clickedElement = e.target;
-        var requestButton = clickedElement.parentElement.parentElement.firstChild;
-
-        if (requestButton) {
-          var mouseoverEvent = new Event('mouseover');
-          requestButton.dispatchEvent(mouseoverEvent);
-        } else {
-          console.log('No request button found');
-        }
-      }
+      this.$onInit = function() {
+    };
 
       this.requestFromThisLocation = function (e) {
         var clickedElement = e.target;
@@ -64,5 +55,6 @@
       };
     }
   });
+
 
 })();
