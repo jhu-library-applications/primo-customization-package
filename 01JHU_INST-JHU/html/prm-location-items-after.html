@@ -1,0 +1,101 @@
+<div class="jhu-location-items-after">
+  <h5 class="section-title" style="margin-bottom: .75em !important;">
+    <span translate="nui.aria.locationItems.locationItems">{{ nui.aria.locationItems.locationItems }}</span>
+  </h5>
+
+  <prm-location-holdings [curr-loc]="$ctrl.parentCtrl.currLoc" [service-scroll-id]="::$ctrl.serviceScrollId">
+    <div ng-if="$ctrl.parentCtrl.currLoc.locationNoItems ? $ctrl.summaryLinesVisible : !$ctrl.summaryLinesVisible"
+      class="display-block layout-align-start-start layout-row" layout="row" layout-align="start start">
+      <div layout="column" class="layout-column"></div>
+    </div>
+    <prm-location-holdings-after parent-ctrl="$ctrl"></prm-location-holdings-after>
+  </prm-location-holdings>
+
+  <div layout="column" flex="" ng-style="::(($ctrl.mediaQueries.xs || $ctrl.mediaQueries.sm) && {'min-width':'100%'})"
+    class="layout-column flex">
+    <h6 ng-if="$ctrl.parentCtrl.currLoc.location && $ctrl.getLibraryName($ctrl.parentCtrl.currLoc.location)"
+      class="md-title ng-binding zero-margin">Offsite Storage</h6>
+    <p ng-if="$ctrl.parentCtrl.currLoc.location.availabilityStatus" class="ng-binding ng-scope zero-margin">
+      <span class="availability-status {{ $ctrl.parentCtrl.currLoc.location.availabilityStatus }}">{{
+        capitalize($ctrl.parentCtrl.currLoc.location.availabilityStatus) }}</span>
+      <span ng-if="$ctrl.parentCtrl.currLoc.location.subLocation">,</span>
+      <span
+        ng-if="$ctrl.parentCtrl.currLoc.location && $ctrl.parentCtrl.currLoc.location.subLocation && $ctrl.parentCtrl.getSubLibraryName($ctrl.parentCtrl.currLoc.location)"
+        ng-bind-html="$ctrl.parentCtrl.currLoc.location.collectionTranslation">{{
+        $ctrl.parentCtrl.currLoc.location.collectionTranslation }}</span>
+      <span ng-if="$ctrl.parentCtrl.currLoc.location.callNumber">;</span>
+      <span ng-if="$ctrl.parentCtrl.currLoc.location.callNumber" dir="auto">{{
+        $ctrl.parentCtrl.currLoc.location.callNumber }}</span>
+    </p>
+    <p ng-if="$ctrl.parentCtrl.currLoc.location.availabilityStatement" class="ng-binding ng-scope zero-margin" style="">
+      {{ $ctrl.parentCtrl.currLoc.location.availabilityStatement }}</p>
+    <prm-location-holdings [curr-loc]="$ctrl.parentCtrl.currLoc" [service-scroll-id]="::$ctrl.serviceScrollId">
+      <div ng-if="$ctrl.parentCtrl.currLoclocationNoItems ? $ctrl.summaryLinesVisible : !$ctrl.summaryLinesVisible"
+        class="display-block layout-align-start-start layout-row" layout="row" layout-align="start start">
+        <div layout="column" class="layout-column"></div>
+      </div>
+      <prm-location-holdings-after parent-ctrl="$ctrl"></prm-location-holdings-after>
+    </prm-location-holdings>
+  </div>
+
+  <md-list layout="column" ng-hide="$ctrl.parentCtrl.currLoc.locationNoItems"
+    class="separate-list-items margin-left-medium md-primoExplore-theme layout-column" role="list" aria-hidden="false">
+    <md-list-item ng-repeat="item in $ctrl.parentCtrl.currLoc.items track by $index"
+      class="md-2-line has-expand md-no-proxy md-with-secondary _md" ng-if="!$ctrl.parentCtrl.currLoc.isMore || !$last"
+      ng-class="item.isExpanded?'item-expanded':''" (click)="$ctrl.parentCtrl.expandCollapse(item)" role="listitem"
+      style="">
+      <div layout="row" aria-live="assertive" flex="" class="layout-row flex">
+        <div class="md-list-item-text layout-wrap layout-row flex" layout="row" layout-wrap="" flex="">
+          <div flex-xs="100" class="flex-xs-100">
+            <div ng-if="item.itemFields[0]">
+              <span translate="nui.item.brief.1"></span>
+              <span class="item-status" ng-click="$ctrl.parentCtrl.checkClick($event)" ng-bind-html="item.itemFields[0]"
+                aria-label="{{ item.itemFields[0] }}" md-labeled-by-tooltip="md-tooltip-135" role="button"
+                tabindex="0">{{ item.itemFields[0] }}</span>
+            </div>
+            <div ng-if="item.itemFields[1]">
+              <span class="location-item" aria-label="{{ item.itemFields[1] }}" md-labeled-by-tooltip="md-tooltip-136">
+                <span translate="nui.item.brief.2"></span>
+                <span class="item-days" ng-click="$ctrl.parentCtrl.checkClick($event)" dir="auto"
+                  ng-bind-html="item.itemFields[1]" role="button" tabindex="0">{{ item.itemFields[1] }}</span>
+              </span>
+            </div>
+          </div>
+          <div class="weak-text flex-xs-100 flex" flex="" flex-xs="100"></div>
+          <div layout-align="end center" layout="row" layout-wrap="" flex-xs="100" flex-sm="30"
+            class="layout-wrap layout-align-end-center layout-row flex-xs-100 flex-sm-30">
+            <div layout="row" layout-align="center center" ng-repeat="service in item.listOfServices track by $index"
+              class="layout-align-center-center layout-row">
+              <prm-service-button
+                ng-if="$ctrl.parentCtrl.allowService() && (service.enableWithoutLogin || $ctrl.parentCtrl.isLoggedIn())"
+                [service]="service" (change-tab-event)="::$ctrl.parentCtrl.onChangeTabEvent($event)"
+                [parent-tab]="::$ctrl.parentCtrl.tabId"
+                [request-parameters]="$ctrl.parentCtrl.getServiceAdditionalParams(item, service)" method="GET">
+                <button class="button-as-link md-button md-primoExplore-theme md-ink-ripple" type="button"
+                  ng-transclude=""
+                  ng-if="$ctrl.parentCtrl.service.allowed === 'Y' && $ctrl.parentCtrl.service['link-to-service']"
+                  (click)="$ctrl.parentCtrl.getServiceDetails()"
+                  ng-class="{'button-external-link': $ctrl.parentCtrl.service['service-type'] == 'OvL' && $ctrl.parentCtrl.service['link-to-service']}"
+                  aria-label="Request from JH">
+                  <span translate="AlmaItemRequest">Request from JH</span>
+                  <div class="md-ripple-container" style=""></div>
+                </button>
+                <prm-service-button-after parent-ctrl="$ctrl"></prm-service-button-after>
+              </prm-service-button>
+            </div>
+          </div>
+        </div>
+        <div class="align-self-stretch"></div>
+      </div>
+      <div class="md-secondary-container">
+        <button class="item-expand-button md-button md-primoExplore-theme md-ink-ripple" type="button" ng-transclude=""
+          aria-expanded="false" aria-label="Expand location item">
+          <prm-icon ng-class="{'rotate-180': item.isExpanded}" icon-type="svg" svg-icon-set="hardware"
+            icon-definition="ic_keyboard_arrow_down_24px" class="" style="">
+            <prm-icon-after parent-ctrl="$ctrl.parentCtrl"></prm-icon-after>
+          </prm-icon>
+        </button>
+      </div>
+    </md-list-item>
+  </md-list>
+</div>
