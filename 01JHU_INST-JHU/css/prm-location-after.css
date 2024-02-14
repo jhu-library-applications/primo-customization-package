@@ -1,0 +1,50 @@
+prm-location {
+    visibility: visible;
+  }
+
+  prm-location>.neutralized-button {
+    visibility: hidden;
+    height: 0;
+    width: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  prm-location-after {
+    visibility: visible !important;
+  }
+
+  .call-number-location-after {
+    font-weight: 800 !important;
+  }
+
+  .available {
+    font-weight: 800 !important;
+  }
+
+  .location-after-request-button {
+    color: #fff;
+    background-color: #002d72;
+    padding: 1em;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+    border-radius: .2em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-right: 1em;
+    min-width: 200px;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-top: auto;
+  }
+
+  prm-location>.flex-xs-100.flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .top-content {
+    flex-grow: 1;
+  }

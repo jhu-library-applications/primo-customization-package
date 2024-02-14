@@ -3,21 +3,10 @@
 
   var app = angular.module('viewCustom', ['angularLoad']);
 
-  app.component('prmSearchBookmarkFilterAfter', {
-    template: `
-      <help-menu-topbar>
-          <a class="md-icon-button button-over-dark md-button md-primoExplore-theme md-ink-ripple"
-                    aria-label="Submit Feedback" target="_blank"
-                    href="https://jh.qualtrics.com/jfe/form/SV_8v0RG9l4bQUPpIi" title="Submit Feedback (opens in new tab)">
-                    <md-icon class="md-primoExplore-theme">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z"/></svg>
-                    </md-icon>
-          </a>
-
-        <span class="notification-indicator"></span>
-      </help-menu-topbar>`
-  });
-
+  const capitalize = (string) => {
+    if (!string) return string;
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
 
   app.component('prmTopBarBefore', {
     bindings: { parentCtrl: `<` },
@@ -29,27 +18,38 @@
     templateUrl: "/discovery/custom/01JHU_INST-JHU/html/prm-search-result-thumbnail-container-after.html"
   });
 
-  /* This component is used to add a "Request" button to the prm-location component. */
+  /* This is the feedback button that appears in the top bar */
+  app.component('prmSearchBookmarkFilterAfter', {
+    templateUrl: "/discovery/custom/01JHU_INST-JHU/html/prm-search-bookmark-filter-after.html"
+  });
+
+  /* This is an override of the prmLocation component. prmLocations display in GetIt and show availability at a location. 
+     You need to click on the location to see the items at that location and make a request. 
+  */
   app.component('prmLocationAfter', {
-    bindings: { parentCtrl: `<` },
+    bindings: { parentCtrl: '<' },
     templateUrl: "/discovery/custom/01JHU_INST-JHU/html/prm-location-after.html",
-    controller: function () {
-      this.$onInit = function() {
-    };
+    controller: function ($scope) {
+      $scope.capitalize = capitalize;
 
-      this.requestFromThisLocation = function (e) {
-        var clickedElement = e.target;
-        var requestButton = clickedElement.parentElement.parentElement.firstChild;
-
-        if (requestButton) {
-          requestButton.click();
-        } else {
-          console.log('No request button found');
-        }
-
+      this.$onInit = function () {
+        console.log("prmLocationsAfter")
       };
     }
   });
 
+
+  /* This is an override of the prmLocationItems component. prmLocationItems displays the items at a location. */
+  app.component('prmLocationItemsAfter', {
+    bindings: { parentCtrl: '<' },
+    templateUrl: "/discovery/custom/01JHU_INST-JHU/html/prm-location-items-after.html",
+    controller: function ($scope) {
+      $scope.capitalize = capitalize
+
+      this.$onInit = function () {
+        console.log("prmLocationItemsAfter")
+      };
+    }
+  });
 
 })();

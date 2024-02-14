@@ -1,17 +1,25 @@
-<style>
-    .location-after-request-button {
-        color: #fff;
-        background-color: #002d72;
-        padding: 1em;
-        padding-left: 2.5em;
-        padding-right: 2.5em;
-        border-radius: .2em;
-        margin-top: 0;
-        margin-bottom: 1em;
-        margin-right: 1em;
-        min-width: 285px;
-        float: right;
-        cursor: pointer;
-    }
-</style>
-<div class="location-after-request-button" ng-mouseover="$ctrl.requestHover($event)" ng-click="$ctrl.requestFromThisLocation($event)">Request item from this location</div>
+<div class="jhu-prm-location-after">
+  <div class="neutralized-button layout-full-width layout-display-flex md-button md-ink-ripple layout-row" tabindex="0"
+    layout="row" ng-click="$ctrl.parentCtrl.onClick()" aria-label="..." md-ink-ripple="red" role="button">
+    <div class="top-content">
+      <div ng-class="{'md-list-item-text': !$ctrl.parentCtrl.mediaQueries.xs}" layout="row" layout-wrap="" flex=""
+        class="layout-wrap layout-row flex md-list-item-text">
+        <div ng-class="{'md-list-item-text': $ctrl.parentCtrl.mediaQueries.xs}" flex="" flex-xs="100"
+          class="flex-xs-100 flex">
+          <h3>{{ $ctrl.parentCtrl.loc.location.mainLocation }}</h3>
+          <p class="availability-status {{ $ctrl.parentCtrl.loc.location.availabilityStatus }}">{{
+            capitalize($ctrl.parentCtrl.loc.location.availabilityStatus) }}</p>
+          <p ng-if="$ctrl.parentCtrl.loc.location && 
+                       $ctrl.parentCtrl.loc.location.subLocation && 
+                       $ctrl.parentCtrl.getSubLibraryName($ctrl.parentCtrl.loc.location)"
+            ng-bind-html="$ctrl.parentCtrl.loc.location.collectionTranslation">
+            {{ $ctrl.parentCtrl.getSubLibraryName($ctrl.parentCtrl.loc.location) }}
+          </p>
+          <p class="call-number-location-after" ng-if="$ctrl.parentCtrl.loc.location.callNumber" dir="auto">{{
+            $ctrl.parentCtrl.loc.location.callNumber }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="location-after-request-button">Request item from this location</div>
+  </div>
+</div>
