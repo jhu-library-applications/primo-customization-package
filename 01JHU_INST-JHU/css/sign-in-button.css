@@ -1,20 +1,27 @@
-/* Sign in button that displays when you are an item page and not signed-in. */
-.bar prm-authentication .md-button[aria-label="Sign in"] {
-  color: #fff !important;
-  background-color: #002d72;
-  padding: 1em;
-  padding-left: 2.5em;
-  padding-right: 2.5em;
-  border-radius: .2em;
-  margin-top: 0;
-  margin-bottom: 1em;
-  margin-right: 1em;
-  min-width: 285px;
-  float: right;
-  cursor: pointer;
-}
+  /* Sign-in button */
+  /* Sign in button that displays when you are an item page and not signed-in. */
+  .bar prm-authentication .md-button[aria-label="Sign in"] {
+    color: #fff !important;
+    background-color: #002d72;
+    padding: 1em;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+    border-radius: .2em;
+    margin-top: 0;
+    margin-bottom: 1em;
+    margin-right: 1em;
+    min-width: 200px;
+    float: right;
+    cursor: pointer;
+  }
 
 /* Bar that contains the sign in button. */
 .bar {
   height: 100px;
 }
+
+  /* External link icon */
+  prm-service-button prm-icon md-icon.md-primoExplore-theme {
+    margin-left: .25em;
+    color: #fff !important
+  }
