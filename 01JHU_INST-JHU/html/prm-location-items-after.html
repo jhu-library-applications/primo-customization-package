@@ -3,18 +3,18 @@
     <span translate="nui.aria.locationItems.locationItems">{{ nui.aria.locationItems.locationItems }}</span>
   </h5>
 
-  <prm-location-holdings [curr-loc]="$ctrl.parentCtrl.currLoc" [service-scroll-id]="::$ctrl.serviceScrollId">
-    <div ng-if="$ctrl.parentCtrl.currLoc.locationNoItems ? $ctrl.summaryLinesVisible : !$ctrl.summaryLinesVisible"
+  <prm-location-holdings [curr-loc]="$ctrl.parentCtrl.currLoc" [service-scroll-id]="::$ctrl.parentCtrl.serviceScrollId">
+    <div ng-if="$ctrl.parentCtrl.currLoc.locationNoItems ? $ctrl.parentCtrl.summaryLinesVisible : !$ctrl.parentCtrl.summaryLinesVisible"
       class="display-block layout-align-start-start layout-row" layout="row" layout-align="start start">
       <div layout="column" class="layout-column"></div>
     </div>
     <prm-location-holdings-after parent-ctrl="$ctrl"></prm-location-holdings-after>
   </prm-location-holdings>
 
-  <div layout="column" flex="" ng-style="::(($ctrl.mediaQueries.xs || $ctrl.mediaQueries.sm) && {'min-width':'100%'})"
+  <div layout="column" flex="" ng-style="::(($ctrl.parentCtrl.mediaQueries.xs || $ctrl.parentCtrl.mediaQueries.sm) && {'min-width':'100%'})"
     class="layout-column flex">
-    <h6 ng-if="$ctrl.parentCtrl.currLoc.location && $ctrl.getLibraryName($ctrl.parentCtrl.currLoc.location)"
-      class="md-title ng-binding zero-margin">Offsite Storage</h6>
+    <h6 ng-if="$ctrl.parentCtrl.currLoc.location && $ctrl.parentCtrl.getLibraryName($ctrl.parentCtrl.currLoc.location)"
+      class="md-title ng-binding zero-margin">{{ $ctrl.parentCtrl.getLibraryName($ctrl.parentCtrl.currLoc.location) }}</h6>
     <p ng-if="$ctrl.parentCtrl.currLoc.location.availabilityStatus" class="ng-binding ng-scope zero-margin">
       <span class="availability-status {{ $ctrl.parentCtrl.currLoc.location.availabilityStatus }}">{{
         capitalize($ctrl.parentCtrl.currLoc.location.availabilityStatus) }}</span>
@@ -29,7 +29,7 @@
     </p>
     <p ng-if="$ctrl.parentCtrl.currLoc.location.availabilityStatement" class="ng-binding ng-scope zero-margin" style="">
       {{ $ctrl.parentCtrl.currLoc.location.availabilityStatement }}</p>
-    <prm-location-holdings [curr-loc]="$ctrl.parentCtrl.currLoc" [service-scroll-id]="::$ctrl.serviceScrollId">
+    <prm-location-holdings [curr-loc]="$ctrl.parentCtrl.currLoc" [service-scroll-id]="::$ctrl.parentCtrl.serviceScrollId">
       <div ng-if="$ctrl.parentCtrl.currLoclocationNoItems ? $ctrl.summaryLinesVisible : !$ctrl.summaryLinesVisible"
         class="display-block layout-align-start-start layout-row" layout="row" layout-align="start start">
         <div layout="column" class="layout-column"></div>
@@ -92,7 +92,7 @@
           aria-expanded="false" aria-label="Expand location item">
           <prm-icon ng-class="{'rotate-180': item.isExpanded}" icon-type="svg" svg-icon-set="hardware"
             icon-definition="ic_keyboard_arrow_down_24px" class="" style="">
-            <prm-icon-after parent-ctrl="$ctrl.parentCtrl"></prm-icon-after>
+            <prm-icon-after parent-ctrl="$ctrl"></prm-icon-after>
           </prm-icon>
         </button>
       </div>
