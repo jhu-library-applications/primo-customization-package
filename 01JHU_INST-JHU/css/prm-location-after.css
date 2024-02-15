@@ -1,4 +1,8 @@
-prm-location > * {
+prm-location {
+  visibility: visible;
+}
+
+prm-location>.neutralized-button {
   visibility: hidden;
   height: 0;
   width: 0;
