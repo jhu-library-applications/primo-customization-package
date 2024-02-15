@@ -3,10 +3,7 @@
 
   var app = angular.module('viewCustom', ['angularLoad']);
 
-  const capitalize = (string) => {
-    if (!string) return string;
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
+  /* Components */
 
   app.component('prmTopBarBefore', {
     bindings: { parentCtrl: `<` },
@@ -29,17 +26,30 @@
   app.component('prmLocationAfter', {
     bindings: { parentCtrl: '<' },
     templateUrl: "/discovery/custom/01JHU_INST-JHU/html/prm-location-after.html",
-    controller: function ($scope) {
-      $scope.capitalize = capitalize;
+    controller: ['AuthService', 'CapitalizeService',  function (AuthService, CapitalizeService) {
+      this.capitalize = CapitalizeService.capitalize;
+      this.isLoggedIn = AuthService.getIsLoggedIn();
 
       this.$onInit = function () {
-        console.log("prmLocationsAfter")
-      };
-    }
+        console.log(this.isLoggedIn);
+      } 
+    }]
   });
 
+  /* Used to get the user's authentication information -- not displayed */
+  app.component('prmAuthenticationAfter', {
+    bindings: { parentCtrl: '<' },
+    template: '<div></div>',
+    controller: ['AuthService', function (AuthService) {
+
+      this.$onInit = function () {
+        AuthService.setIsLoggedIn(this.parentCtrl.isLoggedIn);
+      } 
+    }]
+  });
 
   /* This is an override of the prmLocationItems component. prmLocationItems displays the items at a location. */
+  /* This is component is more complex that prmLocation. */
   app.component('prmLocationItemsAfter', {
     bindings: { parentCtrl: '<' },
     templateUrl: "/discovery/custom/01JHU_INST-JHU/html/prm-location-items-after.html",
@@ -51,5 +61,34 @@
       };
     }
   });
+  
+
+/*Services */
+
+/* Simple service used to capitalize the first letter of a string */
+  app.service('CapitalizeService', function() {
+    this.capitalize = function(string) {
+      if (!string) return string;
+      return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+  });
+
+  /* This service is used to keep track of whether the user is logged in or not. */
+  app.service('AuthService', function() {
+    var isLoggedIn = false;
+
+    return {
+        setIsLoggedIn: function(value) {
+            if (value === false) {
+              isLoggedIn = false;
+            } else {
+              isLoggedIn = true;
+            }
+        },
+        getIsLoggedIn: function() {
+            return isLoggedIn;
+        }
+    };
+});
 
 })();
