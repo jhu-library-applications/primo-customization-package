@@ -52,7 +52,6 @@ prm-location>.flex-xs-100.flex {
 .disabled-button {
   color: #757575;
   background-color: #e0e0e0;
-  cursor: not-allowed;
 }
 
 .jhu-prm-location-after>.neutralized-button.disabled {
