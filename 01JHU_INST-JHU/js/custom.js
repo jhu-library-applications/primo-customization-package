@@ -26,13 +26,13 @@
   app.component('prmLocationAfter', {
     bindings: { parentCtrl: '<' },
     templateUrl: "/discovery/custom/01JHU_INST-JHU/html/prm-location-after.html",
-    controller: ['AuthService', 'CapitalizeService',  function (AuthService, CapitalizeService) {
+    controller: ['AuthService', 'CapitalizeService', function (AuthService, CapitalizeService) {
       this.capitalize = CapitalizeService.capitalize;
       this.isLoggedIn = AuthService.getIsLoggedIn();
 
       this.$onInit = function () {
         console.log(this.isLoggedIn);
-      } 
+      }
     }]
   });
 
@@ -44,51 +44,49 @@
 
       this.$onInit = function () {
         AuthService.setIsLoggedIn(this.parentCtrl.isLoggedIn);
-      } 
+      }
     }]
   });
 
   /* This is an override of the prmLocationItems component. prmLocationItems displays the items at a location. */
-  /* This is component is more complex that prmLocation. */
+  /* This is component is more complex than prmLocation. */
   app.component('prmLocationItemsAfter', {
     bindings: { parentCtrl: '<' },
     templateUrl: "/discovery/custom/01JHU_INST-JHU/html/prm-location-items-after.html",
-    controller: function ($scope) {
-      $scope.capitalize = capitalize
-
+    controller: function () {
       this.$onInit = function () {
         console.log("prmLocationItemsAfter")
       };
     }
   });
-  
 
-/*Services */
 
-/* Simple service used to capitalize the first letter of a string */
-  app.service('CapitalizeService', function() {
-    this.capitalize = function(string) {
+  /*Services */
+
+  /* Simple service used to capitalize the first letter of a string */
+  app.service('CapitalizeService', function () {
+    this.capitalize = function (string) {
       if (!string) return string;
       return string.charAt(0).toUpperCase() + string.slice(1);
     }
   });
 
   /* This service is used to keep track of whether the user is logged in or not. */
-  app.service('AuthService', function() {
+  app.service('AuthService', function () {
     var isLoggedIn = false;
 
     return {
-        setIsLoggedIn: function(value) {
-            if (value === false) {
-              isLoggedIn = false;
-            } else {
-              isLoggedIn = true;
-            }
-        },
-        getIsLoggedIn: function() {
-            return isLoggedIn;
+      setIsLoggedIn: function (value) {
+        if (value === false) {
+          isLoggedIn = false;
+        } else {
+          isLoggedIn = true;
         }
+      },
+      getIsLoggedIn: function () {
+        return isLoggedIn;
+      }
     };
-});
+  });
 
 })();
