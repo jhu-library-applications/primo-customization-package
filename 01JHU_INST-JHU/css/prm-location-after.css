@@ -56,6 +56,5 @@ prm-location>.flex-xs-100.flex {
 }
 
 .jhu-prm-location-after>.neutralized-button.disabled {
-  opacity: 0.5;
   pointer-events: none;
 }
