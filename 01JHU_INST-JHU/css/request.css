@@ -16,7 +16,7 @@ prm-location-items md-list prm-service-button .md-button.button-as-link {
 }
 
 /* External link icon */
-prm-service-button prm-icon md-icon.md-primoExplore-theme {
+prm-service-button prm-icon md-icon {
 	margin-left: .25em;
     color: #fff !important
 }
@@ -30,14 +30,14 @@ prm-request-services .section-title {
     display: none;
 }
 
-prm-location-items > md-list > md-list-item> div.layout-row.flex > div.md-list-item-text.layout-wrap.layout-row.flex > div.layout-wrap.layout-align-end-center.layout-row.flex-xs-100.flex-sm-30 {
+prm-location-items-after .layout-align-end-center {
     flex-direction: column;
     align-items: flex-end;
 }
 
 
 /* Citation linker page request buttons */
-button[aria-label="Check BorrowDirect, opens in a new window"].md-button.neutralized-button, button[aria-label="Get PDF, opens in a new window"].md-button.neutralized-button {
+button[aria-label="Check BorrowDirect, opens in a new window"].md-button.neutralized-button, button[aria-label="Go to Interlibrary Loan Form"].md-button.neutralized-button {
   color: #fff !important;
   background-color: #002d72;
   border-radius: .2em;
@@ -50,6 +50,15 @@ button[aria-label="Check BorrowDirect, opens in a new window"].md-button.neutral
     color: rgb(182, 182, 182);
 }
 
-button[aria-label="Check BorrowDirect, opens in a new window"].md-button.neutralized-button a, button[aria-label="Get PDF, opens in a new window"].md-button.neutralized-button a {
+button[aria-label="Check BorrowDirect, opens in a new window"].md-button.neutralized-button a, button[aria-label="Go to Interlibrary Loan Form"].md-button.neutralized-button a {
   color: #fff !important;
+}
+
+/* This is the call number that displays in the Locations section */
+ span[ng-if="$ctrl.loc.location.callNumber"][dir="auto"] {
+      font-weight: 800;
+    }
+
+.availability-status {
+    font-weight: 800;
 }
