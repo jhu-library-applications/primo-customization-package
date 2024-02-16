@@ -43,3 +43,7 @@
     margin-left: .25em;
     color: #fff !important;
   }
+
+  prm-location-items-after .full-view-section .section-title {
+    display: none;
+  }
