@@ -1,27 +1,54 @@
-<div class="jhu-prm-location-after">
-  <prm-authentication-after parent-ctrl="$ctrl"></prm-authentication-after>
-  <div class="neutralized-button layout-full-width layout-display-flex md-button md-ink-ripple layout-row" tabindex="0"
-    layout="row" ng-click="$ctrl.parentCtrl.onClick()" aria-label="..." ng-class="{'disabled': !$ctrl.isLoggedIn}" md-ink-ripple="red" role="button">
-    <div class="top-content">
-      <div ng-class="{'md-list-item-text': !$ctrl.parentCtrl.mediaQueries.xs}" layout="row" layout-wrap="" flex=""
-        class="layout-wrap layout-row flex md-list-item-text">
-        <div ng-class="{'md-list-item-text': $ctrl.parentCtrl.mediaQueries.xs}" flex="" flex-xs="100"
-          class="flex-xs-100 flex">
-          <h3>{{ $ctrl.parentCtrl.loc.location.mainLocation }}</h3>
-          <p class="availability-status {{ $ctrl.parentCtrl.loc.location.availabilityStatus }}">{{
-            $ctrl.capitalize($ctrl.parentCtrl.loc.location.availabilityStatus) }}</p>
-          <p ng-if="$ctrl.parentCtrl.loc.location && 
-                       $ctrl.parentCtrl.loc.location.subLocation && 
-                       $ctrl.parentCtrl.getSubLibraryName($ctrl.parentCtrl.loc.location)"
-            ng-bind-html="$ctrl.parentCtrl.loc.location.collectionTranslation">
-            {{ $ctrl.parentCtrl.getSubLibraryName($ctrl.parentCtrl.loc.location) }}
-
-          </p>
-          <p class="call-number-location-after" ng-if="$ctrl.parentCtrl.loc.location.callNumber" dir="auto">{{
-            $ctrl.parentCtrl.loc.location.callNumber }}</p>
-        </div>
+<div class="neutralized-button layout-full-width layout-display-flex md-button" tabindex="0" layout="flex"
+  ng-click="$ctrl.parentCtrl.onClick()"
+  aria-label="{{$ctrl.parentCtrl.loc.location.librarycodeTranslation}} {{$ctrl.parentCtrl.loc.location.subLocation | translate}},\r\n                        {{ 'fulldisplay.availabilty.' + $ctrl.parentCtrl.loc.location.availabilityStatus | translate}},\r\n                         {{$ctrl.getButtonActionLabel() | translate}}"
+  md-ink-ripple="red">
+  <div layout="row" flex="100" layout-align="space-between center">
+    <div ng-class="{'md-list-item-text': !$ctrl.parentCtrl.mediaQueries.xs}" layout="row" layout-wrap flex>
+      <div ng-class="{'md-list-item-text': $ctrl.parentCtrl.mediaQueries.xs}" flex flex-xs="100">
+        <h3 >
+          {{$ctrl.parentCtrl.loc.location.librarycodeTranslation}}</h3>
+        <h5
+          ng-if="$ctrl.parentCtrl.loc.location.relatedTitle != null && $ctrl.parentCtrl.loc.location.relatedTitle !== ''"
+          class="related-title">
+          <div class="display-for-location"><span class="related-title-location"><prm-icon
+                icon-type="{{$ctrl.parentCtl.opacLocations.relatedArrow.type}}"
+                svg-icon-set="{{$ctrl.parentCtl.opacLocations.relatedArrow.iconSet}}"
+                icon-definition="{{$ctrl.parentCtl.opacLocations.relatedArrow.icon}}"
+                class="related-title-icon h-flipped"></prm-icon><span ng-if="$ctrl.parentCtrl.loc.location.boundWith"
+                translate="nui.location.unrelated_title" class="related-title-label"></span> <span
+                ng-if="!$ctrl.parentCtrl.loc.location.boundWith" translate="nui.location.related_title"
+                class="related-title-label"></span></span>
+            <div class="display-related-title display-for-location"><span
+                class="related-title-name margin-for-related-title">{{$ctrl.parentCtrl.loc.location.relatedTitle}}</span>
+              <span ng-if="$ctrl.parentCtrl.loc.location.translateRelatedTitle"
+                class="related-title-name display-related-title">{{$ctrl.parentCtrl.loc.location.translateRelatedTitle}}</span>
+            </div>
+          </div>
+        </h5>
+        <p><span class="availability-status {{$ctrl.parentCtrl.loc.location.availabilityStatus}}"
+            translate="fulldisplay.availabilty.{{$ctrl.parentCtrl.loc.location.availabilityStatus}}"></span> <span
+            ng-if="$ctrl.parentCtrl.loc.location.subLocation">,</span> <span
+            ng-if="$ctrl.parentCtrl.loc.location && $ctrl.parentCtrl.loc.location.subLocation && $ctrl.parentCtrl.getSubLibraryName($ctrl.parentCtrl.loc.location)"
+            ng-bind-html="$ctrl.parentCtrl.loc.location.collectionTranslation"></span> <span
+            ng-if="$ctrl.parentCtrl.loc.location.callNumber">;</span> <span
+            ng-if="$ctrl.parentCtrl.loc.location.callNumber"
+            dir="auto">{{$ctrl.parentCtrl.loc.location.callNumber}}</span></p><prm-location-holdings
+          ng-if="$ctrl.parentCtrl.displayHoldingsInLocationsList" [curr-loc]="$ctrl.parentCtrl.loc"
+          [service-scroll-id]="::$ctrl.serviceScrollId"></prm-location-holdings>
       </div>
-    </div>
-    <div class="location-after-request-button" ng-class="{'disabled-button': !$ctrl.isLoggedIn}">Request item from this location</div>
+      <div layout-align="end center" layout="row" layout-wrap flex-xs="100" flex-sm="30" flex class="list-item-actions">
+            <md-button class="location-after-request-button md-primary">Request item from this location</md-button>
+
+        <prm-stack-map ng-if="$ctrl.parentCtrl.isSuprima() && $ctrl.parentCtrl.loc.location.stackMapUrl"
+          [map-url]="$ctrl.parentCtrl.loc.location.stackMapUrl"></prm-stack-map>
+      </div>
+    </div><prm-icon ng-if="!$ctrl.isOvp()" class="padding-right-small location-arrow-icon"
+      icon-type="{{$ctrl.parentCtl.opacLocations.externalLinkIcon.type}}"
+      svg-icon-set="{{$ctrl.parentCtl.opacLocations.externalLinkIcon.iconSet}}"
+      icon-definition="{{$ctrl.parentCtl.opacLocations.externalLinkIcon.icon}}"></prm-icon><prm-icon
+      ng-if="$ctrl.isOvp()" class="padding-right-small location-arrow-icon"
+      icon-type="{{$ctrl.parentCtl.opacLocations.rightArrow.type}}"
+      svg-icon-set="{{$ctrl.parentCtl.opacLocations.rightArrow.iconSet}}"
+      icon-definition="{{$ctrl.parentCtl.opacLocations.rightArrow.icon}}"></prm-icon>
   </div>
 </div>

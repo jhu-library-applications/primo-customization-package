@@ -349,3 +349,34 @@ body > primo-explore > div > prm-services-page > prm-full-view-cont > md-content
   margin-top: 75px !important;
 }
 
+prm-location-items-after .layout-align-end-center {
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+prm-location-items-after .skewed-divider {
+  display:none;
+}
+
+/* External link icon */
+prm-location-items-after prm-service-button button {
+	margin-left: .25em;
+    color: #fff !important;
+}
+
+prm-location-items-after prm-service-button prm-icon {
+	margin-left: .25em;
+    color: #fff !important;
+}
+
+  prm-location-items>* {
+    visibility: hidden;
+    height: 0;
+    width: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  prm-location-items-after {
+    visibility: visible;
+  }
