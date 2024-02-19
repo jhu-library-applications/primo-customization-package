@@ -21,16 +21,16 @@
         translate="nui.location.unrelated_title" class="related-title-label"></span> <span
         ng-if="!$ctrl.parentCtrl.loc.location.boundWith" translate="nui.location.related_title" class="related-title-label"></span>
       <span class="related-title-name">{{$ctrl.parentCtrl.currLoc.location.relatedTitle}}</span></h5>
-    <p ng-if="$ctrl.parentCtrl.currLoc.location.availabilityStatus" class="ng-binding ng-scope zero-margin"><span
+    <p ng-if="$ctrl.parentCtrl.currLoc.location.availabilityStatus" class="ng-binding ng-scope zero-margin"><span style="font-weight: 800;" 
         class="availability-status {{$ctrl.parentCtrl.currLoc.location.availabilityStatus}}"
         translate="fulldisplay.availabilty.{{$ctrl.parentCtrl.currLoc.location.availabilityStatus}}"></span> <span
         ng-if="$ctrl.parentCtrl.currLoc.location.subLocation">,</span> <span
         ng-if="$ctrl.parentCtrl.currLoc.location && $ctrl.parentCtrl.currLoc.location.subLocation && $ctrl.parentCtrl.getSubLibraryName($ctrl.parentCtrl.currLoc.location)"
-        ng-bind-html="$ctrl.parentCtrl.currLoc.location.collectionTranslation"></span> <span
+        ng-bind-html="$ctrl.parentCtrl.currLoc.location.collectionTranslation"></span> <b><span
         ng-if="$ctrl.parentCtrl.currLoc.location.callNumber">;</span> <span ng-if="$ctrl.parentCtrl.currLoc.location.callNumber"
-        dir="auto">{{$ctrl.parentCtrl.currLoc.location.callNumber}}</span></p>
+        dir="auto">{{$ctrl.parentCtrl.currLoc.location.callNumber}}</span></b></p>
     <p ng-if="$ctrl.parentCtrl.currLoc.location.availabilityStatement" class="ng-binding ng-scope zero-margin">
-      {{$ctrl.parentCtrl.currLoc.location.availabilityStatement}}</p><prm-location-holdings [curr-loc]="$ctrl.parentCtrl.currLoc"
+      {{$ctrl.parentCtrl.currLoc.location.availabilityStatement}}</p></br><prm-location-holdings [curr-loc]="$ctrl.parentCtrl.currLoc"
       [service-scroll-id]="::$ctrl.parentCtrl.serviceScrollId"></prm-location-holdings>
   </div>
   <div layout="::{{($ctrl.parentCtrl.mediaQueries.xs || $ctrl.parentCtrl.mediaQueries.sm)  ? 'row' : ''}}">
