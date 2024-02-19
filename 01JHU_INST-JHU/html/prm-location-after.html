@@ -35,7 +35,8 @@
             dir="auto">{{$ctrl.parentCtrl.loc.location.callNumber}}</span></b></p></p>
       </div>
       <div layout-align="end center" layout="row" layout-wrap flex-xs="100" flex-sm="30" flex class="list-item-actions">
-            <md-button class="location-after-request-button md-primary">Request item from this location</md-button>
+            <md-button ng-if="$ctrl.parentCtrl.loc.location.availabilityStatus === 'available'" class="location-after-request-button md-primary">Request item from this location</md-button>
+            <md-button ng-if="$ctrl.parentCtrl.loc.location.availabilityStatus != 'available'" class="location-after-request-button md-primary">Check for other request options</md-button>
 
         <prm-stack-map ng-if="$ctrl.parentCtrl.isSuprima() && $ctrl.parentCtrl.loc.location.stackMapUrl"
           [map-url]="$ctrl.parentCtrl.loc.location.stackMapUrl"></prm-stack-map>
