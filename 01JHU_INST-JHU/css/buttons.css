@@ -3,7 +3,9 @@
 .bar prm-authentication prm-location-items md-list prm-service-button .md-button, 
 prm-location-items md-list prm-service-button .bar prm-authentication .md-button, 
 prm-location-items md-list prm-service-button .md-button, 
-prm-location-items md-list prm-service-button .md-button.button-as-link {
+prm-location-items md-list prm-service-button .md-button.button-as-link,
+prm-location-after >* button, prm-location > prm-location-after >* div.list-item-actions.flex > button
+{
     color: #fff;
     text-transform: none;
     background-color: #002d72;
