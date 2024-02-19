@@ -30,10 +30,11 @@
       this.isLoggedIn = AuthService.getIsLoggedIn();
 
       this.$onInit = function () {
-        console.log(this.isLoggedIn);
+        console.log('prmLocationAfter');
       }
     }]
   });
+
 
   /* Used to get the user's authentication information -- not displayed */
   app.component('prmAuthenticationAfter', {
@@ -58,7 +59,6 @@
       };
     }
   });
-
 
   /*Services */
 
