@@ -13,7 +13,6 @@ prm-collection-gallery-header > .collection-header-inner.has-transparent-topbar 
   padding-top: 100px;
 }
 
-/* Fix for the collections top bar being transparent */
-.prm-primary-bg.prm-hue1, prm-spinner.prm-hue1.overlay-cover.light-on-dark:after, prm-topbar .top-nav-bar, prm-search-bar.prm-hue1 {
+prm-explore-main .header .transparent-top-bar div:not(.favorites-guest-warning) {
   background-color: #fff !important;
 }
