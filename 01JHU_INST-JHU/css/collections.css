@@ -1,0 +1,5 @@
+/* Fix for the Collections header being hidden by the top bar */
+prm-collection-gallery-header > .collection-header-inner.has-transparent-topbar {
+    margin-top: 0;
+    padding-top: 100px;
+}
