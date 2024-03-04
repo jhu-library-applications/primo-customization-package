@@ -1,4 +1,5 @@
-<h5 class="section-title"><span
+<h5 class="section-title">
+  <span
     translate="nui.aria.locationItems.locationItems"></span></h5>
 <div layout="column" layout-align="start start space-between center"><md-button
     class="button-right-align button-link link-alt-color zero-margin"
@@ -8,7 +9,7 @@
     ng-if="$ctrl.parentCtrl.manualRegistrationInProgress" class="inline-loader half-transparent no-text" layout="row"
     layout-align="center center"></prm-spinner><span ng-if="!$ctrl.parentCtrl.showRegisterUser() && $ctrl.parentCtrl.manualRegistrationFailed"
     class="padding-small prm-warning-color" translate="nui.bor_info_failed"></span></div>
-<div class="tab-content-header margin-bottom-small margin-left-medium"
+<div class="tab-content-header location-details margin-bottom-small margin-left-medium"
   layout="{{$ctrl.parentCtrl.mediaQueries.xs || $ctrl.parentCtrl.mediaQueries.sm ? 'column' : 'row'}}" layout-align="space-between end">
   <div layout="column" flex ng-style="::(($ctrl.parentCtrl.mediaQueries.xs || $ctrl.parentCtrl.mediaQueries.sm) && {'min-width':'100%'})">
     <h6 ng-if="$ctrl.parentCtrl.currLoc.location && $ctrl.parentCtrl.getLibraryName($ctrl.parentCtrl.currLoc.location)"
