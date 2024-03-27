@@ -49,18 +49,6 @@
           ng-if="$ctrl.parentCtrl.isLocationsFilterVisible" icon-type="{{$ctrl.parentCtrl.opacLocations.filterOut.type}}"
           svg-icon-set="{{$ctrl.parentCtrl.opacLocations.filterOut.iconSet}}"
           icon-definition="{{$ctrl.parentCtrl.opacLocations.filterOut.icon}}"></prm-icon></md-button>
-      <div class="vertical-divider transparent-divider"></div><md-button
-        aria-label="{{$ctrl.parentCtrl.currLoc.isExpandAll ?  ('nui.locItems.collapse' | translate) : ('nui.locItems.expand' | translate)}}"
-        class="md-icon-button header-action expand-collapse-button"
-        (click)="$ctrl.parentCtrl.toggleExpandAll($ctrl.parentCtrl.currLoc)"><md-tooltip md-autohide="true"><span
-            ng-if="$ctrl.parentCtrl.currLoc.isExpandAll" translate="nui.locItems.collapse"></span> <span
-            ng-if="!$ctrl.parentCtrl.currLoc.isExpandAll" translate="nui.locItems.expand"></span></md-tooltip><span
-          ng-if="!$ctrl.parentCtrl.currLoc.isExpandAll"><prm-icon icon-type="{{$ctrl.parentCtrl.opacLocations.expandAllIcon.type}}"
-            svg-icon-set="{{$ctrl.parentCtrl.opacLocations.expandAllIcon.iconSet}}"
-            icon-definition="{{$ctrl.parentCtrl.opacLocations.expandAllIcon.icon}}"></prm-icon></span><span
-          ng-if="$ctrl.parentCtrl.currLoc.isExpandAll"><prm-icon icon-type="{{$ctrl.parentCtrl.opacLocations.collapseAllIcon.type}}"
-            svg-icon-set="{{$ctrl.parentCtrl.opacLocations.collapseAllIcon.iconSet}}"
-            icon-definition="{{$ctrl.parentCtrl.opacLocations.collapseAllIcon.icon}}"></prm-icon></span></md-button>
     </div>
   </div>
 </div><prm-locations-filter ng-if="$ctrl.parentCtrl.isLocationsFilterVisible && $ctrl.parentCtrl.isAnyFilterFilled()" [item]="$ctrl.parentCtrl.item"
@@ -94,7 +82,7 @@
             <p><span translate="nui.item.brief.4"></span> <span ng-click="$ctrl.parentCtrl.checkClick($event)"
                 ng-bind-html="item.itemFields[3]" /></p><md-tooltip>{{item.itemFields[3]}}</md-tooltip>
           </div>
-          <div ng-if="item.isExpanded">
+          <div>
             <div ng-repeat="full in item.fullItemFields track by $index">
               <p ng-click="$ctrl.parentCtrl.checkClick($event)" ng-bind-html="full"></p>
               <md-tooltip>{{item.fullItemValues[$index]}}</md-tooltip>
