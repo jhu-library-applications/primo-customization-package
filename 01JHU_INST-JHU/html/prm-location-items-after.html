@@ -65,7 +65,7 @@
     (click)="">
     <div layout="row" aria-live="assertive" flex>
       <div class="md-list-item-text" layout="row" layout-wrap flex>
-        <div flex-xs="100">
+        <div flex-xs="100" style="max-width: 120px;">
           <div ng-if="item.itemFields[0]"><span translate="nui.item.brief.1"></span> <span class="item-status"
               ng-click="$ctrl.parentCtrl.checkClick($event)"
               ng-bind-html="item.itemFields[0]" /><md-tooltip>{{item.itemFields[0]}}</md-tooltip></div>
