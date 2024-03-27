@@ -35,17 +35,17 @@
             dir="auto">{{$ctrl.parentCtrl.loc.location.callNumber}}</span></b></p></p>
       </div>
       <div layout-align="end center" layout="row" layout-wrap flex-xs="100" flex-sm="30" flex class="list-item-actions">
-            <md-button ng-if="$ctrl.parentCtrl.loc.location.availabilityStatus === 'available'" class="location-after-request-button md-primary">Request item from this location</md-button>
-            <md-button ng-if="$ctrl.parentCtrl.loc.location.availabilityStatus != 'available'" class="location-after-request-button md-primary checked-out">Check for other request options</md-button>
+            <div class="button-as-link" style="background-color: initial; font-weight: bold; color: #002d72;">View Copies & Request</div>
 
         <prm-stack-map ng-if="$ctrl.parentCtrl.isSuprima() && $ctrl.parentCtrl.loc.location.stackMapUrl"
           [map-url]="$ctrl.parentCtrl.loc.location.stackMapUrl"></prm-stack-map>
       </div>
-    </div><prm-icon ng-if="!$ctrl.isOvp()" class="padding-right-small location-arrow-icon"
-      icon-type="{{$ctrl.parentCtl.opacLocations.externalLinkIcon.type}}"
-      svg-icon-set="{{$ctrl.parentCtl.opacLocations.externalLinkIcon.iconSet}}"
-      icon-definition="{{$ctrl.parentCtl.opacLocations.externalLinkIcon.icon}}"></prm-icon><prm-icon
-      ng-if="$ctrl.isOvp()" class="padding-right-small location-arrow-icon"
+    </div>
+    <prm-icon link-arrow="" icon-type="svg" svg-icon-set="primo-ui" icon-definition="chevron-right" [display-mode]="::$ctrl.displayMode"><!----><md-icon ng-if="($ctrl.iconDefinition &amp;&amp; !$ctrl.isCustom &amp;&amp; !$ctrl.isEmailMode()) &amp;&amp; !$ctrl.useFallBack" md-svg-icon="primo-ui:chevron-right" role="presentation" class="md-primoExplore-theme"><svg id="chevron-right_cache125" width="100%" height="100%" viewBox="0 0 24 24" y="384" xmlns="http://www.w3.org/2000/svg" fit="" preserveAspectRatio="xMidYMid meet" focusable="false">
+      <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"></path>
+  </svg></md-icon><!----><!----><!----><prm-icon-after parent-ctrl="$ctrl"></prm-icon-after></prm-icon>
+      <prm-icon
+       class="padding-right-small location-arrow-icon"
       icon-type="{{$ctrl.parentCtl.opacLocations.rightArrow.type}}"
       svg-icon-set="{{$ctrl.parentCtl.opacLocations.rightArrow.iconSet}}"
       icon-definition="{{$ctrl.parentCtl.opacLocations.rightArrow.icon}}"></prm-icon>
