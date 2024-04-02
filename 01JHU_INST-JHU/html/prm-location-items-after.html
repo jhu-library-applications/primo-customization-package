@@ -1,0 +1,112 @@
+<h5 class="section-title">
+  <span
+    translate="nui.aria.locationItems.locationItems"></span></h5>
+<div layout="column" layout-align="start start space-between center"><md-button
+    class="button-right-align button-link link-alt-color zero-margin"
+    ng-if="$ctrl.parentCtrl.showRegisterUser() && !$ctrl.parentCtrl.manualRegistrationInProgress" (click)="$ctrl.parentCtrl.tryReloadWithRegisterUser()"
+    aria-label="{{'nui.fulldisplay.otherLocations.register' | translate}}"><span class="bold-text padding-small"
+      translate="nui.fulldisplay.otherLocations.register"></span></md-button><prm-spinner
+    ng-if="$ctrl.parentCtrl.manualRegistrationInProgress" class="inline-loader half-transparent no-text" layout="row"
+    layout-align="center center"></prm-spinner><span ng-if="!$ctrl.parentCtrl.showRegisterUser() && $ctrl.parentCtrl.manualRegistrationFailed"
+    class="padding-small prm-warning-color" translate="nui.bor_info_failed"></span></div>
+<div class="tab-content-header location-details margin-bottom-small margin-left-medium"
+  layout="{{$ctrl.parentCtrl.mediaQueries.xs || $ctrl.parentCtrl.mediaQueries.sm ? 'column' : 'row'}}" layout-align="space-between end">
+  <div layout="column" flex ng-style="::(($ctrl.parentCtrl.mediaQueries.xs || $ctrl.parentCtrl.mediaQueries.sm) && {'min-width':'100%'})">
+    <h6 ng-if="$ctrl.parentCtrl.currLoc.location && $ctrl.parentCtrl.getLibraryName($ctrl.parentCtrl.currLoc.location)"
+      class="md-title ng-binding zero-margin">{{$ctrl.parentCtrl.currLoc.location.librarycodeTranslation}}</h6>
+    <h5 ng-if="$ctrl.parentCtrl.currLoc.location.relatedTitle != null && $ctrl.parentCtrl.currLoc.location.relatedTitle !== ''"
+      class="related-title"><prm-icon icon-type="{{$ctrl.parentCtrl.opacLocations.relatedArrow.type}}"
+        svg-icon-set="{{$ctrl.parentCtrl.opacLocations.relatedArrow.iconSet}}"
+        icon-definition="{{$ctrl.parentCtrl.opacLocations.relatedArrow.icon}}"
+        class="related-title-icon h-flipped"></prm-icon><span ng-if="$ctrl.parentCtrl.loc.location.boundWith"
+        translate="nui.location.unrelated_title" class="related-title-label"></span> <span
+        ng-if="!$ctrl.parentCtrl.loc.location.boundWith" translate="nui.location.related_title" class="related-title-label"></span>
+      <span class="related-title-name">{{$ctrl.parentCtrl.currLoc.location.relatedTitle}}</span></h5>
+    <p ng-if="$ctrl.parentCtrl.currLoc.location.availabilityStatus" class="ng-binding ng-scope zero-margin"><span style="font-weight: 800;" 
+        class="availability-status {{$ctrl.parentCtrl.currLoc.location.availabilityStatus}}"
+        translate="fulldisplay.availabilty.{{$ctrl.parentCtrl.currLoc.location.availabilityStatus}}"></span> <span
+        ng-if="$ctrl.parentCtrl.currLoc.location.subLocation">,</span> <span
+        ng-if="$ctrl.parentCtrl.currLoc.location && $ctrl.parentCtrl.currLoc.location.subLocation && $ctrl.parentCtrl.getSubLibraryName($ctrl.parentCtrl.currLoc.location)"
+        ng-bind-html="$ctrl.parentCtrl.currLoc.location.collectionTranslation"></span> <b><span
+        ng-if="$ctrl.parentCtrl.currLoc.location.callNumber">;</span> <span ng-if="$ctrl.parentCtrl.currLoc.location.callNumber"
+        dir="auto">{{$ctrl.parentCtrl.currLoc.location.callNumber}}</span></b></p>
+    <p ng-if="$ctrl.parentCtrl.currLoc.location.availabilityStatement" class="ng-binding ng-scope zero-margin">
+      {{$ctrl.parentCtrl.currLoc.location.availabilityStatement}}</p></br><prm-location-holdings [curr-loc]="$ctrl.parentCtrl.currLoc"
+      [service-scroll-id]="::$ctrl.parentCtrl.serviceScrollId"></prm-location-holdings>
+  </div>
+  <div layout="::{{($ctrl.parentCtrl.mediaQueries.xs || $ctrl.parentCtrl.mediaQueries.sm)  ? 'row' : ''}}">
+    <div layout="row"><prm-stack-map ng-if="$ctrl.parentCtrl.isSuprima() && $ctrl.parentCtrl.currLoc.location.stackMapUrl"
+        [map-url]="$ctrl.parentCtrl.currLoc.location.stackMapUrl"></prm-stack-map></div>
+    <div layout="row" ng-hide="$ctrl.parentCtrl.currLoc.locationNoItems" layout-align="end center"><md-button
+        class="md-icon-button md-mini" aria-label="{{'nui.aria.locationItems.filterButton' | translate}}"
+        ng-if="($ctrl.parentCtrl.isFilter || $ctrl.parentCtrl.isFiltered) && $ctrl.parentCtrl.isAnyFilterFilled()"
+        (click)="$ctrl.parentCtrl.filterClick();"><md-tooltip><span ng-if="$ctrl.parentCtrl.isLocationsFilterVisible"
+            translate="nui.aria.locationItems.filterOut"></span> <span ng-if="!$ctrl.parentCtrl.isLocationsFilterVisible"
+            translate="nui.aria.locationItems.filter"></span></md-tooltip><prm-icon
+          ng-if="!$ctrl.parentCtrl.isLocationsFilterVisible" icon-type="{{$ctrl.parentCtrl.opacLocations.filter.type}}"
+          svg-icon-set="{{$ctrl.parentCtrl.opacLocations.filter.iconSet}}"
+          icon-definition="{{$ctrl.parentCtrl.opacLocations.filter.icon}}"></prm-icon><prm-icon
+          ng-if="$ctrl.parentCtrl.isLocationsFilterVisible" icon-type="{{$ctrl.parentCtrl.opacLocations.filterOut.type}}"
+          svg-icon-set="{{$ctrl.parentCtrl.opacLocations.filterOut.iconSet}}"
+          icon-definition="{{$ctrl.parentCtrl.opacLocations.filterOut.icon}}"></prm-icon></md-button>
+    </div>
+  </div>
+</div><prm-locations-filter ng-if="$ctrl.parentCtrl.isLocationsFilterVisible && $ctrl.parentCtrl.isAnyFilterFilled()" [item]="$ctrl.parentCtrl.item"
+  [is-disabled]="$ctrl.parentCtrl.isItemsFilterDisable($ctrl.parentCtrl.item)" (filter-event)="$ctrl.parentCtrl.handleFilterEvent($event)"
+  [is-after-filtering]="$ctrl.parentCtrl.isFiltered" [drop-down-options]="$ctrl.parentCtrl.dropDownOptions" [filters]="$ctrl.parentCtrl.filters"
+  (clear-filters-event)="$ctrl.parentCtrl.clearFilters(true)"></prm-locations-filter>
+<div ng-if="$ctrl.parentCtrl.currLoc.locationNoItems" class="padding-left-medium">
+
+  <div class="bar alert-bar margin-bottom-medium" layout="row" layout-align="start center"><span flex
+      ng-if="$ctrl.parentCtrl.isLoggedIn();" translate="nui.locations.noitems.signin"></span> <span flex
+      ng-if="!$ctrl.parentCtrl.isLoggedIn();" translate="nui.locations.noitems.guest"></span></div>
+</div><md-list layout="column" ng-hide="$ctrl.parentCtrl.currLoc.locationNoItems"
+  class="separate-list-items margin-left-medium"><md-list-item ng-repeat="item in $ctrl.parentCtrl.currLoc.items track by $index"
+    class="md-2-line has-expand" ng-if="!$ctrl.parentCtrl.currLoc.isMore || !$last" ng-class="item.isExpanded?'item-expanded':''"
+    (click)="">
+    <div layout="row" aria-live="assertive" flex>
+      <div class="md-list-item-text" layout="row" layout-wrap flex>
+        <div flex-xs="100" style="max-width: 120px;">
+          <div ng-if="item.itemFields[0]"><span translate="nui.item.brief.1"></span> <span class="item-status"
+              ng-click="$ctrl.parentCtrl.checkClick($event)"
+              ng-bind-html="item.itemFields[0]" /><md-tooltip>{{item.itemFields[0]}}</md-tooltip></div>
+          <div ng-if="item.itemFields[1]"><span class="location-item"><span translate="nui.item.brief.2"></span> <span
+                class="item-days" ng-click="$ctrl.parentCtrl.checkClick($event)" dir="auto"
+                ng-bind-html="item.itemFields[1]" /></span><md-tooltip>{{item.itemFields[1]}}</md-tooltip></div>
+        </div>
+        <div class="weak-text" flex flex-xs="100">
+          <div ng-if="item.itemFields[2]">
+            <p><span translate="nui.item.brief.3"></span> <span ng-click="$ctrl.parentCtrl.checkClick($event)"
+                ng-bind-html="item.itemFields[2]" /></p><md-tooltip>{{item.itemFields[2]}}</md-tooltip>
+          </div>
+          <div ng-if="item.itemFields[3]">
+            <p><span translate="nui.item.brief.4"></span> <span ng-click="$ctrl.parentCtrl.checkClick($event)"
+                ng-bind-html="item.itemFields[3]" /></p><md-tooltip>{{item.itemFields[3]}}</md-tooltip>
+          </div>
+          <div>
+            <div ng-repeat="full in item.fullItemFields track by $index">
+              <p ng-click="$ctrl.parentCtrl.checkClick($event)" ng-bind-html="full"></p>
+              <md-tooltip>{{item.fullItemValues[$index]}}</md-tooltip>
+            </div>
+          </div>
+        </div>
+        <div layout-align="end center" layout="row" layout-wrap flex-xs="100" flex-sm="30">
+          <div ng-if="$ctrl.parentCtrl.isLoggedIn() && item.listOfServices.length === 0" style="margin-top: 1.5em; font-weight: bold;" flex flex-xs="100">Select an available copy to request</span></div>
+          <div ng-if="!$ctrl.parentCtrl.currLoc.location.isValidUser"><span translate="item.request.not_available"></span></div>
+          <div ng-if="$ctrl.parentCtrl.currLoc.location.isValidUser && item.listOfServices.length === 0  && $ctrl.parentCtrl.isLoggedIn()">
+            <span translate="item.request.blocked"></span></div>
+          <div layout="row" layout-align="center center" ng-repeat="service in item.listOfServices track by $index">
+            <prm-service-button ng-if="$ctrl.parentCtrl.allowService() && (service.enableWithoutLogin  || $ctrl.parentCtrl.isLoggedIn())"
+              [service]="service" (change-tab-event)="::$ctrl.parentCtrl.onChangeTabEvent($event)" [parent-tab]="::$ctrl.parentCtrl.tabId"
+              [request-parameters]="$ctrl.parentCtrl.getServiceAdditionalParams(item, service)" method="GET"></prm-service-button>
+            <div class="skewed-divider" ng-if="!$last"></div>
+          </div>
+        </div>
+      </div>
+    </div><prm-location-item-after parent-ctrl="$ctrl"></prm-location-item-after>
+  </md-list-item><prm-spinner ng-if="$ctrl.parentCtrl.inProgress" class="inline-loader half-transparent no-text" layout="row"
+    layout-align="center center"></prm-spinner></md-list><md-button
+  ng-if="!$ctrl.parentCtrl.currLoc.locationNoItems && $ctrl.parentCtrl.currLoc.isMore" class="button-link link-alt-color zero-margin"
+  (click)="$ctrl.parentCtrl.getlocationsItems($ctrl.parentCtrl.currLoc, true);" ng-hide="!$ctrl.parentCtrl.currLoc.isMore"
+  aria-label="{{'fulldisplay.locations.showmore' | translate}}"><span class="bold-text padding-small"
+    translate="fulldisplay.locations.showmore"></span></md-button>

@@ -1,0 +1,15 @@
+prm-location {
+  visibility: visible;
+}
+
+prm-location>.neutralized-button {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+prm-location-after {
+  visibility: visible !important;
+}
