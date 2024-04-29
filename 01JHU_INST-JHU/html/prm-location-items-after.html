@@ -1,13 +1,13 @@
-<h5 class="section-title">
-  <span
-    translate="nui.aria.locationItems.locationItems"></span></h5>
+
+  <span class="jh-location-items"
+    translate="nui.aria.locationItems.locationItems"></span>
 <div layout="column" layout-align="start start space-between center"><md-button
     class="button-right-align button-link link-alt-color zero-margin"
     ng-if="$ctrl.parentCtrl.showRegisterUser() && !$ctrl.parentCtrl.manualRegistrationInProgress" (click)="$ctrl.parentCtrl.tryReloadWithRegisterUser()"
     aria-label="{{'nui.fulldisplay.otherLocations.register' | translate}}"><span class="bold-text padding-small"
       translate="nui.fulldisplay.otherLocations.register"></span></md-button><prm-spinner
     ng-if="$ctrl.parentCtrl.manualRegistrationInProgress" class="inline-loader half-transparent no-text" layout="row"
-    layout-align="center center"></prm-spinner><span ng-if="!$ctrl.parentCtrl.showRegisterUser() && $ctrl.parentCtrl.manualRegistrationFailed"
+    layout-align="center cen ter"></prm-spinner><span ng-if="!$ctrl.parentCtrl.showRegisterUser() && $ctrl.parentCtrl.manualRegistrationFailed"
     class="padding-small prm-warning-color" translate="nui.bor_info_failed"></span></div>
 <div class="tab-content-header location-details margin-bottom-small margin-left-medium"
   layout="{{$ctrl.parentCtrl.mediaQueries.xs || $ctrl.parentCtrl.mediaQueries.sm ? 'column' : 'row'}}" layout-align="space-between end">
@@ -22,14 +22,16 @@
         translate="nui.location.unrelated_title" class="related-title-label"></span> <span
         ng-if="!$ctrl.parentCtrl.loc.location.boundWith" translate="nui.location.related_title" class="related-title-label"></span>
       <span class="related-title-name">{{$ctrl.parentCtrl.currLoc.location.relatedTitle}}</span></h5>
+      <p>
+        <span class="jh-detail-location"
+        ng-if="$ctrl.parentCtrl.currLoc.location && $ctrl.parentCtrl.currLoc.location.subLocation && $ctrl.parentCtrl.getSubLibraryName($ctrl.parentCtrl.currLoc.location)"
+        ng-bind-html="$ctrl.parentCtrl.currLoc.location.collectionTranslation"></span>
+      </p>
     <p ng-if="$ctrl.parentCtrl.currLoc.location.availabilityStatus" class="ng-binding ng-scope zero-margin"><span style="font-weight: 800;" 
         class="availability-status {{$ctrl.parentCtrl.currLoc.location.availabilityStatus}}"
-        translate="fulldisplay.availabilty.{{$ctrl.parentCtrl.currLoc.location.availabilityStatus}}"></span> <span
-        ng-if="$ctrl.parentCtrl.currLoc.location.subLocation">,</span> <span
-        ng-if="$ctrl.parentCtrl.currLoc.location && $ctrl.parentCtrl.currLoc.location.subLocation && $ctrl.parentCtrl.getSubLibraryName($ctrl.parentCtrl.currLoc.location)"
-        ng-bind-html="$ctrl.parentCtrl.currLoc.location.collectionTranslation"></span> <b><span
-        ng-if="$ctrl.parentCtrl.currLoc.location.callNumber">;</span> <span ng-if="$ctrl.parentCtrl.currLoc.location.callNumber"
-        dir="auto">{{$ctrl.parentCtrl.currLoc.location.callNumber}}</span></b></p>
+        translate="fulldisplay.availabilty.{{$ctrl.parentCtrl.currLoc.location.availabilityStatus}}"></span></br> 
+        <strong> <span ng-if="$ctrl.parentCtrl.currLoc.location.callNumber"
+        dir="auto">{{$ctrl.parentCtrl.currLoc.location.callNumber}}</span></strong></p>
     <p ng-if="$ctrl.parentCtrl.currLoc.location.availabilityStatement" class="ng-binding ng-scope zero-margin">
       {{$ctrl.parentCtrl.currLoc.location.availabilityStatement}}</p></br><prm-location-holdings [curr-loc]="$ctrl.parentCtrl.currLoc"
       [service-scroll-id]="::$ctrl.parentCtrl.serviceScrollId"></prm-location-holdings>
@@ -70,9 +72,7 @@
           <div ng-if="item.itemFields[0]"><span translate="nui.item.brief.1"></span> <span class="item-status"
               ng-click="$ctrl.parentCtrl.checkClick($event)"
               ng-bind-html="item.itemFields[0]" /><md-tooltip>{{item.itemFields[0]}}</md-tooltip></div>
-          <div ng-if="item.itemFields[1]"><span class="location-item"><span translate="nui.item.brief.2"></span> <span
-                class="item-days" ng-click="$ctrl.parentCtrl.checkClick($event)" dir="auto"
-                ng-bind-html="item.itemFields[1]" /></span><md-tooltip>{{item.itemFields[1]}}</md-tooltip></div>
+          <div ng-if="item.itemFields[1]"><span class="location-item"><span translate="nui.item.brief.2"></span><md-tooltip>{{item.itemFields[1]}}</md-tooltip></div>
         </div>
         <div class="weak-text" flex flex-xs="100">
           <div ng-if="item.itemFields[2]">
@@ -91,7 +91,7 @@
           </div>
         </div>
         <div layout-align="end center" layout="row" layout-wrap flex-xs="100" flex-sm="30">
-          <div ng-if="$ctrl.parentCtrl.isLoggedIn() && item.listOfServices.length === 0" style="margin-top: 1.5em; font-weight: bold;" flex flex-xs="100">Select an available copy to request</span></div>
+          <div ng-if="$ctrl.parentCtrl.isLoggedIn() && item.listOfServices.length === 0" style="margin-top: 1.5em; font-weight: bold;" flex flex-xs="100"> <span translate="item.request.blocked"></span></span></div>
           <div ng-if="!$ctrl.parentCtrl.currLoc.location.isValidUser"><span translate="item.request.not_available"></span></div>
           <div ng-if="$ctrl.parentCtrl.currLoc.location.isValidUser && item.listOfServices.length === 0  && $ctrl.parentCtrl.isLoggedIn()">
             <span translate="item.request.blocked"></span></div>

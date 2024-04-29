@@ -1,0 +1,38 @@
+#services-index {
+    display: none;
+  }
+  
+  prm-opac-back-button>.back-button {
+    text-transform: none !important;
+    font-weight: bold !important;
+    font-size: 16px !important;
+    margin: 0 !important;
+  }
+  
+  prm-location-items-after>span.jh-location-items {
+    display: none;
+  }
+  
+  prm-location-items-after>div.tab-content-header.margin-bottom-small.margin-left-medium.layout-row.layout-align-space-between-end>div.layout-column.flex>h6 {
+    display: none;
+  }
+  
+  span.jh-detail-location {
+    font-weight: bold;
+    font-size: 1.5em;
+  
+  }
+  
+  h3.item-title {
+    font-size: 1.7em;
+    line-height: 1.2em;
+    margin: 10px 0 8px 0;
+  }
+  
+  prm-location-items>md-list {
+    display: none !important;
+  }
+  
+  prm-locations > div > h3.section-title {
+    display: none;
+  }
