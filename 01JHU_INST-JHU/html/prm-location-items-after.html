@@ -92,7 +92,7 @@
         </div>
         <div layout-align="end center" layout="row" layout-wrap flex-xs="100" flex-sm="30">
           <div ng-if="$ctrl.parentCtrl.isLoggedIn() && item.listOfServices.length === 0" style="margin-top: 1.5em; font-weight: bold;" flex flex-xs="100"> <span translate="item.request.blocked"></span></span></div>
-          <div ng-if="!$ctrl.parentCtrl.currLoc.location.isValidUser"><span translate="item.request.not_available"></span></div>
+          
           <div ng-if="$ctrl.parentCtrl.currLoc.location.isValidUser && item.listOfServices.length === 0  && $ctrl.parentCtrl.isLoggedIn()">
             <span translate="item.request.blocked"></span></div>
           <div layout="row" layout-align="center center" ng-repeat="service in item.listOfServices track by $index">
