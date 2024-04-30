@@ -36,3 +36,8 @@
   prm-locations > div > h3.section-title {
     display: none;
   }
+
+  /* Needed to keep the title in the search results from being too large */
+  prm-brief-result .item-title {
+    font-size: initial !important
+  }
