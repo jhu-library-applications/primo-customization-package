@@ -64,7 +64,7 @@
   app.component('prmRequestAfter', {
     bindings: { parentCtrl: '<' },
     template: '<div></div>',
-    controller: ['primawsRest', '$scope', function ($scope) {
+    controller: ['$scope', function ($scope) {
 
       this.$onInit = function () {
 
