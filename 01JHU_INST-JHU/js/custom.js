@@ -60,6 +60,38 @@
     }
   });
 
+
+  app.component('prmRequestAfter', {
+    bindings: { parentCtrl: '<' },
+    template: '<div></div>',
+    controller: ['primawsRest', '$scope', function ($scope) {
+
+      this.$onInit = function () {
+
+        // Watch for changes in the dropdown value
+        $scope.$watch(() => this.parentCtrl.formData["pickupLocation"], (newValue, oldValue) => {
+          if (newValue !== oldValue) { // Check if the value has actually changed
+            this.updateCheckboxVisibility(newValue);
+          }
+        });
+      };
+
+      this.updateCheckboxVisibility = function (selectedLocationId) {
+        const homewoodId = "126006350007861$$LIBRARY";
+        const welchId = "126007910007861$$LIBRARY";
+
+        const checkbox = document.getElementById('form_field_genericCheckBox');
+
+        if (checkbox != null && (selectedLocationId === homewoodId || selectedLocationId === welchId)) {
+          checkbox.style.display = 'block';
+          console.log(selectedLocationId === homewoodId ? "Homewood selected" : "Welch selected");
+        } else {
+          checkbox.style.display = 'none';
+        }
+      };
+    }]
+  });
+
   /*Services */
 
   /* Simple service used to capitalize the first letter of a string */
@@ -69,6 +101,21 @@
       return string.charAt(0).toUpperCase() + string.slice(1);
     }
   });
+
+  /* This service is used to get the patron/user's info -- may not be needed, but could be handy */
+  app.service("primawsRest", ['$http', function ($http) {
+    this.myAccountPersonalSettings = function () {
+      return $http({
+        method: 'GET',
+        url: '/primaws/rest/priv/myaccount/personal_settings',
+        headers: {
+          'Authorization': 'Bearer "' + sessionStorage.primoExploreJwt + '"',
+        }
+      });
+    }
+  }]);
+
+
 
   /* This service is used to keep track of whether the user is logged in or not. */
   app.service('AuthService', function () {
