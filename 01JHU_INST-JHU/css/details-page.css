@@ -34,7 +34,7 @@
   }
   /* Needed to keep the title in the search results from being too large */
   prm-brief-result .item-title {
-    font-size: initial !important
+    font-size: initial;
   }
 
   prm-full-view h3.item-title {
