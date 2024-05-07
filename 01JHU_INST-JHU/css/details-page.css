@@ -23,11 +23,7 @@
   
   }
   
-  h3.item-title {
-    font-size: 1.7em;
-    line-height: 1.2em;
-    margin: 10px 0 8px 0;
-  }
+
   
   prm-location-items>md-list {
     display: none !important;
@@ -36,8 +32,13 @@
   prm-locations > div > h3.section-title {
     display: none;
   }
-
   /* Needed to keep the title in the search results from being too large */
   prm-brief-result .item-title {
     font-size: initial !important
+  }
+
+  prm-full-view h3.item-title {
+      font-size: 1.7em;
+      line-height: 1.2em;
+      margin: 10px 0 8px 0;
   }
