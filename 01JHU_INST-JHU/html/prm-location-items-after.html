@@ -91,9 +91,6 @@
           </div>
         </div>
         <div layout-align="end center" layout="row" layout-wrap flex-xs="100" flex-sm="30">          
-          <div ng-if="$ctrl.parentCtrl.currLoc.location.isValidUser && item.listOfServices.length === 0  && $ctrl.parentCtrl.isLoggedIn()">
-            <span translate="item.request.blocked"></span>
-          </div>
           <div layout="row" layout-align="center center" ng-repeat="service in item.listOfServices track by $index">
             <prm-service-button ng-if="$ctrl.parentCtrl.allowService() && (service.enableWithoutLogin  || $ctrl.parentCtrl.isLoggedIn())"
               [service]="service" (change-tab-event)="::$ctrl.parentCtrl.onChangeTabEvent($event)" [parent-tab]="::$ctrl.parentCtrl.tabId"
