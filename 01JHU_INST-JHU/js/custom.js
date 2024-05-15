@@ -63,11 +63,19 @@
 
   app.component('prmRequestAfter', {
     bindings: { parentCtrl: '<' },
-    template: '<div></div>',
-    controller: ['$scope', function ($scope) {
+    template: '<div><style>#form_field_genericCheckBox { display: none; } </style></div>',
+    controller: ['$scope', 'primawsRest', function ($scope, primawsRest) {
+      var patronStatusCode = "";
 
       this.$onInit = function () {
-
+        primawsRest.myAccountPersonalSettings().then(function successCallback(response) {
+          console.log(response.data);
+          patronStatusCode = response.data.data.patronstatus[0].registration[0].institution[0].patronstatuscode;
+      }, function errorCallback(response) {
+          //Failure
+          console.log(response);  
+        });
+  
         // Watch for changes in the dropdown value
         $scope.$watch(() => this.parentCtrl.formData["pickupLocation"], (newValue, oldValue) => {
           if (newValue !== oldValue) { // Check if the value has actually changed
@@ -76,15 +84,27 @@
         });
       };
 
-      this.updateCheckboxVisibility = function (selectedLocationId) {
+      function campusDeliveryEligible(patronStatusCode, selectedLocationId) {
         const homewoodId = "126006350007861$$LIBRARY";
         const welchId = "126007910007861$$LIBRARY";
+        const eligibleHomewoodGroups = ["jhstf", "jhfac", "jhsrstf", "jhgrad"];
+        const eligibleWelchGroups = ["jhfac"];
 
+        if (selectedLocationId === homewoodId) {
+          return eligibleHomewoodGroups.includes(patronStatusCode);
+        }
+
+        if (selectedLocationId === welchId) {
+          return eligibleWelchGroups.includes(patronStatusCode);
+        }
+      }
+
+      this.updateCheckboxVisibility = function (selectedLocationId) {
         const checkbox = document.getElementById('form_field_genericCheckBox');
 
-        if (checkbox != null && (selectedLocationId === homewoodId || selectedLocationId === welchId)) {
+
+        if (campusDeliveryEligible(patronStatusCode, selectedLocationId)) {
           checkbox.style.display = 'block';
-          console.log(selectedLocationId === homewoodId ? "Homewood selected" : "Welch selected");
         } else {
           checkbox.style.display = 'none';
         }
@@ -102,7 +122,7 @@
     }
   });
 
-  /* This service is used to get the patron/user's info -- may not be needed, but could be handy */
+  /* This service is used to get the patron/user's info -- currently used for office delivery */
   app.service("primawsRest", ['$http', function ($http) {
     this.myAccountPersonalSettings = function () {
       return $http({
