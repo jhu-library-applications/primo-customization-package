@@ -112,6 +112,50 @@
     }]
   });
 
+  app.component('prmLocationHoldingsAfter', {
+    bindings: { parentCtrl: '<' },
+    template: `
+      <div>
+        <div ng-repeat="line in $ctrl.holdings">
+          <span ng-if="line.key !== 'For availability see:'">{{line.key}} {{line.value.join(' ')}}</span>
+          <span ng-if="line.key === 'For availability see:'">
+          <md-card md-theme-watch>
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-headline">          For availability see:
+              <a href="https://jhu-psb.primo.exlibrisgroup.com/discovery/fulldisplay?docid=alma{{line.value[2]}}&context=L&vid=01JHU_INST:JHU">
+                {{line.value[0]}} {{line.value[1]}}
+              </a></span>
+            </md-card-title-text>
+            </md-card-title>
+            </md-card>
+          </span>
+        </div>
+      </div>
+      </br>
+    `,
+    controller: ['$scope', function ($scope) {
+      var ctrl = this;
+      
+      this.$onInit = function () {
+        $scope.$watch(
+          function () {
+            return ctrl.parentCtrl && ctrl.parentCtrl.currLoc && ctrl.parentCtrl.currLoc.summaryHoldings;
+          },
+          function (newVal, oldVal) {
+            if (newVal) {
+              ctrl.holdings = ctrl.parentCtrl.currLoc.summaryHoldings.allLines;
+            }
+          },
+          true // deep watch to detect changes in nested objects
+        );
+      };
+    }]
+  });
+  
+
+
+
   /*Services */
 
   /* Simple service used to capitalize the first letter of a string */
