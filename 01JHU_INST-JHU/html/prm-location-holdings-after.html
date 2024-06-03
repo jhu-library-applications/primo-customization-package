@@ -1,0 +1,74 @@
+<div>
+    <style>
+        prm-location-holdings>* {
+            visibility: hidden;
+            height: 0;
+            width: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        prm-location-holdings-after {
+            visibility: visible;
+        }
+    </style>
+    <div ng-repeat="line in $ctrl.holdings">
+        <span ng-if="line.key === 'For availability see:'">
+            <md-card md-theme-watch>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">Holdings Information</span>
+
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content><span class="bold-text">For availability see:</span>
+                    <a
+                        href="https://jhu-psb.primo.exlibrisgroup.com/discovery/fulldisplay?docid=alma{{line.value[1]}}&context=L&vid=01JHU_INST:JHU">
+                        {{line.value[0]}}
+                    </a>
+                    <div ng-if="$ctrl.parentCtrl.currLoc.locationNoItems ? $ctrl.parentCtrl.summaryLinesVisible : !$ctrl.parentCtrl.summaryLinesVisible"
+                        class="display-block" layout="row" layout-align="start start">
+                        <div layout="column">
+                            <div ng-repeat="summaryLine in $ctrl.parentCtrl.currLoc.summaryHoldings.baseSummaryShort track by $index"
+                                layout="row">
+                                <div translate="{{summaryLine.key}}" class="margin-right-small summary-brief-header"
+                                    ng-class="{'margin-right-medium': $ctrl.parentCtrl.mediaQueries.xs}"></div>
+                                <span class="summary-brief word-break-all"
+                                    ng-style="::(($ctrl.parentCtrl.isIE && $ctrl.parentCtrl.mediaQueries.xs) && {'width':'14em'})">
+                                    <a ng-if="summaryLine.value.startsWith('http:') || summaryLine.value.startsWith('https:')"
+                                        href="{{summaryLine.value}}">{{summaryLine.value}}</a>
+                                    <span
+                                        ng-if="!summaryLine.value.startsWith('http:') && !summaryLine.value.startsWith('https:')"
+                                        ng-bind-html="summaryLine.value"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-if="$ctrl.parentCtrl.currLoc.locationNoItems ? !$ctrl.parentCtrl.summaryLinesVisible : $ctrl.parentCtrl.summaryLinesVisible"
+                        layout="row" layout-align="start start" class="display-block">
+                        <div layout="column">
+                            <div
+                                ng-repeat="allLine in $ctrl.parentCtrl.currLoc.summaryHoldings.allLines track by $index">
+                                <div ng-if="allLine.key !== 'For availability see:'">
+                                    <div class="margin-top-small"><span class="bold-text"
+                                            translate="{{allLine.key}}"></span></div>
+                                    <div ng-repeat="lineItem in allLine.value track by $index"
+                                        class="padding-left-medium">
+                                        <span>
+                                            <a ng-if="lineItem.startsWith('http:') || lineItem.startsWith('https:')"
+                                                href="{{lineItem}}">{{lineItem}}</a>
+                                            <span
+                                                ng-if="!lineItem.startsWith('http:') && !lineItem.startsWith('https:')"
+                                                ng-bind-html="lineItem"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </md-card-content>
+            </md-card>
+        </span>
+    </div>
+</div>
+<br />

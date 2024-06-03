@@ -87,7 +87,7 @@
       function campusDeliveryEligible(patronStatusCode, selectedLocationId) {
         const homewoodId = "126006350007861$$LIBRARY";
         const welchId = "126007910007861$$LIBRARY";
-        const eligibleHomewoodGroups = ["jhstf", "jhfac", "jhsrstf", "jhgrad"];
+        const eligibleHomewoodGroups = [ "jhfac", "jhgrad"];
         const eligibleWelchGroups = ["jhfac"];
 
         if (selectedLocationId === homewoodId) {
@@ -102,7 +102,6 @@
       this.updateCheckboxVisibility = function (selectedLocationId) {
         const checkbox = document.getElementById('form_field_genericCheckBox');
 
-
         if (campusDeliveryEligible(patronStatusCode, selectedLocationId)) {
           checkbox.style.display = 'block';
         } else {
@@ -114,26 +113,7 @@
 
   app.component('prmLocationHoldingsAfter', {
     bindings: { parentCtrl: '<' },
-    template: `
-      <div>
-        <div ng-repeat="line in $ctrl.holdings">
-          <span ng-if="line.key !== 'For availability see:'">{{line.key}} {{line.value.join(' ')}}</span>
-          <span ng-if="line.key === 'For availability see:'">
-          <md-card md-theme-watch>
-          <md-card-title>
-            <md-card-title-text>
-              <span class="md-headline">          For availability see:
-              <a href="https://jhu-psb.primo.exlibrisgroup.com/discovery/fulldisplay?docid=alma{{line.value[2]}}&context=L&vid=01JHU_INST:JHU">
-                {{line.value[0]}} {{line.value[1]}}
-              </a></span>
-            </md-card-title-text>
-            </md-card-title>
-            </md-card>
-          </span>
-        </div>
-      </div>
-      </br>
-    `,
+    templateUrl: '/discovery/custom/01JHU_INST-JHU/html/prm-location-holdings-after.html',
     controller: ['$scope', function ($scope) {
       var ctrl = this;
       
