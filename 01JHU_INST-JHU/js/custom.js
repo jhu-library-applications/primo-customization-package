@@ -63,10 +63,25 @@
 
   app.component('prmRequestAfter', {
     bindings: { parentCtrl: '<' },
-    template: '<div><style>#form_field_genericCheckBox { display: none; } </style></div>',
+    template: `<div><style>#form_field_genericCheckBox { display: none; } #pickup-notice { display: none; }  </style>
+    <div id="pickup-notice">
+    <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">Attention</span>
+      </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+    The Eisenhower Pick Up Shelf will be unavailable beginning June 18th. Pick Ups will resume at the MSE Library Annex (The building formerly known as The Hopkins Club) on the week of June 24th.
+    </md-card-content>
+  </md-card>
+    
+    </div>`,
     controller: ['$scope', 'primawsRest', function ($scope, primawsRest) {
       var patronStatusCode = "";
 
+
+      
       this.$onInit = function () {
         primawsRest.myAccountPersonalSettings().then(function successCallback(response) {
           console.log(response.data);
@@ -79,15 +94,28 @@
         // Watch for changes in the dropdown value
         $scope.$watch(() => this.parentCtrl.formData["pickupLocation"], (newValue, oldValue) => {
           if (newValue !== oldValue) { // Check if the value has actually changed
-            this.updateCheckboxVisibility(newValue);
+            console.log(newValue);
+            pickupNotice(newValue);
           }
         });
       };
 
+
+      function pickupNotice(selectedLocationId) {
+        const eisenhowerId = "126006350007861$$LIBRARY";
+        const pickupNotice = document.getElementById('pickup-notice');
+
+        if (selectedLocationId === eisenhowerId) {
+          pickupNotice.style.display = 'block';
+        } else {
+          pickupNotice.style.display = 'none';
+        }
+        
+      }
       function campusDeliveryEligible(patronStatusCode, selectedLocationId) {
         const homewoodId = "126006350007861$$LIBRARY";
         const welchId = "126007910007861$$LIBRARY";
-        const eligibleHomewoodGroups = ["jhstf", "jhfac", "jhsrstf", "jhgrad"];
+        const eligibleHomewoodGroups = [ "jhfac", "jhgrad"];
         const eligibleWelchGroups = ["jhfac"];
 
         if (selectedLocationId === homewoodId) {
@@ -101,7 +129,6 @@
 
       this.updateCheckboxVisibility = function (selectedLocationId) {
         const checkbox = document.getElementById('form_field_genericCheckBox');
-
 
         if (campusDeliveryEligible(patronStatusCode, selectedLocationId)) {
           checkbox.style.display = 'block';
