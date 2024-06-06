@@ -3,6 +3,47 @@
 
   var app = angular.module('viewCustom', ['angularLoad']);
 
+  app.config(['$httpProvider', function ($httpProvider) {
+    $httpProvider.interceptors.push('itemRequestUrlInterceptor');
+  }]);
+
+  app.factory('itemRequestUrlInterceptor', function () {
+    return {
+      request: function (config) {
+        if (config.url.includes('AlmaItemRequest')) {
+          console.log(config)
+        }
+        return config;
+      },
+      response: function (response) {
+        if (response.config.url.includes('AlmaItemRequest')) {
+          response.data['services-arr'].services.forEach(function (service) {
+            service['groups-list-map'].forEach(function (item) {
+              item.pickupLocation.forEach(function (location) {
+                if (location.key === "126006350007861$$LIBRARY") {
+                  location.value = "Milton S. Eisenhower Library - Annex";
+                }
+              });
+            });
+          });
+        }
+        return response;
+      },
+      requestError: function (rejection) {
+        if (rejection.config && rejection.config.url.includes('AlmaItemRequest')) {
+          console.log('Request Error: ', rejection)
+        }
+        return Promise.reject(rejection);
+      },
+      responseError: function (rejection) {
+        if (rejection.config && rejection.config.url.includes('AlmaItemRequest')) {
+          console.log('Response Error: ', rejection)
+        }
+        return Promise.reject(rejection);
+      }
+    };
+  });
+
   /* Components */
   app.component('prmTopBarBefore', {
     bindings: { parentCtrl: `<` },
@@ -81,16 +122,19 @@
       var patronStatusCode = "";
 
 
-      
+
       this.$onInit = function () {
+        // Change label for the pickup location
+        // document.querySelector('[value="126006350007861$$LIBRARY"] > .md-text > span').textContent = "Milton S. Eisenhower Library – Annex";
+
         primawsRest.myAccountPersonalSettings().then(function successCallback(response) {
           console.log(response.data);
           patronStatusCode = response.data.data.patronstatus[0].registration[0].institution[0].patronstatuscode;
-      }, function errorCallback(response) {
+        }, function errorCallback(response) {
           //Failure
-          console.log(response);  
+          console.log(response);
         });
-  
+
         // Watch for changes in the dropdown value
         $scope.$watch(() => this.parentCtrl.formData["pickupLocation"], (newValue, oldValue) => {
           if (newValue !== oldValue) { // Check if the value has actually changed
@@ -110,12 +154,12 @@
         } else {
           pickupNotice.style.display = 'none';
         }
-        
+
       }
       function campusDeliveryEligible(patronStatusCode, selectedLocationId) {
         const homewoodId = "126006350007861$$LIBRARY";
         const welchId = "126007910007861$$LIBRARY";
-        const eligibleHomewoodGroups = [ "jhfac", "jhgrad"];
+        const eligibleHomewoodGroups = ["jhfac", "jhgrad"];
         const eligibleWelchGroups = ["jhfac"];
 
         if (selectedLocationId === homewoodId) {
