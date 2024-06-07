@@ -3,14 +3,15 @@
 
   var app = angular.module('viewCustom', ['angularLoad']);
 
-  app.config(['$httpProvider', function ($httpProvider) {
-    $httpProvider.interceptors.push('itemRequestUrlInterceptor');
-  }]);
+
 
   /* Library name override */
   /* This is used to change the name of the library in the request form */
   /*
 
+  app.config(['$httpProvider', function ($httpProvider) {
+    $httpProvider.interceptors.push('itemRequestUrlInterceptor');
+  }]);
   
   app.factory('itemRequestUrlInterceptor', function() {
     return {
