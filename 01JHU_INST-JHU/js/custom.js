@@ -7,6 +7,9 @@
     $httpProvider.interceptors.push('itemRequestUrlInterceptor');
   }]);
 
+  /* Library name override */
+  /* This is used to change the name of the library in the request form */
+  /*
   app.factory('itemRequestUrlInterceptor', function() {
     return {
         request: function(config) {
@@ -132,11 +135,7 @@ app.config(['$httpProvider', function($httpProvider) {
     controller: ['$scope', 'primawsRest', function ($scope, primawsRest) {
       var patronStatusCode = "";
 
-
-
       this.$onInit = function () {
-        // Change label for the pickup location
-        // document.querySelector('[value="126006350007861$$LIBRARY"] > .md-text > span').textContent = "Milton S. Eisenhower Library – Annex";
 
         primawsRest.myAccountPersonalSettings().then(function successCallback(response) {
           console.log(response.data);
