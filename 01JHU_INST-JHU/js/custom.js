@@ -120,17 +120,24 @@ app.config(['$httpProvider', function($httpProvider) {
 
   app.component('prmRequestAfter', {
     bindings: { parentCtrl: '<' },
-    template: `<div><style>#form_field_genericCheckBox { display: none; } #pickup-notice { display: none; }  </style>
+    template: `<div><style>#form_field_genericCheckBox { display: none; } #pickup-notice { display: none; }  
+    .jh-attention { padding-left: .7em; font-weight: bold; }
+    .jh-attention-card-content { padding: 1em 1em; }
+    .jh-attention-icon { color: #A15A95; opacity: 1 !important; }
+    </style>
     <div id="pickup-notice">
     <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
     <md-card-title>
+      <prm-icon class="giant-icon bg-icon jh-attention-icon" icon-type="svg" svg-icon-set="primo-ui" icon-definition="alert"></prm-icon>
+      <div>
       <md-card-title-text>
-        <span class="md-headline">Attention</span>
+        <span class="md-headline jh-attention">Attention</span>
       </md-card-title-text>
     </md-card-title>
-    <md-card-content>
+    <md-card-content class="jh-attention-card-content">
     The Eisenhower Pick Up Shelf will be unavailable beginning June 18th. Pick Ups will resume at the MSE Library Annex (The building formerly known as The Hopkins Club) on the week of June 24th.
     </md-card-content>
+    </div>
   </md-card>
     
     </div>`,
