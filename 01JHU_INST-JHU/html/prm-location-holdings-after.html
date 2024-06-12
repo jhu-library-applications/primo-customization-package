@@ -11,17 +11,27 @@
         prm-location-holdings-after {
             visibility: visible;
         }
+
+        .jh-boundswith-card {
+            margin: 15px 0 0 0 !important;
+        }
     </style>
     <div ng-repeat="line in $ctrl.holdings">
         <span ng-if="line.key === 'For availability see:'">
-            <md-card md-theme-watch>
+            <md-card class="jh-boundswith-card" md-theme-watch>
                 <md-card-title>
                     <md-card-title-text>
                         <span class="md-headline">Holdings Information</span>
 
                     </md-card-title-text>
                 </md-card-title>
-                <md-card-content><span class="bold-text">For availability see:</span>
+                <md-card-content>
+                    <div class="margin-bottom-medium">
+                        This item is physically bound with another item.
+                    </div>
+
+                    <span class="bold-text">For availability see:</span>
+                 
                     <a
                         href="https://jhu-psb.primo.exlibrisgroup.com/discovery/fulldisplay?docid=alma{{line.value[1]}}&context=L&vid=01JHU_INST:JHU">
                         {{line.value[0]}}
@@ -50,16 +60,16 @@
                             <div
                                 ng-repeat="allLine in $ctrl.parentCtrl.currLoc.summaryHoldings.allLines track by $index">
                                 <div ng-if="allLine.key !== 'For availability see:'">
-                                    <div class="margin-top-small"><span class="bold-text"
-                                            translate="{{allLine.key}}"></span></div>
-                                    <div ng-repeat="lineItem in allLine.value track by $index"
-                                        class="padding-left-medium">
-                                        <span>
-                                            <a ng-if="lineItem.startsWith('http:') || lineItem.startsWith('https:')"
-                                                href="{{lineItem}}">{{lineItem}}</a>
-                                            <span
-                                                ng-if="!lineItem.startsWith('http:') && !lineItem.startsWith('https:')"
-                                                ng-bind-html="lineItem"></span>
+                                    <div>
+                                        <span class="bold-text" translate="{{allLine.key}}"></span>
+                                        <span ng-repeat="lineItem in allLine.value track by $index">
+                                            <span>
+                                                <a ng-if="lineItem.startsWith('http:') || lineItem.startsWith('https:')"
+                                                    href="{{lineItem}}">{{lineItem}}</a>
+                                                <span
+                                                    ng-if="!lineItem.startsWith('http:') && !lineItem.startsWith('https:')"
+                                                    ng-bind-html="lineItem"></span>
+                                            </span>
                                         </span>
                                     </div>
                                 </div>
