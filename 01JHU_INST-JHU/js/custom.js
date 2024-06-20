@@ -7,7 +7,6 @@
 
   /* Library name override */
   /* This is used to change the name of the library in the request form */
-  /*
 
   app.config(['$httpProvider', function ($httpProvider) {
     $httpProvider.interceptors.push('itemRequestUrlInterceptor');
