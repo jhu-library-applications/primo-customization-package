@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "esbuild": "0.21.5",
     "gulp": "^4.0.2"
   },
   "dependencies": {
