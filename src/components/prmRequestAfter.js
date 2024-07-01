@@ -35,10 +35,13 @@ export const prmRequestAfter = {
         if (newValue !== oldValue) {
           console.log(newValue);
           pickupNotice(newValue);
+          this.updateCheckboxVisibility(newValue);
         }
       });
     };
 
+
+    
     function pickupNotice(selectedLocationId) {
       const eisenhowerId = "126006350007861$$LIBRARY";
       const pickupNotice = document.getElementById('pickup-notice');
@@ -49,6 +52,7 @@ export const prmRequestAfter = {
         pickupNotice.style.display = 'none';
       }
     }
+
     function campusDeliveryEligible(patronStatusCode, selectedLocationId) {
       const homewoodId = "126006350007861$$LIBRARY";
       const welchId = "126007910007861$$LIBRARY";
