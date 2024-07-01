@@ -34,7 +34,6 @@ export const prmRequestAfter = {
       $scope.$watch(() => this.parentCtrl.formData["pickupLocation"], (newValue, oldValue) => {
         if (newValue !== oldValue) {
           console.log(newValue);
-          pickupNotice(newValue);
           this.updateCheckboxVisibility(newValue);
         }
       });
