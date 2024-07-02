@@ -2,7 +2,26 @@ export function itemRequestUrlInterceptor() {
   return {
     request: function (config) {
       if (config.url.includes('AlmaItemRequest')) {
-        console.log('Request Config:', config);
+       
+       
+        if (config.method === 'POST' && config.data) {
+          if (config.data.genericCheckBox == "Yes") {
+            delete config.data.genericCheckBox;
+
+            console.log("Data on POST Request:", config.data);
+            try {
+            config.data.comment = "Office Delivery Request: " + config.data.comment;
+            } catch (error) {
+              return config;
+            }
+            
+          } 
+          else {
+            delete config.data.genericCheckBox;
+          }
+
+          console.log('Comment on POST Request:', config.data.comment);
+        }
       }
       return config;
     },
@@ -24,6 +43,7 @@ export function itemRequestUrlInterceptor() {
           return response;
         }
       }
+      console.log(response)
       return response;
     },
     requestError: function (rejection) {
