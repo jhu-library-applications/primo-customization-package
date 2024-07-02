@@ -59,10 +59,12 @@ export const prmRequestAfter = {
       const eligibleWelchGroups = ["jhfac"];
 
       if (selectedLocationId === homewoodId) {
+        document.querySelector('#form_field_checkbox_genericCheckBox > md-input-container > md-checkbox > div.md-label > span').textContent = "Office Delivery (Please include your Campus Mailbox Address in the Comment section)";
         return eligibleHomewoodGroups.includes(patronStatusCode);
       }
 
       if (selectedLocationId === welchId) {
+        document.querySelector('#form_field_checkbox_genericCheckBox > md-input-container > md-checkbox > div.md-label > span').textContent = "Office Delivery (Please include your Office Address in the Comment Section)";
         return eligibleWelchGroups.includes(patronStatusCode);
       }
     }
