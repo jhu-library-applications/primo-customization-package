@@ -55,7 +55,7 @@ export const prmRequestAfter = {
     function campusDeliveryEligible(patronStatusCode, selectedLocationId) {
       const homewoodId = "126006350007861$$LIBRARY";
       const welchId = "126007910007861$$LIBRARY";
-      const eligibleHomewoodGroups = ["jhfac", "jhgrad"];
+      const eligibleHomewoodGroups = ["jhfac", "jhgrad", "jhstf", "jhsrstf"];
       const eligibleWelchGroups = ["jhfac"];
 
       if (selectedLocationId === homewoodId) {
