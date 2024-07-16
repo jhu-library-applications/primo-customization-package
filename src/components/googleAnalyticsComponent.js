@@ -12,7 +12,7 @@ export const googleAnalyticsComponent = {
       insertGoogleAnalytics() {
         const script = document.createElement('script');
         script.async = true;
-        script.src = 'https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID'; // Replace GA_MEASUREMENT_ID with your actual ID
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=GTM-KVWVGLP'; // Replace GA_MEASUREMENT_ID with your actual ID
         document.head.appendChild(script);
   
         this.$window.dataLayer = this.$window.dataLayer || [];
