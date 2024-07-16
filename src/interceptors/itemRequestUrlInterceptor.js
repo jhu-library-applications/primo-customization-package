@@ -8,7 +8,6 @@ export function itemRequestUrlInterceptor() {
           if (config.data.genericCheckBox == "Yes") {
             delete config.data.genericCheckBox;
 
-            console.log("Data on POST Request:", config.data);
             try {
             config.data.comment = "Office Delivery Request: " + config.data.comment;
             } catch (error) {
@@ -20,7 +19,6 @@ export function itemRequestUrlInterceptor() {
             delete config.data.genericCheckBox;
           }
 
-          console.log('Comment on POST Request:', config.data.comment);
         }
       }
       return config;
@@ -37,7 +35,6 @@ export function itemRequestUrlInterceptor() {
               });
             });
           });
-          console.log('Modified Response:', response.data);
         } catch (error) {
           console.log('Error modifying response:', error);
           return response;
