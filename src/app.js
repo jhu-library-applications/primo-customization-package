@@ -10,7 +10,6 @@ import { prmLocationAfter } from './components/prmLocationAfter';
 import { prmAuthenticationAfter } from './components/prmAuthenticationAfter';
 import { prmLocationItemsAfter } from './components/prmLocationItemsAfter';
 import { prmRequestAfter } from './components/prmRequestAfter';
-import { googleAnalyticsComponent } from './components/googleAnalyticsComponent';
 
 // Services
 import { AuthService } from './services/AuthService';
@@ -25,7 +24,6 @@ configureInterceptors(app);
 
 
 app.component('prmTopBarBefore', prmTopBarBefore);
-app.component('googleAnalyticsComponent', googleAnalyticsComponent);
 app.component('prmSearchResultThumbnailContainerAfter', prmSearchResultThumbnailContainerAfter);
 app.component('prmSearchBookmarkFilterAfter', prmSearchBookmarkFilterAfter);
 app.component('prmLocationAfter', prmLocationAfter);
