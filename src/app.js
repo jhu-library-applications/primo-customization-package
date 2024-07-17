@@ -16,12 +16,21 @@ import { AuthService } from './services/AuthService';
 import { CapitalizeService } from './services/CapitalizeService';
 import { primawsRest } from './services/primawsRest';
 
+
 const app = angular.module('viewCustom', ['angularLoad']);
 
 app.factory('itemRequestUrlInterceptor', itemRequestUrlInterceptor);
 
 configureInterceptors(app);
 
+(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+      'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', 'GTM-KVWVGLP');
 
 app.component('prmTopBarBefore', prmTopBarBefore);
 app.component('prmSearchResultThumbnailContainerAfter', prmSearchResultThumbnailContainerAfter);
