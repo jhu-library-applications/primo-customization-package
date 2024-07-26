@@ -40,7 +40,7 @@ export function itemRequestUrlInterceptor() {
           return response;
         }
       }
-      console.log(response)
+      // console.log(response)
       return response;
     },
     requestError: function (rejection) {
