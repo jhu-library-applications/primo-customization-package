@@ -1,0 +1,35 @@
+prm-location-items>* {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+prm-location-items-after {
+  visibility: visible;
+}
+
+prm-location-holdings {
+  margin-bottom: 1em;
+}
+
+/* Divs not hidden by default */
+prm-location-items>div.tab-content-header.margin-bottom-small.margin-left-medium.layout-row.layout-align-space-between-end {
+  margin: 0;
+}
+
+prm-location-items-after .skewed-divider {
+  display: none;
+}
+
+
+prm-service-button prm-icon md-icon.md-primoExplore-theme {
+  margin-left: .25em;
+  color: #fff !important;
+}
+
+prm-location-items-after>md-list>md-list-item>div.layout-row.flex>div>div.layout-wrap.layout-align-end-center.layout-row.flex-xs-100.flex-sm-30 {
+  flex-direction: column !important;
+  align-items: flex-start !important;
+}

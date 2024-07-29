@@ -6,7 +6,11 @@ import { prmTopBarBefore } from './components/prmTopBarBefore';
 import { prmSearchResultThumbnailContainerAfter } from './components/prmSearchResultThumbnailContainerAfter';
 import { prmSearchBookmarkFilterAfter } from './components/prmSearchBookmarkFilterAfter';
 import { prmLocationAfter } from './components/prmLocationAfter';
-// import { prmLocationHoldingsAfter } from './components/prmLocationHoldingsAfter';
+
+
+// Custom holdings component for boundwiths
+import { prmLocationHoldingsAfter } from './components/prmLocationHoldingsAfter';
+
 import { prmAuthenticationAfter } from './components/prmAuthenticationAfter';
 import { prmLocationItemsAfter } from './components/prmLocationItemsAfter';
 import { prmRequestAfter } from './components/prmRequestAfter';
@@ -36,7 +40,7 @@ app.component('prmTopBarBefore', prmTopBarBefore);
 app.component('prmSearchResultThumbnailContainerAfter', prmSearchResultThumbnailContainerAfter);
 app.component('prmSearchBookmarkFilterAfter', prmSearchBookmarkFilterAfter);
 app.component('prmLocationAfter', prmLocationAfter);
-//app.component('prmLocationHoldingsAfter', prmLocationHoldingsAfter);
+app.component('prmLocationHoldingsAfter', prmLocationHoldingsAfter);
 app.component('prmAuthenticationAfter', prmAuthenticationAfter);
 app.component('prmLocationItemsAfter', prmLocationItemsAfter);
 app.component('prmRequestAfter', prmRequestAfter);
