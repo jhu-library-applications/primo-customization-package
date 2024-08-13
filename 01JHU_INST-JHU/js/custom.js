@@ -90,20 +90,23 @@
     }]
   };
 
-// src/components/prmScriptInjector.js
-var prmScriptInjector = {
-  bindings: { parentCtrl: "<" },
-  template: "<div></div>",
-  controller: ["$document", function($document) {
-    this.$onInit = function() {
-      var script = $document[0].createElement('script');
-      script.type = 'module';
-      script.async = true;
-      script.src = 'https://jhu-library-applications.github.io/showcase-bundle/discovery-showcase.bundled.js';
-      $document[0].body.appendChild(script);
-    };
-  }]
-};
+  function loadJS(FILE_URL, async = true) {
+    let scriptEle = document.createElement("script");
+    scriptEle.setAttribute("src", FILE_URL);
+    scriptEle.setAttribute("type", "module");
+    scriptEle.setAttribute("async", async);
+    document.body.appendChild(scriptEle);
+    // success event
+    scriptEle.addEventListener("load", () => {
+        console.log("File loaded")
+    });
+    // error event
+    scriptEle.addEventListener("error", (ev) => {
+        console.log("Error on loading file", ev);
+    });
+}
+
+loadJS('https://jhu-library-applications.github.io/showcase-bundle/discovery-showcase.bundled.js');
 
 
   // src/components/prmAuthenticationAfter.js
@@ -258,7 +261,6 @@ var prmScriptInjector = {
   app.component("prmAuthenticationAfter", prmAuthenticationAfter);
   app.component("prmLocationItemsAfter", prmLocationItemsAfter);
   app.component("prmRequestAfter", prmRequestAfter);
-  app.component("prmScriptInjector", prmScriptInjector);
   app.service("AuthService", AuthService);
   app.service("CapitalizeService", CapitalizeService);
   app.service("primawsRest", primawsRest);
