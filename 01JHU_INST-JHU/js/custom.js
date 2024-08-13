@@ -90,6 +90,22 @@
     }]
   };
 
+// src/components/prmScriptInjector.js
+var prmScriptInjector = {
+  bindings: { parentCtrl: "<" },
+  template: "<div></div>",
+  controller: ["$document", function($document) {
+    this.$onInit = function() {
+      var script = $document[0].createElement('script');
+      script.type = 'module';
+      script.async = true;
+      script.src = 'https://jhu-library-applications.github.io/showcase-bundle/discovery-showcase.bundled.js';
+      $document[0].body.appendChild(script);
+    };
+  }]
+};
+
+
   // src/components/prmAuthenticationAfter.js
   var prmAuthenticationAfter = {
     bindings: { parentCtrl: "<" },
@@ -242,6 +258,7 @@
   app.component("prmAuthenticationAfter", prmAuthenticationAfter);
   app.component("prmLocationItemsAfter", prmLocationItemsAfter);
   app.component("prmRequestAfter", prmRequestAfter);
+  app.component("prmScriptInjector", prmScriptInjector);
   app.service("AuthService", AuthService);
   app.service("CapitalizeService", CapitalizeService);
   app.service("primawsRest", primawsRest);
