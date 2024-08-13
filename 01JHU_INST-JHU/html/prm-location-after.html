@@ -1,0 +1,53 @@
+<div class="neutralized-button layout-full-width layout-display-flex md-button" tabindex="0" layout="flex"
+  ng-click="$ctrl.parentCtrl.onClick()"
+  aria-label="{{$ctrl.parentCtrl.loc.location.librarycodeTranslation}} {{$ctrl.parentCtrl.loc.location.subLocation | translate}},\r\n                        {{ 'fulldisplay.availabilty.' + $ctrl.parentCtrl.loc.location.availabilityStatus | translate}},\r\n                         {{$ctrl.getButtonActionLabel() | translate}}"
+  md-ink-ripple="red">
+  <div layout="row" flex="100" layout-align="space-between center">
+    <div ng-class="{'md-list-item-text': !$ctrl.parentCtrl.mediaQueries.xs}" layout="row" layout-wrap flex>
+      <div ng-class="{'md-list-item-text': $ctrl.parentCtrl.mediaQueries.xs}" flex flex-xs="100">
+        <h3>
+          {{$ctrl.parentCtrl.loc.location.librarycodeTranslation}}</h3>
+        <h5
+          ng-if="$ctrl.parentCtrl.loc.location.relatedTitle != null && $ctrl.parentCtrl.loc.location.relatedTitle !== ''"
+          class="related-title">
+          <div class="display-for-location"><span class="related-title-location"><prm-icon
+                icon-type="{{$ctrl.parentCtl.opacLocations.relatedArrow.type}}"
+                svg-icon-set="{{$ctrl.parentCtl.opacLocations.relatedArrow.iconSet}}"
+                icon-definition="{{$ctrl.parentCtl.opacLocations.relatedArrow.icon}}"
+                class="related-title-icon h-flipped"></prm-icon><span ng-if="$ctrl.parentCtrl.loc.location.boundWith"
+                translate="nui.location.unrelated_title" class="related-title-label"></span> <span
+                ng-if="!$ctrl.parentCtrl.loc.location.boundWith" translate="nui.location.related_title"
+                class="related-title-label"></span></span>
+            <div class="display-related-title display-for-location"><span
+                class="related-title-name margin-for-related-title">{{$ctrl.parentCtrl.loc.location.relatedTitle}}</span>
+              <span ng-if="$ctrl.parentCtrl.loc.location.translateRelatedTitle"
+                class="related-title-name display-related-title">{{$ctrl.parentCtrl.loc.location.translateRelatedTitle}}</span>
+            </div>
+          </div>
+        </h5>
+        <p><p><b><span class="availability-status {{$ctrl.parentCtrl.loc.location.availabilityStatus}}"
+            translate="fulldisplay.availabilty.{{$ctrl.parentCtrl.loc.location.availabilityStatus}}"></span></b></p>
+            <p><span
+            ng-if="$ctrl.parentCtrl.loc.location && $ctrl.parentCtrl.loc.location.subLocation && $ctrl.parentCtrl.getSubLibraryName($ctrl.parentCtrl.loc.location)"
+            ng-bind-html="$ctrl.parentCtrl.loc.location.collectionTranslation"></span></p></br>
+            <p><b><span
+            ng-if="$ctrl.parentCtrl.loc.location.callNumber"
+            dir="auto">{{$ctrl.parentCtrl.loc.location.callNumber}}</span></b></p></p>
+      </div>
+      <div layout-align="end center" layout="row" layout-wrap flex-xs="100" flex-sm="30" flex class="list-item-actions">
+            <div class="button-as-link" style="background-color: initial; font-weight: bold; color: #002d72;">View Copies & Request</div>
+
+        <prm-stack-map ng-if="$ctrl.parentCtrl.isSuprima() && $ctrl.parentCtrl.loc.location.stackMapUrl"
+          [map-url]="$ctrl.parentCtrl.loc.location.stackMapUrl"></prm-stack-map>
+      </div>
+    </div>
+    <prm-icon link-arrow="" icon-type="svg" svg-icon-set="primo-ui" icon-definition="chevron-right" [display-mode]="::$ctrl.displayMode"><!----><md-icon ng-if="($ctrl.iconDefinition &amp;&amp; !$ctrl.isCustom &amp;&amp; !$ctrl.isEmailMode()) &amp;&amp; !$ctrl.useFallBack" md-svg-icon="primo-ui:chevron-right" role="presentation" class="md-primoExplore-theme"><svg id="chevron-right_cache125" width="100%" height="100%" viewBox="0 0 24 24" y="384" xmlns="http://www.w3.org/2000/svg" fit="" preserveAspectRatio="xMidYMid meet" focusable="false">
+      <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"></path>
+  </svg></md-icon><!----><!----><!----><prm-icon-after parent-ctrl="$ctrl"></prm-icon-after></prm-icon>
+      <prm-icon
+       class="padding-right-small location-arrow-icon"
+      icon-type="{{$ctrl.parentCtl.opacLocations.rightArrow.type}}"
+      svg-icon-set="{{$ctrl.parentCtl.opacLocations.rightArrow.iconSet}}"
+      icon-definition="{{$ctrl.parentCtl.opacLocations.rightArrow.icon}}"></prm-icon>
+  </div>
+</div>

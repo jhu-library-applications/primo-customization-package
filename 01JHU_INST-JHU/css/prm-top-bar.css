@@ -6,3 +6,13 @@
   prm-main-menu[menu-type="menu"] .md-button {
     font-size: .80em;
   }
+
+  /* Fix for the Collections header being hidden by the top bar */
+prm-collection-gallery-header > .collection-header-inner.has-transparent-topbar {
+  margin-top: 0;
+  padding-top: 100px;
+}
+
+prm-explore-main .header .transparent-top-bar div:not(.favorites-guest-warning) {
+  background-color: #fff !important;
+}

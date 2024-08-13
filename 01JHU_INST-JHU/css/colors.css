@@ -111,6 +111,11 @@ prm-brief-result .item-title span {
 [class*="available"] > span {
   color: #002d72;
 }
+
+[class*="unavailable"] {
+  color: #c44545;
+  }
+
 .not_restricted {
   color: #286140;
 }

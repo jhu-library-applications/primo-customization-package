@@ -1,5 +1,14 @@
 
+<script type="module" src="https://bespoke.mse.jhu.edu/Discovery-Showcase-demo/discovery-showcase.bundled.js"></script>
+<script>
+    document.querySelector('prm-static').previousSibling.remove();
+    document.querySelector('prm-static').nextSibling.remove();
+</script>
 <md-content layout-xs="column" layout="row">
+    <div>
+        <search-carousel titleText="Recently Acquired Books" titleLink="https://catalyst.library.jhu.edu/discovery/search?query=any,contains,%3F&tab=Everything&search_scope=All_except_EU&vid=01JHU_INST:JHU&facet=tlevel,include,available_p&facet=rtype,include,books&facet=newrecords,include,07%20days%20back&lang=en&offset=0" defaultThumbnailUrl="https://catalyst.library.jhu.edu/discovery/custom/01JHU_INST-JHU/img/icon_book.png"
+            searchUrl="https://catalyst.library.jhu.edu/discovery/search?query=any,contains,%3F&tab=Everything&search_scope=All_except_EU&vid=01JHU_INST:JHU&facet=tlevel,include,available_p&facet=rtype,include,books&facet=newrecords,include,07%20days%20back&lang=en&offset=0">
+    </div>
     <div flex="60" layout="column">
         <md-card class="default-card">
             <md-card-title>
@@ -34,7 +43,7 @@
                 <ul>
                     <li><a href="https://www.library.jhu.edu/">Sheridan Libraries Website</a></li>
                     <li>Email for research support: <a href="mailto:asklib@jhu.edu">asklib@jhu.edu</a></li>
-                    <li><a href="https://www.library.jhu.edu/library-departments/academic-liaison/">Find you subject specialist librarian for in-depth help</a></li>
+                    <li><a href="https://www.library.jhu.edu/library-departments/academic-liaison/">Find your subject specialist librarian for in-depth help</a></li>
                 </ul>
                 
                 <h3>Medicine, Nursing, & Public Health Programs</h3>
@@ -109,9 +118,8 @@
             </md-card-title>
             <md-card-content>
                 <p>If you encounter any problems while using Catalyst, please report them so we can fix them.</p>
-                <p><a href="https://jh.qualtrics.com/jfe/form/SV_8v0RG9l4bQUPpIi">Submit issues using this form</a></p>
+                <p><a href="https://jh.qualtrics.com/jfe/form/SV_9RJloZAeIUBgCsS">Submit issues using this form</a></p>
             </md-card-content>
         </md-card>
     </div>
 </md-content>
-<eu-cookie-law-popup></eu-cookie-law-popup>

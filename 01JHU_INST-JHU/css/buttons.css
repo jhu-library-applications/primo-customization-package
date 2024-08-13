@@ -1,0 +1,70 @@
+
+  #getit_link1_0 >* .bar{
+    height:100px;
+  }
+  
+  /* External link icon */
+  prm-service-button prm-icon md-icon.md-primoExplore-theme {
+    margin-left: .25em;
+    color: #fff;
+  }
+
+  #getit_link1_0 >* .location-after-request-button, #getit_link1_0 >* prm-authentication > button, prm-service-button .md-button.button-as-link, 
+  .bar prm-authentication prm-location-items md-list prm-service-button .md-button, 
+  prm-location-items md-list prm-service-button .bar prm-authentication .md-button, 
+  prm-location-items md-list prm-service-button .md-button, 
+  prm-location-items md-list prm-service-button .md-button.button-as-link,
+  prm-location-after >* button, prm-location > prm-location-after >* div.list-item-actions.flex > button
+  {
+      color: #fff;
+      text-transform: none;
+      background-color: #0072ce;
+      font-weight: bold;
+      padding: 1em;
+      padding-left: 2em;
+      padding-right: 2em;
+      border-radius: 1em;
+      margin-top: 1em;
+      margin-bottom: 1em;
+      margin-right: 1em;
+      min-width: initial; /* Remove this! */
+      cursor: pointer;
+      align-self: flex-end;
+      margin-top: auto;
+  
+  }
+  
+  #getit_link1_0 >* .location-after-request-button:hover {
+    background-color: #002d72 !important;
+    border-radius: 1em !important;
+  
+  }
+  
+  prm-authentication > button:hover {
+    background-color: #002d72 !important;
+    border-radius: 1em !important;}
+  
+  #getit_link1_0 >*  prm-authentication > button { 
+      margin-left: 20px !important
+    }
+  .unavailable { 
+    color: #a6192e !important;
+  }
+  
+  .checked-out {
+    background-color: #7d7670 !important;
+  }
+  
+  .checked-out:hover {
+    background-color: #655d56 !important;
+  }
+  
+  .location-details {
+    line-height: 1.6em !important;
+  margin-top: .7em !important;
+  }
+
+span.jh-detail-location {
+  font-weight: bold !important;
+  font-size: 1.6em !important;
+}

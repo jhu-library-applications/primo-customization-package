@@ -1,4 +1,79 @@
 
+
+  #getit_link1_0 >* .bar{
+    height:100px;
+  }
+  
+  /* External link icon */
+  prm-service-button prm-icon md-icon.md-primoExplore-theme {
+    margin-left: .25em;
+    color: #fff;
+  }
+
+  #getit_link1_0 >* .location-after-request-button, #getit_link1_0 >* prm-authentication > button, prm-service-button .md-button.button-as-link, 
+  .bar prm-authentication prm-location-items md-list prm-service-button .md-button, 
+  prm-location-items md-list prm-service-button .bar prm-authentication .md-button, 
+  prm-location-items md-list prm-service-button .md-button, 
+  prm-location-items md-list prm-service-button .md-button.button-as-link,
+  prm-location-after >* button, prm-location > prm-location-after >* div.list-item-actions.flex > button
+  {
+      color: #fff;
+      text-transform: none;
+      background-color: #0072ce;
+      font-weight: bold;
+      padding: 1em;
+      padding-left: 2em;
+      padding-right: 2em;
+      border-radius: 1em;
+      margin-top: 1em;
+      margin-bottom: 1em;
+      margin-right: 1em;
+      min-width: initial; /* Remove this! */
+      cursor: pointer;
+      align-self: flex-end;
+      margin-top: auto;
+  
+  }
+  
+  #getit_link1_0 >* .location-after-request-button:hover {
+    background-color: #002d72 !important;
+    border-radius: 1em !important;
+  
+  }
+  
+  prm-authentication > button:hover {
+    background-color: #002d72 !important;
+    border-radius: 1em !important;}
+  
+  #getit_link1_0 >*  prm-authentication > button { 
+      margin-left: 20px !important
+    }
+  .unavailable { 
+    color: #a6192e !important;
+  }
+  
+  .checked-out {
+    background-color: #7d7670 !important;
+  }
+  
+  .checked-out:hover {
+    background-color: #655d56 !important;
+  }
+  
+  .location-details {
+    line-height: 1.6em !important;
+  margin-top: .7em !important;
+  }
+
+span.jh-detail-location {
+  font-weight: bold !important;
+  font-size: 1.6em !important;
+}
+
+md-radio-button[value="journal"] {
+    display: none !important;
+}
+
 /* #fff = top bar
    #001f4e = top bar text, hover
    turquoise = guest/name
@@ -112,6 +187,11 @@ prm-brief-result .item-title span {
 [class*="available"] > span {
   color: #002d72;
 }
+
+[class*="unavailable"] {
+  color: #c44545;
+  }
+
 .not_restricted {
   color: #286140;
 }
@@ -256,6 +336,52 @@ md-dialog.light-on-dark-dialog md-list md-list-item.list-login .md-button {
 md-dialog.light-on-dark-dialog {
   background-color: #002d72;
 }
+
+#services-index {
+    display: none;
+  }
+  
+  prm-opac-back-button>.back-button {
+    text-transform: none !important;
+    font-weight: bold !important;
+    font-size: 16px !important;
+    margin: 0 !important;
+  }
+  
+  prm-location-items-after>span.jh-location-items {
+    display: none;
+  }
+  
+  prm-location-items-after>div.tab-content-header.margin-bottom-small.margin-left-medium.layout-row.layout-align-space-between-end>div.layout-column.flex>h6 {
+    display: none;
+  }
+  
+  span.jh-detail-location {
+    font-weight: bold;
+    font-size: 1.5em;
+  
+  }
+  
+
+  
+  prm-location-items>md-list {
+    display: none !important;
+  }
+  
+  prm-locations > div > h3.section-title {
+    display: none;
+  }
+  /* Needed to keep the title in the search results from being too large */
+  prm-brief-result .item-title {
+    font-size: initial;
+  }
+
+  prm-full-view h3.item-title {
+      font-size: 1.7em;
+      line-height: 1.2em;
+      margin: 10px 0 8px 0;
+  }
+
 @import url("https://use.typekit.net/jge8wgr.css");
 
 body {
@@ -267,6 +393,30 @@ md-card-content h3 {
 .md-headline {
   font-weight:400;
 }
+@media (max-width: 1140px) {
+    .jh-header-menu {
+        margin-left:0px;
+    }
+    .jh-header-menu ul li {
+        font-size: 0.8em;
+      }
+}
+@media (max-width: 768px) {
+    .jh-header-menu {
+        display:none;
+    }
+    .logo-image {
+        margin-left:0px!important;
+    }
+    .search-switch-buttons {
+        padding:0px;
+        font-size:0.9em;
+    }
+    .layout-column {
+        max-width: 100% !important;
+    }
+}
+
 prm-atoz-search-bar {
     margin-top: 75px;
 }
@@ -276,9 +426,27 @@ prm-browse-search-bar {
 #citationLinker {
     margin-top: 75px;
 }
+prm-location {
+  visibility: visible;
+}
+
+prm-location>.neutralized-button {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+prm-location-after {
+  visibility: visible !important;
+}
+
 prm-newspapers-search-bar {
     margin-top: 75px;
 }
+/* #form_field_genericCheckBox { display: none; } */
+
 prm-search-bar {
     margin-top: 75px;
 }
@@ -340,6 +508,17 @@ prm-topbar .top-nav-bar {
   prm-main-menu[menu-type="menu"] .md-button {
     font-size: .80em;
   }
+
+  /* Fix for the Collections header being hidden by the top bar */
+prm-collection-gallery-header > .collection-header-inner.has-transparent-topbar {
+  margin-top: 0;
+  padding-top: 100px;
+}
+
+prm-explore-main .header .transparent-top-bar div:not(.favorites-guest-warning) {
+  background-color: #fff !important;
+}
+
 /* This is for the services page which is the equivalent of Find It in the pre-Alma times 
    this is the page that displays when you use the citation linker. */
 
@@ -347,185 +526,4 @@ prm-topbar .top-nav-bar {
 /* This fixes a problem with the services page where the top of the page is hidden by the top navigation bar. */
 body > primo-explore > div > prm-services-page > prm-full-view-cont > md-content {
   margin-top: 75px !important;
-}
-
-
-/*  Modified by jkeyes for use by JHU Libraries NPS Survey, Nov 2023  */
-
-.clearfix {
-	clear: both;
-}
-
-.eupopup-container {
-	background-color: rgba(0, 45, 114, 0.9);
-	color: #fff;
-	padding: 50px 20px;
-  margin-top: 150px;
-	font-size: 12px;
-	line-height: 1.2em;
-	text-align: center;
-	display: none;
-	z-index: 9999999;
-
-}
-
-.eupopup-container-top,
-.eupopup-container-fixedtop {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
-.eupopup-container-fixedtop {
-	position: fixed;
-}
-
-.eupopup-container-bottom {
-	position: fixed;
-	bottom: 0; left: 0; right: 0;
-}
-
-.eupopup-container-bottomleft {
-	position: fixed;
-	bottom: 10px;
-	left: 10px;
-	width: 300px;
-}
-
-.eupopup-container-bottomright {
-	position: fixed;
-	bottom: 10px;
-	right: 10px;
-	width: 300px;
-}
-
-.eupopup-closebutton {
-	font-size: 16px;
-	font-weight: 100;
-	line-height: 1;
-	color: #fff;
-	position: absolute;
-	top: 0; right: 0;
-	margin: 5px 5px;
-	padding: 2px 8px 5px 8px;
-	text-decoration: none;
-	font-family: "factoria", sans-serif;
-	font-weight: 500;
-	font-style: normal;
-}
-.eupopup-closebutton:hover,
-.eupopup-closebutton:active {
-	color: #4A484C;
-	background-color: #E5E2E0;
-	text-decoration: none;
-	border-radius:3px;
-}
-
-.eupopup-head {
-	font-family: "factoria", sans-serif;
-	font-weight: 500;
-	font-style: normal;
-	font-size: 1.5em;
-	line-height: 1.2em;
-	padding: 7px;
-	color: #fff;
-}
-
-.eupopup-body {
-	color: #fff;
-	font-family: "factoria", sans-serif;
-	font-weight: 500;
-	font-style: normal;
-	font-size: 1.2em;
-}
-
-.eupopup-buttons {
-	padding: 7px 0 5px 0;
-	margin:20px 0 20px 0;
-	font-family: "factoria", sans-serif;
-	font-weight: 500;
-	font-style: normal;
-}
-
-.eupopup-button_1 {
-	color: #fff !important;
-	font-size: 1.1em;
-	background-color: #7E7E7C !important;
-	border-radius: 8px;
-	padding:10px 40px;
-	text-decoration:none;
-	width: 100px;
-	font-weight: bold;
-}
-
-.eupopup-button_2 {
-	color: #fff !important;
-	font-size: 1.1em;
-	background-color: #009877 !important;
-	border-radius: 8px;
-	padding:10px 40px;
-	text-decoration:none;
-	width: 100px;
-	font-weight: bold;
-}
-
-.eupopup-button {
-	margin: 0 10px;
-}
-
-.eupopup-button:hover,
-.eupopup-button:focus {
-	color: #4A484C;
-	background-color: #E5E2E0;
-}
-
-body .eupopup-color-inverse {
-	color: #000;
-	background-color: rgba(255, 255, 255, 0.9);
-}
-
-body .eupopup-color-inverse .eupopup-head {
-	color: #000;
-}
-
-body .eupopup-style-compact {
-	text-align: left;
-	padding: 8px 30px 7px 20px;
-	line-height: 15px;
-}
-
-body .eupopup-style-compact .eupopup-head,
-body .eupopup-style-compact .eupopup-body,
-body .eupopup-style-compact .eupopup-buttons {
-	display: inline;
-	padding: 0;
-	margin: 0;
-}
-
-body .eupopup-style-compact .eupopup-button {
-	margin: 0 5px;
-}
-
-@media (max-width: 420px) {
-
-.eupopup-button_1 {
-	display:block;
-	padding: 10px 20px;
-	margin: auto;
-}
-.eupopup-button_2 {
-	display: block;
-	padding: 10px 20px;
-	margin:auto;
-	margin-bottom: 10px;
-}
-}
-
-@media (max-width:668px) {
-	.eupopup-container-top,
-.eupopup-container-fixedtop {
-	position: relative;
-	top: 30%; left:0; right:15%;
-}
 }
