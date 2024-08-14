@@ -7,14 +7,15 @@
 <script type="module" async="true" src="https://jhu-library-applications.github.io/showcase-bundle/discovery-showcase.bundled.js"></script>
 
 <!-- <md-content flex="0" flex-md="0" flex-lg="10" flex-xl="20"></md-content> -->
-<md-content flex-offset="15" flex="70" layout-xs="column" layout="row">
+<md-content flex-offset="10" flex="80" layout="column">
 
-    <md-content layout-xs="column" layout="row">
-        <div flex="100" layout="row">
+    <md-content layout="row">
+        <div flex="100">
             <search-carousel titleText="Recently Acquired Books" titleLink="https://catalyst.library.jhu.edu/discovery/search?query=any,contains,%3F&tab=Everything&search_scope=All_except_EU&sortby=date_d&vid=01JHU_INST:JHU&facet=tlevel,include,available_p&facet=rtype,include,books&facet=newrecords,include,30%20days%20back" defaultThumbnailUrl="https://catalyst.library.jhu.edu/discovery/custom/01JHU_INST-JHU/img/icon_book.png"
             searchUrl="https://catalyst.library.jhu.edu/discovery/search?query=any,contains,%3F&tab=Everything&search_scope=All_except_EU&sortby=date_d&vid=01JHU_INST:JHU&facet=tlevel,include,available_p&facet=rtype,include,books&facet=newrecords,include,30%20days%20back&facet=lang,include,eng&lang=en&offset=0">
         </div>
     </md-content>
+
 
     <md-content layout-xs="column" layout="row">
     
@@ -56,44 +57,48 @@
                 </md-card-content>
             </md-card>
         </div>
+    </md-content>
 
-
-            <div flex="100" layout-xs="column" layout="row>">
+    <md-content>
+        <div flex="100" layout-xs="column" layout="row>">
             <md-card class="default-card">
                 <md-card-title>
                     <md-card-title-text>
                         <h2 class="md-headline">Need help finding materials?</h2>
                     </md-card-title-text>
-                </md-card-title>
-                <md-card-content>
+                </md-card-title >
+                <md-card-content flex="20">
                     <h3>Homewood & DC Campuses; Affiliated Programs</h3>
                     <ul>
                         <li><a href="https://www.library.jhu.edu/">Sheridan Libraries Website</a></li>
                         <li>Email for research support: <a href="mailto:asklib@jhu.edu">asklib@jhu.edu</a></li>
                         <li><a href="https://www.library.jhu.edu/library-departments/academic-liaison/">Find your subject specialist librarian for in-depth help</a></li>
                     </ul>
-                    
+                </md-card-content>
+                <md-card-content flex="20">
                     <h3>Medicine, Nursing, & Public Health Programs</h3>
                     <ul>
                         <li><a href="https://welch.jhmi.edu/">Welch Medical Library Website</a></li>
                         <li><a href="https://welch.jhmi.edu/get-help">Browse help topics and contact the library</a></li>
-                        <li><a href="https://welch.jhmi.edu/about/informationists">Find your informationist for in-depth questions or to request a consultation</a></li>
-                        
+                        <li><a href="https://welch.jhmi.edu/about/informationists">Find your informationist for in-depth questions or to request a consultation</a></li>    
                     </ul>
-
+                </md-card-content>
+                <md-card-content flex="20">
                     <h3>Music & Dance Programs</h3>
                     <ul>
                         <li><a href="https://musiclibrary.peabody.jhu.edu/home">Arthur Friedheim Library Website</a></li>
                         <li>Email questions to: <a href="mailto:friedheimlibrary@jhu.edu">friedheimlibrary@jhu.edu</a></li>
                         <li><a href="https://musiclibrary.peabody.jhu.edu/home/askafl">Find your librarian for in-depth help</a></li>
                     </ul>
-
+                </md-card-content>
+                <md-card-content flex="20">
                     <h3>Applied Physics Laboratory</h3>
                     <ul>
                         <li><a href="https://www.jhuapl.edu/Library/">APL Staff Website</a></li>
                         <li><a href="https://www.library.jhu.edu/">Engineering for Professionals Program</a></li>
                     </ul>
-
+                </md-card-content>
+                <md-card-content flex="20">
                     <h3>International Campuses</h3>
                     <ul>
                         <li><a href="https://sais.jhu.edu/faculty-research/sais-libraries/robert-evans-library-sais-europe">SAIS Europe Library in Bologna</a></li>
@@ -103,8 +108,9 @@
                 </md-card-content>
             </md-card>
         </div>
-       
-       
+    </md-content>
+    
+    <md-content>
          <div flex-xs flex="100" layout-xs="column" layout="row">
             <md-card class="default-card">
                 <md-card-title>
