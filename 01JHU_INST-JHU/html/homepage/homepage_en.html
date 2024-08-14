@@ -1,130 +1,148 @@
-<script type="module" async="true" src="https://jhu-library-applications.github.io/showcase-bundle/discovery-showcase.bundled.js"></script>
-<script>
+<!-- <script>
     document.addEventListener('DOMContentLoaded', function(e) {
         document.querySelector('prm-static').previousSibling.remove();
         document.querySelector('prm-static').nextSibling.remove();
-    });
+    });  
+</script> -->
+<script type="module" async="true" src="https://jhu-library-applications.github.io/showcase-bundle/discovery-showcase.bundled.js"></script>
+
+<!-- <md-content flex="0" flex-md="0" flex-lg="10" flex-xl="20"></md-content> -->
+<md-content flex-offset="15" flex="70" layout-xs="column" layout="row">
+
+    <md-content layout-xs="column" layout="row">
+        <div flex="100" layout="row">
+            <search-carousel titleText="Recently Acquired Books" titleLink="https://catalyst.library.jhu.edu/discovery/search?query=any,contains,%3F&tab=Everything&search_scope=All_except_EU&sortby=date_d&vid=01JHU_INST:JHU&facet=tlevel,include,available_p&facet=rtype,include,books&facet=newrecords,include,30%20days%20back" defaultThumbnailUrl="https://catalyst.library.jhu.edu/discovery/custom/01JHU_INST-JHU/img/icon_book.png"
+            searchUrl="https://catalyst.library.jhu.edu/discovery/search?query=any,contains,%3F&tab=Everything&search_scope=All_except_EU&sortby=date_d&vid=01JHU_INST:JHU&facet=tlevel,include,available_p&facet=rtype,include,books&facet=newrecords,include,30%20days%20back&facet=lang,include,eng&lang=en&offset=0">
+        </div>
+    </md-content>
+
+    <md-content layout-xs="column" layout="row">
     
-</script>
-<md-content layout-xs="column" layout="row">
-    <div flex="100" layout="row">
-        <search-carousel titleText="Recently Acquired Books" titleLink="https://catalyst.library.jhu.edu/discovery/search?query=any,contains,%3F&tab=Everything&search_scope=All_except_EU&vid=01JHU_INST:JHU&facet=tlevel,include,available_p&facet=rtype,include,books&facet=newrecords,include,07%20days%20back&lang=en&offset=0" defaultThumbnailUrl="https://catalyst.library.jhu.edu/discovery/custom/01JHU_INST-JHU/img/icon_book.png"
-        searchUrl="https://catalyst.library.jhu.edu/primaws/rest/external/pnxs?acTriggered=false&blendFacetsSeparately=false&citationTrailFilterByAvailability=true&disableCache=false&getMore=0&inst=01JHU_INST&isCDSearch=false&lang=en&limit=10&newspapersActive=true&newspapersSearch=false&offset=0&otbRanking=false&pcAvailability=false&q=any,contains,%3F&qExclude=&qInclude=facet_tlevel,exact,available_p%7C,%7Cfacet_rtype,exact,books%7C,%7Cfacet_newrecords,exact,07+days+back&rapido=false&refEntryActive=false&rtaLinks=true&scope=All_except_EU&searchInFulltextUserSelection=false&skipDelivery=Y&sort=rank&tab=Everything&vid=01JHU_INST:JHU">
-    </div>
-</md-content>
-<md-content layout-xs="column" layout="row">
-   
-    <div flex="60" layout="column">
-        <md-card class="default-card">
-            <md-card-title>
-                <md-card-title-text>
-                    <h2 class="md-headline">SANDBOX</h2>
-                </md-card-title-text>
-            </md-card-title>
-            <md-card-content>
-                <p>
-                    Search Catalyst for books, articles, journals, digital media, and more within JH Libraries collections plus subscription databases and journal collections.
-                </p>
-                <p>
-                    Catalyst also helps you manage your research. Sign in to:
-                </p>
-                <ul>
-                    <li>Request items from JH Libraries, or via <a href="https://borrowdirect.reshare.indexdata.com/">BorrowDirect</a> or <a href="https://ill.library.jhu.edu">Interlibrary Loan</a> for pickup</li>
-                    <li>Renew checked out materials</li>
-                    <li>Create lists of bookmarked items</li>
-                    <li>Export citations to popular citation managers</li>
-                    <li>View full search results (some databases only show results when you're signed in)</li>
-                </ul>
-            </md-card-content>
-        </md-card>
-        <md-card class="default-card">
-            <md-card-title>
-                <md-card-title-text>
-                    <h2 class="md-headline">Need help finding materials?</h2>
-                </md-card-title-text>
-            </md-card-title>
-            <md-card-content>
-                <h3>Homewood & DC Campuses; Affiliated Programs</h3>
-                <ul>
-                    <li><a href="https://www.library.jhu.edu/">Sheridan Libraries Website</a></li>
-                    <li>Email for research support: <a href="mailto:asklib@jhu.edu">asklib@jhu.edu</a></li>
-                    <li><a href="https://www.library.jhu.edu/library-departments/academic-liaison/">Find your subject specialist librarian for in-depth help</a></li>
-                </ul>
-                
-                <h3>Medicine, Nursing, & Public Health Programs</h3>
-                <ul>
-                    <li><a href="https://welch.jhmi.edu/">Welch Medical Library Website</a></li>
-                    <li><a href="https://welch.jhmi.edu/get-help">Browse help topics and contact the library</a></li>
-                    <li><a href="https://welch.jhmi.edu/about/informationists">Find your informationist for in-depth questions or to request a consultation</a></li>
+        <div flex="60" layout-xs="column" layout="row">
+            <md-card class="default-card">
+                <md-card-title>
+                    <md-card-title-text>
+                        <h2 class="md-headline">What am I searching?</h2>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    <p>
+                        Catalyst is where you search for and request books, articles, digital media, and more within JH Libraries collections, subscription databases, and journal collections.
+                    </p>
+                    <p>
+                        Sign in to:
+                    </p>
+                    <ul>
+                        <li>Request items from JH Libraries, or via <a href="https://borrowdirect.reshare.indexdata.com/">BorrowDirect</a> or <a href="https://ill.library.jhu.edu">Interlibrary Loan</a>.</li>
+                        <li>Renew checked out materials</li>
+                        <li>Create lists of bookmarked items</li>
+                        <li>Export citations to popular citation managers</li>
+                        <li>View full search results (some databases only show results when you're signed in)</li>
+                    </ul>
+                </md-card-content>
+            </md-card>
+        </div>
+
+        <div flex="40" layout-xs="column" layout="row">
+            <md-card class="default-card">
+                <md-card-title>
+                    <md-card-title-text>
+                        <h2 class="md-headline">Issue Reporting</h2>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    <p>If you encounter any problems while using Catalyst, please report them so we can fix them.</p>
+                    <p><a href="https://jh.qualtrics.com/jfe/form/SV_9RJloZAeIUBgCsS">Submit issues using this form</a></p>
+                </md-card-content>
+            </md-card>
+        </div>
+
+
+            <div flex="100" layout-xs="column" layout="row>">
+            <md-card class="default-card">
+                <md-card-title>
+                    <md-card-title-text>
+                        <h2 class="md-headline">Need help finding materials?</h2>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    <h3>Homewood & DC Campuses; Affiliated Programs</h3>
+                    <ul>
+                        <li><a href="https://www.library.jhu.edu/">Sheridan Libraries Website</a></li>
+                        <li>Email for research support: <a href="mailto:asklib@jhu.edu">asklib@jhu.edu</a></li>
+                        <li><a href="https://www.library.jhu.edu/library-departments/academic-liaison/">Find your subject specialist librarian for in-depth help</a></li>
+                    </ul>
                     
-                </ul>
+                    <h3>Medicine, Nursing, & Public Health Programs</h3>
+                    <ul>
+                        <li><a href="https://welch.jhmi.edu/">Welch Medical Library Website</a></li>
+                        <li><a href="https://welch.jhmi.edu/get-help">Browse help topics and contact the library</a></li>
+                        <li><a href="https://welch.jhmi.edu/about/informationists">Find your informationist for in-depth questions or to request a consultation</a></li>
+                        
+                    </ul>
 
-                <h3>Music & Dance Programs</h3>
-                <ul>
-                    <li><a href="https://musiclibrary.peabody.jhu.edu/home">Arthur Friedheim Library Website</a></li>
-                    <li>Email questions to: <a href="mailto:friedheimlibrary@jhu.edu">friedheimlibrary@jhu.edu</a></li>
-                    <li><a href="https://musiclibrary.peabody.jhu.edu/home/askafl">Find your librarian for in-depth help</a></li>
-                </ul>
+                    <h3>Music & Dance Programs</h3>
+                    <ul>
+                        <li><a href="https://musiclibrary.peabody.jhu.edu/home">Arthur Friedheim Library Website</a></li>
+                        <li>Email questions to: <a href="mailto:friedheimlibrary@jhu.edu">friedheimlibrary@jhu.edu</a></li>
+                        <li><a href="https://musiclibrary.peabody.jhu.edu/home/askafl">Find your librarian for in-depth help</a></li>
+                    </ul>
 
-                <h3>Applied Physics Laboratory</h3>
-                <ul>
-                    <li><a href="https://www.jhuapl.edu/Library/">APL Staff Website</a></li>
-                    <li><a href="https://www.library.jhu.edu/">Engineering for Professionals Program</a></li>
-                </ul>
+                    <h3>Applied Physics Laboratory</h3>
+                    <ul>
+                        <li><a href="https://www.jhuapl.edu/Library/">APL Staff Website</a></li>
+                        <li><a href="https://www.library.jhu.edu/">Engineering for Professionals Program</a></li>
+                    </ul>
 
-                <h3>International Campuses</h3>
-                <ul>
-                    <li><a href="https://sais.jhu.edu/faculty-research/sais-libraries/robert-evans-library-sais-europe">SAIS Europe Library in Bologna</a></li>
-                    <li>Email questions to: <a href="sais.eu.library@jh.edu">sais.eu.library@jh.edu</a></li>
-                    <li><a href="https://sais.jhu.edu/faculty-research/sais-libraries/hopkins-nanjing-center-library">Hopkins-Nanjing Center Library</a></li>
-                </ul>
-            </md-card-content>
-        </md-card>
-    </div>
-    <div flex-xs flex="40" layout="column">
-        <md-card class="default-card">
-            <md-card-title>
-                <md-card-title-text>
-                    <h2 class="md-headline">What's not included?</h2>
-                </md-card-title-text>
-            </md-card-title>
-            <md-card-content>
-                <p>Not everything we have at JH Libraries appears in the search results. Expand your search using the following tools.</p>
-                <h3>Subject & Research Guides by Librarians</h3>
-                <ul>
-                    <li><a href="https://guides.library.jhu.edu/">Sheridan Libraries Guides</a></li>
-                    <li><a href="https://browse.welch.jhmi.edu/all-guides/list-view">Welch Medical Library Guides</a></li>
-                    <li><a href="https://musiclibrary.peabody.jhu.edu/c.php?g=678311&p=6975375">Friedheim Library Guides</a></li>
-                    <li><a href="https://www.jhuapl.edu/Library/">APL Subject Guides</a></li>
-                    <li><a href="https://databases.library.jhu.edu/">Browse Databases by Subject</a></li>
-                </ul>
-                <h3>Archival Materials</h3>
-                <ul>
-                    <li><a href="https://aspace.library.jhu.edu">Ferdinand Hamburger University Archives and Peabody Archives</a></li>
-                    <li><a href="https://medicalarchives.jhmi.edu/">Chesney Medical Archives</a></li>
-                    <li><a href="https://cdm16613.contentdm.oclc.org/digital/">Digital Collections of the Arthur Friedheim Library</a></li>
-                    <li><a href="https://jscholarship.library.jhu.edu/">JScholarship Institutional Repository</a></li>
-                </ul>
-                <h3>Art and Material Culture Collections</h3>
-                <ul>
-                    <li><a href="https://jhu.catalogaccess.com/">JHU Art & Material Culture Catalogue</a></li>
-                    <li><a href="https://medicalarchives.jhmi.edu/">Chesney Medical Archives</a></li>
-                    <li><a href="https://cdm16613.contentdm.oclc.org/digital/">Digital Collections of the Arthur Friedheim Library</a></li>
-                    <li><a href="https://library.artstor.org/#/collection/87732344">Johns Hopkins Archaeological Museum on Artstor</a></li>
-                </ul>
-                
-            </md-card-content>
-        </md-card>
-        <md-card class="default-card">
-            <md-card-title>
-                <md-card-title-text>
-                    <h2 class="md-headline">Issue Reporting</h2>
-                </md-card-title-text>
-            </md-card-title>
-            <md-card-content>
-                <p>If you encounter any problems while using Catalyst, please report them so we can fix them.</p>
-                <p><a href="https://jh.qualtrics.com/jfe/form/SV_9RJloZAeIUBgCsS">Submit issues using this form</a></p>
-            </md-card-content>
-        </md-card>
-    </div>
+                    <h3>International Campuses</h3>
+                    <ul>
+                        <li><a href="https://sais.jhu.edu/faculty-research/sais-libraries/robert-evans-library-sais-europe">SAIS Europe Library in Bologna</a></li>
+                        <li>Email questions to: <a href="sais.eu.library@jh.edu">sais.eu.library@jh.edu</a></li>
+                        <li><a href="https://sais.jhu.edu/faculty-research/sais-libraries/hopkins-nanjing-center-library">Hopkins-Nanjing Center Library</a></li>
+                    </ul>
+                </md-card-content>
+            </md-card>
+        </div>
+       
+       
+         <div flex-xs flex="100" layout-xs="column" layout="row">
+            <md-card class="default-card">
+                <md-card-title>
+                    <md-card-title-text>
+                        <h2 class="md-headline">Other JH Libraries Search Tools</h2>
+                    </md-card-title-text>
+                </md-card-title>
+
+                <md-card-content flex="33">
+                    <h3>Subject & Research Guides by Librarians</h3>
+                    <ul>
+                        <li><a href="https://guides.library.jhu.edu/">Sheridan Libraries Guides</a></li>
+                        <li><a href="https://browse.welch.jhmi.edu/all-guides/list-view">Welch Medical Library Guides</a></li>
+                        <li><a href="https://musiclibrary.peabody.jhu.edu/c.php?g=678311&p=6975375">Friedheim Library Guides</a></li>
+                        <li><a href="https://www.jhuapl.edu/Library/">APL Subject Guides</a></li>
+                        <li><a href="https://databases.library.jhu.edu/">Browse Databases by Subject</a></li>
+                    </ul>
+                </md-card-content>
+                <md-card-content flex="33">
+                    <h3>Archival Materials</h3>
+                    <ul>
+                        <li><a href="https://aspace.library.jhu.edu">Ferdinand Hamburger University Archives and Peabody Archives</a></li>
+                        <li><a href="https://medicalarchives.jhmi.edu/">Chesney Medical Archives</a></li>
+                        <li><a href="https://cdm16613.contentdm.oclc.org/digital/">Digital Collections of the Arthur Friedheim Library</a></li>
+                        <li><a href="https://jscholarship.library.jhu.edu/">JScholarship Institutional Repository</a></li>
+                    </ul>
+                </md-card-content>
+                <md-card-content flex="33">
+                    <h3>Art and Material Culture Collections</h3>
+                    <ul>
+                        <li><a href="https://jhu.catalogaccess.com/">JHU Art & Material Culture Catalogue</a></li>
+                        <li><a href="https://medicalarchives.jhmi.edu/">Chesney Medical Archives</a></li>
+                        <li><a href="https://cdm16613.contentdm.oclc.org/digital/">Digital Collections of the Arthur Friedheim Library</a></li>
+                        <li><a href="https://library.artstor.org/#/collection/87732344">Johns Hopkins Archaeological Museum on Artstor</a></li>
+                    </ul>  
+                </md-card-content>
+            </md-card>
+         </div>
+    </md-content>
 </md-content>
+<!-- <md-content flex="0" flex-md="0" flex-lg="10" flex-xl="20"></med-content> -->
