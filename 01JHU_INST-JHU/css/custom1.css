@@ -1,397 +1,445 @@
 
 
-#getit_link1_0 >* .bar{
-  height:100px;
-}
-
-/* External link icon */
-prm-service-button prm-icon md-icon.md-primoExplore-theme {
-  margin-left: .25em;
-  color: #fff;
-}
-
-#getit_link1_0 >* .location-after-request-button, #getit_link1_0 >* prm-authentication > button, prm-service-button .md-button.button-as-link, 
-.bar prm-authentication prm-location-items md-list prm-service-button .md-button, 
-prm-location-items md-list prm-service-button .bar prm-authentication .md-button, 
-prm-location-items md-list prm-service-button .md-button, 
-prm-location-items md-list prm-service-button .md-button.button-as-link,
-prm-location-after >* button, prm-location > prm-location-after >* div.list-item-actions.flex > button
-{
-    color: #fff;
-    text-transform: none;
-    background-color: #0072ce;
-    font-weight: bold;
-    padding: 1em;
-    padding-left: 2em;
-    padding-right: 2em;
-    border-radius: 1em;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    margin-right: 1em;
-    min-width: initial; /* Remove this! */
-    cursor: pointer;
-    align-self: flex-end;
-}
-
-#getit_link1_0 >* .location-after-request-button:hover {
-  background-color: #002d72 !important;
-  border-radius: 1em !important;
-
-}
-
-prm-authentication > button:hover {
-  background-color: #002d72 !important;
-  border-radius: 1em !important;}
-
-#getit_link1_0 >*  prm-authentication > button { 
-    margin-left: 20px !important
+  #getit_link1_0 >* .bar{
+    height:100px;
   }
-.unavailable { 
-  color: #a6192e !important;
-}
+  
+  /* External link icon */
+  prm-service-button prm-icon md-icon.md-primoExplore-theme {
+    margin-left: .25em;
+    color: #fff;
+  }
 
-.checked-out {
-  background-color: #7d7670 !important;
-}
+  #getit_link1_0 >* .location-after-request-button, #getit_link1_0 >* prm-authentication > button, prm-service-button .md-button.button-as-link, 
+  .bar prm-authentication prm-location-items md-list prm-service-button .md-button, 
+  prm-location-items md-list prm-service-button .bar prm-authentication .md-button, 
+  prm-location-items md-list prm-service-button .md-button, 
+  prm-location-items md-list prm-service-button .md-button.button-as-link,
+  prm-location-after >* button, prm-location > prm-location-after >* div.list-item-actions.flex > button
+  {
+      color: #fff;
+      text-transform: none;
+      background-color: #0072ce;
+      font-weight: bold;
+      padding: 1em;
+      padding-left: 2em;
+      padding-right: 2em;
+      border-radius: 1em;
+      margin-top: 1em;
+      margin-bottom: 1em;
+      margin-right: 1em;
+      min-width: initial; /* Remove this! */
+      cursor: pointer;
+      align-self: flex-end;
+      margin-top: auto;
+  
+  }
+  
+  #getit_link1_0 >* .location-after-request-button:hover {
+    background-color: #002d72 !important;
+    border-radius: 1em !important;
+  
+  }
+  
+  prm-authentication > button:hover {
+    background-color: #002d72 !important;
+    border-radius: 1em !important;}
+  
+  #getit_link1_0 >*  prm-authentication > button { 
+      margin-left: 20px !important
+    }
+  .unavailable { 
+    color: #a6192e !important;
+  }
+  
+  .checked-out {
+    background-color: #7d7670 !important;
+  }
+  
+  .checked-out:hover {
+    background-color: #655d56 !important;
+  }
+  
+  .location-details {
+    line-height: 1.6em !important;
+  margin-top: .7em !important;
+  }
 
-.checked-out:hover {
-  background-color: #655d56 !important;
-}
-
-.location-details {
-  line-height: 1.6em !important;
-margin-top: 0 !important;
-margin-bottom: 0 !important;
-
+span.jh-detail-location {
+  font-weight: bold !important;
+  font-size: 1.6em !important;
 }
 
 md-radio-button[value="journal"] {
-  display: none !important;
+    display: none !important;
 }
 
-
-
 /* #fff = top bar
- #001f4e = top bar text, hover
- turquoise = guest/name
- #002d72 = search bar
- lightgray = sign in
+   #001f4e = top bar text, hover
+   turquoise = guest/name
+   #002d72 = search bar
+   lightgray = sign in
 */
 /*--------Top Banner ---------------*/
 
 /*Top Banner Background Color */
 .prm-primary-bg.prm-hue1, prm-spinner.prm-hue1.overlay-cover.light-on-dark:after, prm-topbar .top-nav-bar, prm-search-bar.prm-hue1 {
-background-color: #fff;
+	background-color: #fff;
 }
 
 /*-----User Area -------*/
 
 /*background for Guest Button And Icon */
 .prm-primary-bg.prm-hue2, prm-main-menu[menu-type=full] md-backdrop, prm-search-bookmark-filter .md-button, prm-spinner.prm-hue2.overlay-cover.light-on-dark:after, prm-user-area, prm-user-area md-fab-trigger>.md-button .md-fab-toolbar-background {
-  background-color: #fff;
+    background-color: #fff;
 }
 
-/*Hover */
-/*NAV BAR REGULAR button hover */
-prm-topbar .md-button:focus, prm-topbar .md-button:hover {
-    color: #fff !important;
-    background-color: #002d72 !important;
-    box-shadow: none;
-}
+  /*Hover */
+  /*NAV BAR REGULAR button hover */
+  prm-topbar .md-button:focus, prm-topbar .md-button:hover {
+      color: #fff !important;
+      background-color: #002d72 !important;
+      box-shadow: none;
+  }
 
-prm-user-area .user-menu-button .user-name {
-    text-transform: none;
-    font-weight: 600;
-    color: turquoise;
-    text-align: left;
-    max-width: 150px;
-}
+  prm-user-area .user-menu-button .user-name {
+      text-transform: none;
+      font-weight: 600;
+      color: turquoise;
+      text-align: left;
+      max-width: 150px;
+  }
 
 /*  TOPBAR - USER AREA - HOVER COLOR */
-md-fab-toolbar md-toolbar {
-    background-color: #fff !important;
-    pointer-events: none;
-    z-index: 23;
-}
+  md-fab-toolbar md-toolbar {
+      background-color: #fff !important;
+      pointer-events: none;
+      z-index: 23;
+  }
 
 /*Top Bar- User Area - Button Link Color - On Hover */
 /*Language Button hover */
 
 prm-topbar .md-button {
-color: #001f4e !important;
-text-transform: none;
-height: 100%;
-border-radius: 0;
-margin: 0;
+  color: #001f4e !important;
+  text-transform: none;
+  height: 100%;
+  border-radius: 0;
+  margin: 0;
 }
 
 prm-user-area md-fab-toolbar .md-fab-action-item md-input-container md-select, prm-user-area md-fab-toolbar .md-fab-action-item md-input-container .md-input-container-dummy > .md-select-dummy, prm-user-area md-fab-toolbar ._md-fab-action-item md-input-container md-select, prm-user-area md-fab-toolbar ._md-fab-action-item md-input-container .md-input-container-dummy > .md-select-dummy {
-  color: #001f4e;
-  height: 100%;
+    color: #001f4e;
+    height: 100%;
 }
 
 /*User Area - Hover - Button  Color - My Library Card*/
 prm-user-area md-fab-toolbar .md-fab-action-item md-input-container.md-primoExplore-theme:not([disabled]) {
-  color: #001f4e;
-}
-
-prm-user-area md-fab-toolbar .md-fab-action-item .md-button.md-primoExplore-theme:not([disabled]) {
     color: #001f4e;
 }
 
-/*User Area - Hover - Button on Hover Color - My Library Card*/
+prm-user-area md-fab-toolbar .md-fab-action-item .md-button.md-primoExplore-theme:not([disabled]) {
+      color: #001f4e;
+  }
+
+  /*User Area - Hover - Button on Hover Color - My Library Card*/
 prm-user-area md-fab-toolbar .md-fab-action-item .md-button.md-primoExplore-theme:not([disabled]):focus, prm-user-area md-fab-toolbar .md-fab-action-item .md-button.md-primoExplore-theme:not([disabled]):hover, prm-user-area md-fab-toolbar .md-fab-action-item md-input-container.md-primoExplore-theme:not([disabled]):focus, prm-user-area md-fab-toolbar .md-fab-action-item md-input-container.md-primoExplore-theme:not([disabled]):hover {
-  background-color: #fff;
-  color: #001f4e;
-  box-shadow: none!important;
+    background-color: #fff;
+    color: #001f4e;
+    box-shadow: none!important;
 }
 
 /*Language Label - On Hover!! */
 prm-user-area md-fab-toolbar .md-fab-action-item md-input-container md-select:hover, prm-user-area md-fab-toolbar .md-fab-action-item md-input-container .md-input-container-dummy:hover {
-  color: #fff; /*Language - English- Text Color */
-  background-color: #001f4e; /*background-color for English Label*/
-  height: 100%;
+    color: #fff; /*Language - English- Text Color */
+    background-color: #001f4e; /*background-color for English Label*/
+    height: 100%;
 }
 
 /* search bar */
 .prm-primary-bg, prm-atoz-search-bar, prm-browse-search-bar, prm-collection-gallery-header .collection-header-inner, prm-newspapers-search-bar, prm-search-bar, prm-spinner.overlay-cover.light-on-dark::after, prm-tags-search-bar {
-  background-color: #002d72;
+    background-color: #002d72;
 }
 prm-search-bar {
-padding: 1.5em 1.5em 0.7em 1.5em;
+  padding: 1.5em 1.5em 0.7em 1.5em;
 }
 
 /* sign in */
 .bar.alert-bar {
-background-color: #ffffff;
+	background-color: #ffffff;
 }
 
 /* results list colors */
 
 has-checkbox .list-item-count { /* item count spacing inside of checkbox */
-top: 1.5em;
+  top: 1.5em;
 }
 
 prm-brief-result .item-title span {
-color: #002d72;
+  color: #002d72;
 }
 .md-button.arrow-link-button .button-content {
-color: #002d72;
+  color: #002d72;
 }
 [class*="available"] {
-color: #286140;
+  color: #286140;
 }
 [class*="available"] > span {
-color: #002d72;
+  color: #002d72;
 }
 
 [class*="unavailable"] {
-color: #c44545;
-}
+  color: #c44545;
+  }
 
 .not_restricted {
-color: #286140;
+  color: #286140;
 }
 .fulltext {
-color: #286140;
+  color: #286140;
 }
 prm-quick-link a span {
-color: #286140;
+  color: #286140;
 }
 
 mark {
-box-shadow: inset 0 -.3em 0 0 #f1c400;
+  box-shadow: inset 0 -.3em 0 0 #f1c400;
 }
 .prm-notice {
-color: #9e5330;
+  color: #9e5330;
 }
 .result-item-actions .pin-button {
-color: #002d72;
+  color: #002d72;
 }
 prm-facet .switch-results md-switch.md-checked .md-label {
-color: #002d72;
+  color: #002d72;
 }
 .md-button.button-as-link.link-alt-color {
-color: #002d72;
+  color: #002d72;
 }
 .md-button.button-as-link.link-alt-color:focus:not([disabled]), .md-button.button-as-link.link-alt-color:hover:not([disabled]) {
-background-color: #002d72;
+  background-color: #002d72;
 }
 prm-facet-exact .section-title prm-icon {
-color: #002d72;
+  color: #002d72;
 }
 prm-facet-exact .section-title:focus span{
-color: #002d72;
+  color: #002d72;
 }
 prm-facet-exact .section-title:hover span {
-color: #002d72;
+  color: #002d72;
 }
 prm-facet-range .section-title:focus span {
-color: #002d72;
+  color: #002d72;
 }
 prm-facet-range .section-title:hover span {
-color: #002d72;
+  color: #002d72;
 }
 prm-facet-range .section-title prm-icon {
-color: #002d72;
+  color: #002d72;
 }
 prm-newspapers-spotlight h3 a {
-color: #002d72;
+  color: #002d72;
 }
 prm-brief-result .item-detail [class^="media-"] {
-opacity: .4;
+  opacity: .4;
 }
 
 .best-location-delivery::before {
-    content: "\--\00a0";
+      content: "\--\00a0";
 }
 prm-search-result-availability-line .availability-status span:first-child + .locations-link::before {
-content: "\--\00a0";
+  content: "\--\00a0";
 }
 .availability-line-parenthesis {
-display:none;
+  display:none;
 }
 
 /* item detail listing */
 .md-button.button-link {
-color: #002d72;
+  color: #002d72;
 }
 .md-button.button-link:hover:not([disabled]) {
-background-color: #002d72;
+  background-color: #002d72;
 }
 .md-button.button-link:focus:not([disabled]) {
-background-color: #002d72;
+  background-color: #002d72;
 }
 .md-button.button-as-link {
-color: #002d72;
+  color: #002d72;
 }
 .md-button.button-as-link:hover:not([disabled]) {
-background-color: #002d72;
+  background-color: #002d72;
 }
 .md-button.button-as-link:focus:not([disabled]) {
-background-color: #002d72;
+  background-color: #002d72;
 }
 [external-link]:hover {
-color: #fff;
+  color: #fff;
 }
 [external-link]:focus {
-color: #fff;
+  color: #fff;
 }
 md-tabs.tabs-as-app .back-button {
-color: #002d72;
+  color: #002d72;
 }
 md-tabs.tabs-as-app .back-button:hover:not([disabled]) {
-background-color: #002d72;
+  background-color: #002d72;
 }
 md-tabs.tabs-as-app .back-button:focus:not([disabled]) {
-background-color: #002d72;
+  background-color: #002d72;
 }
 a {
-color:#002d72;
+  color:#002d72;
 }
 a:hover {
-box-shadow: inset 0 -2px 0 0 #002d72;
+  box-shadow: inset 0 -2px 0 0 #002d72;
 }
 .bar prm-authentication .md-button {
-color: #002d72;
+  color: #002d72;
 }
 .bar prm-authentication .md-button:hover:not([disabled]) {
-background-color:#002d72;
+  background-color:#002d72;
 }
 .bar prm-authentication .md-button:focus:not([disabled]) {
-background-color:#002d72;
+  background-color:#002d72;
 }
 .bar.alert-bar {
-border-color: #F1C400;
+  border-color: #F1C400;
 }
 
 /* facets */
 
 prm-facet .switch-results md-switch.md-checked .md-bar {
-color: #002d72;
-background-color: #002d72;
-opacity: .4;
+  color: #002d72;
+  background-color: #002d72;
+  opacity: .4;
 }
 prm-facet .switch-results md-switch.md-checked .md-thumb {
-color: #002d72;
-background-color: #002d72;
+  color: #002d72;
+  background-color: #002d72;
 }
 prm-facet .switch-results md-switch:hover.active {
-background-color: #002d72;
+  background-color: #002d72;
 }
 prm-facet .switch-results md-switch:focus.active {
-background-color: #002d72;
+  background-color: #002d72;
 }
 
 /* modal pop-up for menu and sign-in */
 prm-main-menu[menu-type="full"] .md-button .md-headline, prm-main-menu[menu-type="full"] .overlay-menu-item .md-headline {
-color: #fff;
+  color: #fff;
 }
 md-dialog.light-on-dark-dialog md-list md-list-item.list-login .md-button {
-color: #fff!important;
+  color: #fff!important;
 }
 md-dialog.light-on-dark-dialog {
-background-color: #002d72;
+  background-color: #002d72;
 }
+
+#services-index {
+    display: none;
+  }
+  
+  prm-opac-back-button>.back-button {
+    text-transform: none !important;
+    font-weight: bold !important;
+    font-size: 16px !important;
+    margin: 0 !important;
+  }
+  
+  prm-location-items-after>span.jh-location-items {
+    display: none;
+  }
+  
+  prm-location-items-after>div.tab-content-header.margin-bottom-small.margin-left-medium.layout-row.layout-align-space-between-end>div.layout-column.flex>h6 {
+    display: none;
+  }
+  
+  span.jh-detail-location {
+    font-weight: bold;
+    font-size: 1.5em;
+  
+  }
+  
+
+  
+  prm-location-items>md-list {
+    display: none !important;
+  }
+  
+  prm-locations > div > h3.section-title {
+    display: none;
+  }
+  /* Needed to keep the title in the search results from being too large */
+  prm-brief-result .item-title {
+    font-size: initial;
+  }
+
+  prm-full-view h3.item-title {
+      font-size: 1.7em;
+      line-height: 1.2em;
+      margin: 10px 0 8px 0;
+  }
 
 @import url("https://use.typekit.net/jge8wgr.css");
 
 body {
-font-family: "proxima-nova", sans-serif;
+  font-family: "proxima-nova", sans-serif;
 }
 md-card-content h3 {
-font-weight:400;
+  font-weight:400;
 }
 .md-headline {
-font-weight:400;
+  font-weight:400;
 }
 @media (max-width: 1140px) {
-  .jh-header-menu {
-      margin-left:0px;
-  }
-  .jh-header-menu ul li {
-      font-size: 0.8em;
+    .jh-header-menu {
+        margin-left:0px;
     }
+    .jh-header-menu ul li {
+        font-size: 0.8em;
+      }
 }
 @media (max-width: 768px) {
-  .jh-header-menu {
-      display:none;
-  }
-  .logo-image {
-      margin-left:0px!important;
-  }
-  .search-switch-buttons {
-      padding:0px;
-      font-size:0.9em;
-  }
-  .layout-column {
-      max-width: 100% !important;
-  }
+    .jh-header-menu {
+        display:none;
+    }
+    .logo-image {
+        margin-left:0px!important;
+    }
+    .search-switch-buttons {
+        padding:0px;
+        font-size:0.9em;
+    }
+    .layout-column {
+        max-width: 100% !important;
+    }
 }
 
 prm-atoz-search-bar {
-  margin-top: 75px;
+    margin-top: 75px;
 }
 prm-browse-search-bar {
-  margin-top: 75px;
+    margin-top: 75px;
 }
 #citationLinker {
-  margin-top: 75px;
+    margin-top: 75px;
 }
 prm-location {
-visibility: visible;
+  visibility: visible;
 }
 
 prm-location>.neutralized-button {
-visibility: hidden;
-height: 0;
-width: 0;
-margin: 0;
-padding: 0;
+  visibility: hidden;
+  height: 0;
+  width: 0;
+  margin: 0;
+  padding: 0;
 }
 
 prm-location-after {
-visibility: visible !important;
+  visibility: visible !important;
 }
 
 prm-location-items>* {
@@ -431,85 +479,87 @@ prm-location-items-after>md-list>md-list-item>div.layout-row.flex>div>div.layout
 }
 
 prm-newspapers-search-bar {
-  margin-top: 75px;
+    margin-top: 75px;
 }
+/* #form_field_genericCheckBox { display: none; } */
+
 prm-search-bar {
-  margin-top: 75px;
+    margin-top: 75px;
 }
 prm-tags-search-bar {
-  margin-top: 75px;
+    margin-top: 75px;
 }
 .jh-header-container {
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 40px;
-  padding-right: 40px;
-  height: 68px;
-  background-color:#002d72;
-  color:#fff;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    height: 68px;
+    background-color:#002d72;
+    color:#fff;
 }
 
 @media only screen and (max-width: 1280px) {
-  .jh-header-container {
-      padding-left: 20px;
-      padding-right: 20px;
-  }
+    .jh-header-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
 .jh-header-logo {
- margin:15px 0;
-  float:left;
+   margin:15px 0;
+    float:left;
 }
 .jh-header-logo a:hover,
 .jh-header-logo a:focus {
-  box-shadow: none;
+    box-shadow: none;
 }
 .jh-image {
-  height: auto;
-  max-width: 100%;
+    height: auto;
+    max-width: 100%;
 }
 .jh-header-menu {
-  margin: 10px 20px 0 40px;
-  float:left;
+    margin: 10px 20px 0 40px;
+    float:left;
 }
 .jh-header-menu ul {
 
-  list-style-type:none;
+    list-style-type:none;
 }
 .jh-header-menu ul li {
-  display:inline block;
-  float:left;
-  padding: 0 15px;
+    display:inline block;
+    float:left;
+    padding: 0 15px;
 }
 .jh-header-menu ul li a {
-  color:#fff;
+    color:#fff;
 }
 prm-topbar .top-nav-bar {
-  clear:both;
-}
+    clear:both;
+  }
 .logo-image {
-  height: 30px;
-  margin-left:70px;
-}
+    height: 30px;
+    margin-left:70px;
+  }
 
-prm-main-menu[menu-type="menu"] .md-button {
-  font-size: .80em;
-}
+  prm-main-menu[menu-type="menu"] .md-button {
+    font-size: .80em;
+  }
 
-/* Fix for the Collections header being hidden by the top bar */
+  /* Fix for the Collections header being hidden by the top bar */
 prm-collection-gallery-header > .collection-header-inner.has-transparent-topbar {
-margin-top: 0;
-padding-top: 100px;
+  margin-top: 0;
+  padding-top: 100px;
 }
 
 prm-explore-main .header .transparent-top-bar div:not(.favorites-guest-warning) {
-background-color: #fff !important;
+  background-color: #fff !important;
 }
 
 /* This is for the services page which is the equivalent of Find It in the pre-Alma times 
- this is the page that displays when you use the citation linker. */
+   this is the page that displays when you use the citation linker. */
 
 
 /* This fixes a problem with the services page where the top of the page is hidden by the top navigation bar. */
 body > primo-explore > div > prm-services-page > prm-full-view-cont > md-content {
-margin-top: 75px !important;
+  margin-top: 75px !important;
 }
