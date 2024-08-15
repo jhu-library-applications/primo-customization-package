@@ -104,6 +104,11 @@
     scriptEle.addEventListener("error", (ev) => {
         console.log("Error on loading file", ev);
     });
+
+    document.addEventListener('DOMContentLoaded', function(e) {
+      document.querySelector('prm-static').previousSibling.remove();
+      document.querySelector('prm-static').nextSibling.remove();
+    });
 }
 
 loadJS('https://jhu-library-applications.github.io/showcase-bundle/discovery-showcase.bundled.js');
