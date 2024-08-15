@@ -91,12 +91,6 @@
   };
 
   function loadJS(FILE_URL, async = true) {
-    let hideEle = document.createElement("script");
-    hideEle.text  = `
-       document.querySelector('prm-static').previousSibling.remove();
-       document.querySelector('prm-static').nextSibling.remove();`
-    document.body.appendChild(hideEle);
-    
     let scriptEle = document.createElement("script");
     scriptEle.setAttribute("src", FILE_URL);
     scriptEle.setAttribute("type", "module");
