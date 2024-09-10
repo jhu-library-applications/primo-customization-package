@@ -1,69 +1,115 @@
 <div>
     <style>
-      prm-location-holdings>* {
-        visibility: hidden;
-        height: 0;
-        width: 0;
-        margin: 0;
-        padding: 0;
-      }
-      prm-location-holdings-after {
-        visibility: visible;
-      }
-      .jh-boundswith-card {
-        margin: 15px 0 0 0 !important;
-      }
+        prm-location-holdings > * {
+            visibility: hidden;
+            height: 0;
+            width: 0;
+            margin: 0;
+            padding: 0;
+        }
+        prm-location-holdings-after {
+            visibility: visible;
+        }
+        .jh-boundswith-card {
+            margin: 15px 0 0 0 !important;
+        }
     </style>
-    <md-card class="jh-boundswith-card" md-theme-watch>
-      <md-card-title>
-        <md-card-title-text>
-          <span class="md-headline">Holdings Information</span>
-        </md-card-title-text>
-      </md-card-title>
-      <md-card-content>
-        <div ng-repeat="line in $ctrl.holdings">
-          <span ng-if="$ctrl.isAvailabilityLine(line)">
-            <div class="margin-bottom-medium">
-              This item is physically bound with another item.
+    <md-card
+        ng-if="$ctrl.holdings && $ctrl.holdings.length > 0"
+        class="jh-boundswith-card"
+        md-theme-watch
+    >
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">Holdings Information</span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+            <div ng-repeat="line in $ctrl.holdings">
+                <span ng-if="$ctrl.isAvailabilityLine(line)">
+                    <div class="margin-bottom-medium">
+                        This item is physically bound with another item.
+                    </div>
+                    <span class="bold-text">For availability see:</span>
+                    <a
+                        ng-if="$ctrl.hasValidLink(line)"
+                        ng-href="{{$ctrl.getAvailabilityLink(line)}}"
+                    >
+                        {{$ctrl.getLinkText(line)}}
+                    </a>
+                </span>
             </div>
-            <span class="bold-text">For availability see:</span>
-            <a ng-if="$ctrl.hasValidLink(line)" ng-href="{{$ctrl.getAvailabilityLink(line)}}">
-              {{$ctrl.getLinkText(line)}}
-            </a>
-          </span>
-        </div>
-        
-        <div ng-if="$ctrl.shouldShowBaseSummary()" class="display-block" layout="row" layout-align="start start">
-          <div layout="column">
-            <div ng-repeat="summaryLine in $ctrl.getBaseSummaryLines() track by $index" layout="row">
-              <div translate="{{summaryLine.key}}" class="margin-right-small summary-brief-header"
-                   ng-class="{'margin-right-medium': $ctrl.parentCtrl.mediaQueries.xs}"></div>
-              <span class="summary-brief word-break-all" ng-style="$ctrl.getStyle()">
-                <a ng-if="$ctrl.isLink(summaryLine.value)" ng-href="{{summaryLine.value}}">{{summaryLine.value}}</a>
-                <span ng-if="!$ctrl.isLink(summaryLine.value)" ng-bind-html="summaryLine.value"></span>
-              </span>
-            </div>
-          </div>
-        </div>
-        
-        <div ng-if="$ctrl.shouldShowAllLines()" layout="row" layout-align="start start" class="display-block">
-          <div layout="column">
-            <div ng-repeat="allLine in $ctrl.getAllLines() track by $index">
-              <div ng-if="!$ctrl.isAvailabilityLine(allLine)">
-                <div>
-                  <span class="bold-text" translate="{{allLine.key}}"></span>
-                  <span ng-repeat="lineItem in allLine.value track by $index">
-                    <span>
-                      <a ng-if="$ctrl.isLink(lineItem)" ng-href="{{lineItem}}">{{lineItem}}</a>
-                      <span ng-if="!$ctrl.isLink(lineItem)" ng-bind-html="lineItem"></span>
-                    </span>
-                  </span>
+
+            <div
+                ng-if="$ctrl.shouldShowBaseSummary()"
+                class="display-block"
+                layout="row"
+                layout-align="start start"
+            >
+                <div layout="column">
+                    <div
+                        ng-repeat="summaryLine in $ctrl.getBaseSummaryLines() track by $index"
+                        layout="row"
+                    >
+                        <div
+                            translate="{{summaryLine.key}}"
+                            class="margin-right-small summary-brief-header"
+                            ng-class="{'margin-right-medium': $ctrl.parentCtrl.mediaQueries.xs}"
+                        ></div>
+                        <span
+                            class="summary-brief word-break-all"
+                            ng-style="$ctrl.getStyle()"
+                        >
+                            <a
+                                ng-if="$ctrl.isLink(summaryLine.value)"
+                                ng-href="{{summaryLine.value}}"
+                                >{{summaryLine.value}}</a
+                            >
+                            <span
+                                ng-if="!$ctrl.isLink(summaryLine.value)"
+                                ng-bind-html="summaryLine.value"
+                            ></span>
+                        </span>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </md-card-content>
+
+            <div
+                ng-if="$ctrl.shouldShowAllLines()"
+                layout="row"
+                layout-align="start start"
+                class="display-block"
+            >
+                <div layout="column">
+                    <div
+                        ng-repeat="allLine in $ctrl.getAllLines() track by $index"
+                    >
+                        <div ng-if="!$ctrl.isAvailabilityLine(allLine)">
+                            <div>
+                                <span
+                                    class="bold-text"
+                                    translate="{{allLine.key}}"
+                                ></span>
+                                <span
+                                    ng-repeat="lineItem in allLine.value track by $index"
+                                >
+                                    <span>
+                                        <a
+                                            ng-if="$ctrl.isLink(lineItem)"
+                                            ng-href="{{lineItem}}"
+                                            >{{lineItem}}</a
+                                        >
+                                        <span
+                                            ng-if="!$ctrl.isLink(lineItem)"
+                                            ng-bind-html="lineItem"
+                                        ></span>
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </md-card-content>
     </md-card>
-  </div>
-  
+</div>
