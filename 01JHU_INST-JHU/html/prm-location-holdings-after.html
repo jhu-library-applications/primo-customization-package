@@ -1,16 +1,6 @@
 <div>
     <style>
-        prm-location-holdings > * {
-            visibility: hidden;
-            height: 0;
-            width: 0;
-            margin: 0;
-            padding: 0;
-        }
-        prm-location-holdings-after {
-            visibility: visible;
-        }
-        .jh-boundswith-card {
+        noe .jh-boundswith-card {
             margin: 15px 0 0 0 !important;
         }
     </style>
@@ -110,6 +100,25 @@
                     </div>
                 </div>
             </div>
+            <md-button
+                class="button-as-link link-alt-color"
+                (click)="$ctrl.$ctrl.parentCtrl.viewMore(!$ctrl.summaryLinesVisible, $event)"
+                ng-if="($ctrl.parentCtrl.currLoc.locationNoItems ?  !$ctrl.parentCtrl.summaryLinesVisible : $ctrl.parentCtrl.summaryLinesVisible) && $ctrl.parentCtrl.currLoc.summaryHoldings.baseSummaryShort.length > 0 && $ctrl.parentCtrl.currLoc.isHoldingExpandedData"
+                aria-label="{{'nui.aria.locations.viewLess' | translate}}"
+                ><span
+                    translate="nui.locations.viewLess"
+                    class="bold-text"
+                ></span></md-button
+            ><md-button
+                class="button-as-link link-alt-color"
+                (click)="$ctrl.parentCtrl.viewMore(!$ctrl.summaryLinesVisible, $event)"
+                ng-if="($ctrl.parentCtrl.currLoc.locationNoItems ?  $ctrl.parentCtrl.summaryLinesVisible : !$ctrl.parentCtrl.summaryLinesVisible) && $ctrl.parentCtrl.currLoc.summaryHoldings.baseSummaryShort.length > 0 && $ctrl.parentCtrl.currLoc.isHoldingExpandedData"
+                aria-label="{{'nui.aria.locations.viewMore' | translate}}"
+                ><span
+                    translate="nui.locations.viewMore"
+                    class="bold-text"
+                ></span
+            ></md-button>
         </md-card-content>
     </md-card>
 </div>
