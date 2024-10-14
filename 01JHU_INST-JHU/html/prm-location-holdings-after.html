@@ -1,7 +1,14 @@
 <div>
     <style>
-        noe .jh-boundswith-card {
-            margin: 15px 0 0 0 !important;
+        prm-location-holdings > * {
+            visibility: hidden;
+            height: 0;
+            width: 0;
+            margin: 0;
+            padding: 0;
+        }
+        prm-location-holdings-after {
+            visibility: visible;
         }
     </style>
     <md-card
@@ -83,7 +90,7 @@
                                 <span
                                     ng-repeat="lineItem in allLine.value track by $index"
                                 >
-                                    <span>
+                                    <div>
                                         <a
                                             ng-if="$ctrl.isLink(lineItem)"
                                             ng-href="{{lineItem}}"
@@ -93,7 +100,7 @@
                                             ng-if="!$ctrl.isLink(lineItem)"
                                             ng-bind-html="lineItem"
                                         ></span>
-                                    </span>
+                                    </div>
                                 </span>
                             </div>
                         </div>
