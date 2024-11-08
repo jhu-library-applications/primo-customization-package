@@ -9,12 +9,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/jquery": "^3.5.32",
     "esbuild": "0.21.5",
     "gulp": "^4.0.2"
   },
   "dependencies": {
     "gulp-clean": "^0.4.0",
     "gulp-concat": "^2.6.1",
-    "gulp-uglify": "^3.0.2"
+    "gulp-uglify": "^3.0.2",
+    "jquery": "^3.7.1"
   }
 }
