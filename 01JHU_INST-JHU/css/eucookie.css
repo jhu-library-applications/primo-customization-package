@@ -180,3 +180,12 @@ body .eupopup-style-compact .eupopup-button {
         right: 15%;
     }
 }
+
+.eupopup-container-top,
+.eupopup-container-fixedtop {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    right: 25%;
+    border-radius: 15px;
+}
