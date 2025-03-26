@@ -39,6 +39,10 @@
                             {{$ctrl.getLinkText(line)}}
                         </a>
                     </span>
+                    <span ng-if="!$ctrl.isAvailabilityLine(line)">
+                        <!-- Display other holdings notes -->
+                        <div ng-bind-html="line"></div>
+                    </span>
                 </div>
 
                 <div ng-if="!$ctrl.hasAvailabilityLine">
