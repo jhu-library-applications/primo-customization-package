@@ -22,122 +22,69 @@
             </md-card-title-text>
         </md-card-title>
         <md-card-content>
-            <div ng-init="$ctrl.hasAvailabilityLine = false">
+            <div>
+                <!-- Display all lines -->
                 <div ng-repeat="line in $ctrl.holdings">
-                    <span
-                        ng-if="$ctrl.isAvailabilityLine(line)"
-                        ng-init="$ctrl.hasAvailabilityLine = true"
-                    >
+                    <!-- Special handling for "For availability see:" line -->
+                    <div ng-if="$ctrl.isAvailabilityLine(line)">
                         <div class="margin-bottom-medium">
                             This item is physically bound with another item.
                         </div>
-                        <span class="bold-text">For availability see:</span>
-                        <a
-                            ng-if="$ctrl.hasValidLink(line)"
-                            ng-href="{{$ctrl.getAvailabilityLink(line)}}"
+                        <div>
+                            <span class="bold-text">{{line.key}}</span>
+                            <a
+                                ng-if="$ctrl.hasValidLink(line)"
+                                ng-href="{{$ctrl.getAvailabilityLink(line)}}"
+                            >
+                                {{$ctrl.getLinkText(line)}}
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Handle regular lines -->
+                    <div ng-if="!$ctrl.isAvailabilityLine(line)">
+                        <span class="bold-text">{{line.key}}</span>
+                        <span
+                            ng-repeat="lineItem in line.value track by $index"
                         >
-                            {{$ctrl.getLinkText(line)}}
-                        </a>
-                    </span>
-                    <span ng-if="!$ctrl.isAvailabilityLine(line)">
-                        <!-- Display other holdings notes -->
-                        <div ng-bind-html="line"></div>
-                    </span>
-                </div>
-
-                <div ng-if="!$ctrl.hasAvailabilityLine">
-                    <div
-                        ng-if="!$ctrl.parentCtrl.summaryLinesVisible"
-                        class="display-block"
-                        layout="row"
-                        layout-align="start start"
-                    >
-                        <div layout="column">
-                            <div
-                                ng-repeat="summaryLine in $ctrl.getBaseSummaryLines() track by $index"
-                                layout="row"
-                            >
-                                <div
-                                    translate="{{summaryLine.key}}"
-                                    class="margin-right-small summary-brief-header"
-                                    ng-class="{'margin-right-medium': $ctrl.parentCtrl.mediaQueries.xs}"
-                                ></div>
-                                <span
-                                    class="summary-brief word-break-all"
-                                    ng-style="$ctrl.getStyle()"
+                            <div>
+                                <a
+                                    ng-if="$ctrl.isLink(lineItem)"
+                                    ng-href="{{lineItem}}"
+                                    >{{lineItem}}</a
                                 >
-                                    <a
-                                        ng-if="$ctrl.isLink(summaryLine.value)"
-                                        ng-href="{{summaryLine.value}}"
-                                        >{{summaryLine.value}}</a
-                                    >
-                                    <span
-                                        ng-if="!$ctrl.isLink(summaryLine.value)"
-                                        ng-bind-html="summaryLine.value"
-                                    ></span>
-                                </span>
+                                <span
+                                    ng-if="!$ctrl.isLink(lineItem)"
+                                    ng-bind-html="lineItem"
+                                ></span>
                             </div>
-                        </div>
+                        </span>
                     </div>
-
-                    <div
-                        ng-if="$ctrl.parentCtrl.summaryLinesVisible"
-                        layout="row"
-                        layout-align="start start"
-                        class="display-block"
-                    >
-                        <div layout="column">
-                            <div
-                                ng-repeat="allLine in $ctrl.getAllLines() track by $index"
-                            >
-                                <div>
-                                    <span
-                                        class="bold-text"
-                                        translate="{{allLine.key}}"
-                                    ></span>
-                                    <span
-                                        ng-repeat="lineItem in allLine.value track by $index"
-                                    >
-                                        <div>
-                                            <a
-                                                ng-if="$ctrl.isLink(lineItem)"
-                                                ng-href="{{lineItem}}"
-                                                >{{lineItem}}</a
-                                            >
-                                            <span
-                                                ng-if="!$ctrl.isLink(lineItem)"
-                                                ng-bind-html="lineItem"
-                                            ></span>
-                                        </div>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <md-button
-                        class="button-as-link link-alt-color"
-                        ng-click="$ctrl.parentCtrl.viewMore(!$ctrl.parentCtrl.summaryLinesVisible, $event)"
-                        ng-if="!$ctrl.parentCtrl.summaryLinesVisible && $ctrl.parentCtrl.currLoc.summaryHoldings.baseSummaryShort.length > 0 && $ctrl.parentCtrl.currLoc.isHoldingExpandedData"
-                        aria-label="{{'nui.aria.locations.viewMore' | translate}}"
-                    >
-                        <span
-                            translate="nui.locations.viewMore"
-                            class="bold-text"
-                        ></span>
-                    </md-button>
-                    <md-button
-                        class="button-as-link link-alt-color"
-                        ng-click="$ctrl.parentCtrl.viewMore(!$ctrl.parentCtrl.summaryLinesVisible, $event)"
-                        ng-if="$ctrl.parentCtrl.summaryLinesVisible && $ctrl.parentCtrl.currLoc.summaryHoldings.baseSummaryShort.length > 0 && $ctrl.parentCtrl.currLoc.isHoldingExpandedData"
-                        aria-label="{{'nui.aria.locations.viewLess' | translate}}"
-                    >
-                        <span
-                            translate="nui.locations.viewLess"
-                            class="bold-text"
-                        ></span>
-                    </md-button>
                 </div>
+
+                <!-- View More/Less buttons -->
+                <md-button
+                    class="button-as-link link-alt-color"
+                    ng-click="$ctrl.parentCtrl.viewMore(!$ctrl.parentCtrl.summaryLinesVisible, $event)"
+                    ng-if="!$ctrl.parentCtrl.summaryLinesVisible && $ctrl.parentCtrl.currLoc.summaryHoldings.baseSummaryShort.length > 0 && $ctrl.parentCtrl.currLoc.isHoldingExpandedData"
+                    aria-label="{{'nui.aria.locations.viewMore' | translate}}"
+                >
+                    <span
+                        translate="nui.locations.viewMore"
+                        class="bold-text"
+                    ></span>
+                </md-button>
+                <md-button
+                    class="button-as-link link-alt-color"
+                    ng-click="$ctrl.parentCtrl.viewMore(!$ctrl.parentCtrl.summaryLinesVisible, $event)"
+                    ng-if="$ctrl.parentCtrl.summaryLinesVisible && $ctrl.parentCtrl.currLoc.summaryHoldings.baseSummaryShort.length > 0 && $ctrl.parentCtrl.currLoc.isHoldingExpandedData"
+                    aria-label="{{'nui.aria.locations.viewLess' | translate}}"
+                >
+                    <span
+                        translate="nui.locations.viewLess"
+                        class="bold-text"
+                    ></span>
+                </md-button>
             </div>
         </md-card-content>
     </md-card>
