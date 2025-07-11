@@ -1,3 +1,15 @@
-.md-headline2 {
-    margin-top: -24px;
+h2.sais-home {
+    font-weight:500;
+    font-size:1.4em;
+    margin-top:1.3em;
+}
+h2.sais-home-top {
+    margin-top:0;
+    font-weight:500;
+    font-size:1.4em;
+}
+h3.sais-home {
+    margin-top:1.4em;
+    font-weight:500;
+    font-size:1.2em;
 }

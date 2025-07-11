@@ -1,4 +1,7 @@
 
+md-radio-button[value="journal"] {
+    display:none!important;
+}
 /* #fff = top bar
    #001f4e = top bar text, hover
    turquoise = guest/name
@@ -299,6 +302,14 @@ prm-full-view-service-container > div.section-head > prm-service-header > div > 
 .logo-image {
     margin-top:3px;
 }
+@media (max-width: 1140px) {
+    .jh-header-menu {
+        margin-left:0px;
+    }
+    .jh-header-menu ul li {
+        font-size: 0.8em;
+      }
+}
 @media (max-width: 768px) {
     .jh-header-menu {
         display:none;
@@ -311,17 +322,33 @@ prm-full-view-service-container > div.section-head > prm-service-header > div > 
         font-size:0.9em;
     }
     .layout-column {
-        max-width:100%!important;
+        max-width: 100% !important;
+    }
+    .search-extras {
+        display:none;
     }
 }
+ @media (max-width: 480px) {
+    .search-extras {
+        display:none;
+    }
+ }
+
 prm-atoz-search-bar {
     margin-top: 85px;
+    background-color:transparent;
+    padding: 1.5em 1.5em 1.5em 1.5em;
 }
 prm-browse-search-bar {
     margin-top: 85px;
+    background-color:transparent;
+    padding: 1.5em 1.5em 1.5em 1.5em;
 }
-#citationLinker {
+
+
+#citationLinker{
     margin-top: 85px;
+    background-color:transparent!important;
 }
 /* This is for the services page which is the equivalent of Find It in the pre-Alma times 
    this is the page that displays when you use the citation linker. */
@@ -331,14 +358,25 @@ prm-browse-search-bar {
 body > primo-explore > div > prm-services-page > prm-full-view-cont > md-content {
     margin-top: 85px !important;
   }
+
+  /* display navigation links on services page */
+  prm-topbar .isDeposit, prm-topbar .isServicePage, prm-topbar .isSummonOverAlma {
+    display: inline;
+}
 prm-newspapers-search-bar {
     margin-top: 85px;
+    background-color:transparent;
+    padding: 1.5em 1.5em 1.5em 1.5em;
 }
 prm-search-bar {
-    margin-top: 85px;
+    margin-top: 79px;
+    background-color:transparent;
+    padding: 1.5em 1.5em 0em 1.5em;
 }
 prm-tags-search-bar {
     margin-top: 85px;
+    background-color:transparent;
+    padding: 1.5em 1.5em 1.5em 1.5em;
 }
 .jh-header-container {
     margin-left: auto;
@@ -346,7 +384,7 @@ prm-tags-search-bar {
     padding-left: 40px;
     padding-right: 40px;
     height: 78px;
-    background-color:#002d72;
+    background-color:transparent;
     color:#fff;
 }
 
@@ -394,3 +432,9 @@ prm-topbar .top-nav-bar {
     height: 30px;
     margin-left:70px;
   }
+prm-explore-main .header {
+    background-image: url("/discovery/custom/01JHU_INST-sais_europe/img/bolognabanner1.jpg");
+    background-repeat: no-repeat;
+    background-color:#002d72;
+    padding-bottom:25px;
+}
