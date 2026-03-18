@@ -14,3 +14,7 @@ prm-full-view-service-container > div.section-head > prm-service-header > div > 
     display: none !important;
 }
  */
+
+button[aria-label="Request from another library"] {
+    display: none;
+}
