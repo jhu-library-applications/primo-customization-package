@@ -1,0 +1,24 @@
+/* Hide all known images for Prophet Muhammad, also CGI Jesus Christ */
+
+/* HIDE THE ENTITY PERSON IMAGE */
+md-card:has([src*="Siyer-i_Nebi_158b.jpg" i], [src*="Mohammed.jpg" i], [src*="Muslim_depiction_of_Muhammad_-_17th_century_Ottoman_copy_from_the" i], [src*="Jesus_-_Cicero_Moraes_-_BBC.jpg" i]) md-card-avatar {
+display: none !important;
+}
+
+/* Hides Image from Person Page */
+
+.image-person-cont:has(img[src*="Siyer-i_Nebi_158b.jpg" i], [src*="Mohammed.jpg" i], [src*="Muslim_depiction_of_Muhammad_-_17th_century_Ottoman_copy_from_the" i], [src*="Jesus_-_Cicero_Moraes_-_BBC.jpg" i]) {
+display: none !important;
+}
+
+/* Hides the Image From Autocomplete */
+
+.person-autocomplete:has(img[src*="Siyer-i_Nebi_158b.jpg" i], [src*="Mohammed.jpg" i], [src*="Muslim_depiction_of_Muhammad_-_17th_century_Ottoman_copy_from_the" i], [src*="Jesus_-_Cicero_Moraes_-_BBC.jpg" i]) img {
+display: none !important;
+}
+
+/* Hides the Image From the People Associated With Pane */
+
+prm-featured-result-item md-card:has(img[src*="Siyer-i_Nebi_158b.jpg" i], [src*="Mohammed.jpg" i], [src*="Muslim_depiction_of_Muhammad_-_17th_century_Ottoman_copy_from_the" i], [src*="Jesus_-_Cicero_Moraes_-_BBC.jpg" i]) .card-image {
+display: none !important;
+}
