@@ -55,8 +55,10 @@ export const prmRequestAfter = {
     function campusDeliveryEligible(patronStatusCode, selectedLocationId) {
       const homewoodId = "126006350007861$$LIBRARY";
       const welchId = "126007910007861$$LIBRARY";
+      const aplId = "126004400007861$$LIBRARY";	
       const eligibleHomewoodGroups = ["jhfac", "jhgrad", "jhstf", "jhsrstf"];
       const eligibleWelchGroups = ["jhfac"];
+      const eligibleAplGroups = ["jhstf", "jhsrstf"];
 
       if (selectedLocationId === homewoodId) {
         document.querySelector('#form_field_checkbox_genericCheckBox > md-input-container > md-checkbox > div.md-label > span').textContent = "Office Delivery (Please include your Campus Mailbox Address in the Comment section)";
@@ -66,6 +68,11 @@ export const prmRequestAfter = {
       if (selectedLocationId === welchId) {
         document.querySelector('#form_field_checkbox_genericCheckBox > md-input-container > md-checkbox > div.md-label > span').textContent = "Office Delivery (Please include your Office Address in the Comment Section)";
         return eligibleWelchGroups.includes(patronStatusCode);
+      }
+
+      if (selectedLocationId === aplId) {
+          document.querySelector('#form_field_checkbox_genericCheckBox > md-input-container > md-checkbox > div.md-label > span').textContent = "Office Delivery (Please include your APL mailstop in the Comment section)";
+          return eligibleAplGroups.includes(patronStatusCode);
       }
     }
 
