@@ -11,7 +11,7 @@ export const prmTopBarBefore = {
         ndeBanner.classList.add("nde-banner");
         ndeBanner.setAttribute("role", "status");
         ndeBanner.setAttribute("aria-live", "polite");
-        ndeBanner.setAttribute("style", "background: #F1C400;padding: 1em; text-align: center;");
+        ndeBanner.setAttribute("style", "background: #F1C400; font-weight: bold; padding: 1em; text-align: center;");
 
         ndeBanner.innerHTML = `
             <a href="https://t.jh.edu/nde">Preview the new Catalyst interface</a>: a new Catalyst interface is coming in 2027. Try a functional preview now and provide feedback to help us improve Catalyst.
