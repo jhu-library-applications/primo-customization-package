@@ -14,13 +14,10 @@ export const prmTopBarBefore = {
         ndeBanner.setAttribute("style", "background: #F1C400; font-weight: bold; padding: 1em; text-align: center;");
 
         ndeBanner.innerHTML = `
-            <a href="https://t.jh.edu/nde">Preview the new Catalyst interface</a>: a new Catalyst interface is coming in 2027. Try a functional preview now and provide feedback to help us improve Catalyst.
-              <button id="banner-close-button" class="md-button md-ink-ripple">&#x2715;</button>
+            <b>Intermittent Access Problems with E-Resources:</b> the EZproxy system that enables you to link to online articles, books, and other e-resources when you are not on the campus network or VPN is unstable right now. If you get an error message when you attempt to link to e-resources, please wait a few minutes and try again. We apologize for the inconvenience and are working to resolve the problem as quickly as possible.
         `;
 
-        if (!document.cookie.split('; ').find(row => row.startsWith('ndeBannerClosed=true'))) {
-          document.body.prepend(ndeBanner);
-        }
+        document.body.prepend(ndeBanner);
 
         const closeButton = document.getElementById("banner-close-button");
 
