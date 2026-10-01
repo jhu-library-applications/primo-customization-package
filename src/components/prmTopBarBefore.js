@@ -3,6 +3,7 @@ export const prmTopBarBefore = {
   templateUrl: "/discovery/custom/01JHU_INST-JHU/html/prm-top-bar-before.html",
   controller: ['$scope', function ($scope) {
     this.$onInit = function () {
+      /*
       const ndeAddedBanner = document.querySelector(".nde-banner");
 
       if (!ndeAddedBanner) {
@@ -28,6 +29,7 @@ export const prmTopBarBefore = {
           });
         }
       }
+    */
     }
   }]
 };
